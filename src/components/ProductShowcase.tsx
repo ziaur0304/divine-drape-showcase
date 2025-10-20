@@ -1,21 +1,17 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MessageCircle } from "lucide-react";
-import saree1 from "@/assets/saree-1.jpg";
-import saree2 from "@/assets/saree-2.jpg";
-import saree3 from "@/assets/saree-3.jpg";
-import saree4 from "@/assets/saree-4.jpg";
-import saree5 from "@/assets/saree-5.jpg";
-import saree6 from "@/assets/saree-6.jpg";
+import dress1 from "@/assets/dress-1.jpg";
+import dress2 from "@/assets/dress-2.jpg";
+import dress3 from "@/assets/dress-3.jpg";
+import dress4 from "@/assets/dress-4.jpg";
 
 const ProductShowcase = () => {
   const products = [
-    { id: 1, image: saree1, name: "Emerald Elegance", category: "Designer" },
-    { id: 2, image: saree2, name: "Teal Tradition", category: "Pre-Designed" },
-    { id: 3, image: saree3, name: "Ivory Grace", category: "Custom" },
-    { id: 4, image: saree4, name: "Royal Red", category: "Designer" },
-    { id: 5, image: saree5, name: "Pastel Dream", category: "Pre-Designed" },
-    { id: 6, image: saree6, name: "Burgundy Bliss", category: "Designer" },
+    { id: 1, image: dress1, name: "Peach Blossom", category: "Designer" },
+    { id: 2, image: dress2, name: "Pink Floral Grace", category: "Pre-Designed" },
+    { id: 3, image: dress3, name: "Garden Dream", category: "Designer" },
+    { id: 4, image: dress4, name: "Vibrant Elegance", category: "Custom" },
   ];
 
   const handleWhatsAppClick = (productName: string) => {
@@ -36,7 +32,7 @@ const ProductShowcase = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
           {products.map((product, index) => (
             <Card
               key={product.id}

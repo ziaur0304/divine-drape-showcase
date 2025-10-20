@@ -1,12 +1,7 @@
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { MessageCircle, Phone, Instagram, Facebook } from "lucide-react";
-import { useState } from "react";
-import { toast } from "sonner";
 
 const Connect = () => {
-  const [email, setEmail] = useState("");
-
   const handleWhatsApp = () => {
     const whatsappNumber = "919394889709";
     const message = encodeURIComponent("Hi! I'd like to know more about your collection.");
@@ -15,14 +10,6 @@ const Connect = () => {
 
   const handleCall = () => {
     window.location.href = "tel:+919394889709";
-  };
-
-  const handleNewsletterSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (email) {
-      toast.success("Thank you for joining the Divine Circle! We'll keep you updated.");
-      setEmail("");
-    }
   };
 
   return (
@@ -88,31 +75,6 @@ const Connect = () => {
                 Call Now
               </Button>
             </div>
-          </div>
-        </div>
-
-        {/* Newsletter */}
-        <div className="bg-gradient-card border border-border rounded-2xl p-8 shadow-soft animate-slide-up max-w-2xl mx-auto">
-          <div className="text-center space-y-6">
-            <h3 className="text-2xl font-playfair font-semibold text-primary">
-              Join the Divine Circle
-            </h3>
-            <p className="text-muted-foreground">
-              Subscribe to receive updates about new collections and exclusive designs
-            </p>
-            <form onSubmit={handleNewsletterSubmit} className="flex gap-4">
-              <Input
-                type="email"
-                placeholder="Enter your email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                className="flex-1"
-              />
-              <Button type="submit" variant="hero">
-                Subscribe
-              </Button>
-            </form>
           </div>
         </div>
 

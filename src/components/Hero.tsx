@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
-import heroImage from "@/assets/hero-boutique.jpg";
+import logo from "@/assets/logo.jpg";
 
 interface HeroProps {
   onEnter: () => void;
@@ -8,30 +8,21 @@ interface HeroProps {
 
 const Hero = ({ onEnter }: HeroProps) => {
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0">
-        <img 
-          src={heroImage} 
-          alt="Ruby's Divine Drape Boutique Interior" 
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/80 via-primary/60 to-primary/80" />
-      </div>
-
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-subtle">
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 text-center">
         <div className="max-w-3xl mx-auto space-y-8 animate-fade-in">
-          {/* Logo/Brand Name */}
-          <div className="animate-zoom-in">
-            <h1 className="text-5xl md:text-7xl font-playfair font-bold text-primary-foreground mb-4 tracking-tight">
-              Ruby's Divine Drape
-            </h1>
-            <div className="h-1 w-32 bg-gradient-primary mx-auto rounded-full animate-glow" />
+          {/* Logo */}
+          <div className="animate-zoom-in flex justify-center">
+            <img 
+              src={logo} 
+              alt="Ruby's Divine Drape Logo" 
+              className="w-64 h-64 md:w-80 md:h-80 object-contain"
+            />
           </div>
 
           {/* Tagline */}
-          <p className="text-xl md:text-3xl text-primary-foreground/90 font-light animate-slide-up">
+          <p className="text-xl md:text-3xl text-primary font-light animate-slide-up">
             Customise your style, the ethnic way.
           </p>
 
@@ -50,7 +41,7 @@ const Hero = ({ onEnter }: HeroProps) => {
 
           {/* Scroll Indicator */}
           <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
-            <ChevronDown className="h-8 w-8 text-primary-foreground/70" />
+            <ChevronDown className="h-8 w-8 text-primary/70" />
           </div>
         </div>
       </div>

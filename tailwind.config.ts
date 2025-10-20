@@ -63,27 +63,58 @@ export default {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      fontFamily: {
+        playfair: ['Playfair Display', 'serif'],
+        poppins: ['Poppins', 'sans-serif'],
+      },
+      backgroundImage: {
+        'gradient-primary': 'var(--gradient-primary)',
+        'gradient-subtle': 'var(--gradient-subtle)',
+        'gradient-card': 'var(--gradient-card)',
+      },
+      boxShadow: {
+        'soft': 'var(--shadow-soft)',
+        'glow': 'var(--shadow-glow)',
+        'elegant': 'var(--shadow-elegant)',
+      },
       keyframes: {
         "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+        fadeIn: {
+          '0%': { opacity: '0', transform: 'translateY(20px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        slideUp: {
+          '0%': { opacity: '0', transform: 'translateY(40px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        zoomIn: {
+          '0%': { opacity: '0', transform: 'scale(0.9)' },
+          '100%': { opacity: '1', transform: 'scale(1)' },
+        },
+        pulse: {
+          '0%, 100%': { transform: 'scale(1)', opacity: '1' },
+          '50%': { transform: 'scale(1.05)', opacity: '0.8' },
+        },
+        glow: {
+          '0%, 100%': { filter: 'drop-shadow(0 0 10px hsl(42 85% 65% / 0.4))' },
+          '50%': { filter: 'drop-shadow(0 0 20px hsl(42 85% 65% / 0.6))' },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "fade-in": "fadeIn 0.8s ease-out forwards",
+        "slide-up": "slideUp 0.8s ease-out forwards",
+        "zoom-in": "zoomIn 0.6s ease-out forwards",
+        "pulse-soft": "pulse 3s ease-in-out infinite",
+        "glow": "glow 2s ease-in-out infinite",
       },
     },
   },

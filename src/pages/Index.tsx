@@ -7,7 +7,6 @@ import HowItWorks from "@/components/HowItWorks";
 import VisitBoutique from "@/components/VisitBoutique";
 import Connect from "@/components/Connect";
 import Footer from "@/components/Footer";
-import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import BottomNavigation from "@/components/BottomNavigation";
 
 const Index = () => {
@@ -64,7 +63,6 @@ const Index = () => {
         <Footer />
       </div>
 
-      <FloatingWhatsApp />
       <BottomNavigation activeSection={activeSection} onNavigate={handleNavigate} />
     </main>
   );

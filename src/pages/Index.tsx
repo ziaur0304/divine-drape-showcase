@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Hero from "@/components/Hero";
 import CategoryCards from "@/components/CategoryCards";
-import ProductShowcase from "@/components/ProductShowcase";
+
 import OurCollection from "@/components/OurCollection";
 import About from "@/components/About";
 import HowItWorks from "@/components/HowItWorks";
@@ -123,7 +123,6 @@ const Index = () => {
       <div className={showHero ? "hidden" : ""}>
         <CategoryCards onCategoryClick={handleCategoryClick} />
         <OurCollection onAddToCart={handleAddToCart} />
-        <ProductShowcase />
         <About />
         <HowItWorks />
         <VisitBoutique />

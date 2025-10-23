@@ -11,9 +11,9 @@ import dress4 from "@/assets/dress-4.jpg";
 const products: Product[] = [
   {
     id: "1",
-    name: "Royal Silk Saree",
+    name: "Peach Tiered Anarkali with Floral Embroidery",
     price: 2499,
-    originalPrice: 4999,
+    originalPrice: 4749,
     image: dress1,
     category: "Designer Drapes"
   },

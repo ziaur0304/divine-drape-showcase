@@ -21,25 +21,25 @@ const products: Product[] = [
   },
   {
     id: "2",
-    name: "Elegant Cotton Blend",
-    price: 1799,
-    originalPrice: 3599,
+    name: "Pastel Pink Embroidered Anarkali Dress",
+    price: 2689,
+    originalPrice: 5379,
     image: dress2,
     category: "Pre-Designed Sarees"
   },
   {
     id: "3",
-    name: "Traditional Banarasi",
-    price: 3499,
-    originalPrice: 6999,
+    name: "Grey Floral Print Pleated Maxi Dress with Embellishment",
+    price: 1929,
+    originalPrice: 3859,
     image: dress3,
     category: "Designer Drapes"
   },
   {
     id: "4",
-    name: "Festive Ethnic Wear",
-    price: 2199,
-    originalPrice: 4399,
+    name: "Yellow & Green Printed Anarkali Kurta Set with Dupatta - Cloth set in 3 pieces",
+    price: 1774,
+    originalPrice: 3549,
     image: dress4,
     category: "Custom Ethnic Wear"
   },
@@ -104,11 +104,11 @@ const OurCollection = ({ onAddToCart }: OurCollectionProps) => {
                 </div>
                 
                 <div className="flex items-center gap-2">
-                  <span className="text-xl font-bold text-primary">
-                    ₹{product.price}
-                  </span>
-                  <span className="text-sm text-muted-foreground line-through">
+                  <span className="text-lg text-muted-foreground line-through">
                     ₹{product.originalPrice}
+                  </span>
+                  <span className="text-base font-bold text-primary">
+                    ₹{product.price}
                   </span>
                 </div>
 

@@ -28,8 +28,13 @@ const Index = () => {
   };
 
   const handleNavigate = (sectionId: string) => {
-    const section = document.getElementById(sectionId);
-    section?.scrollIntoView({ behavior: "smooth" });
+    if (sectionId === "hero") {
+      setShowHero(true);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      const section = document.getElementById(sectionId);
+      section?.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   const handleCategoryClick = (category: string) => {

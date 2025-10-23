@@ -7,6 +7,8 @@ import dress1 from "@/assets/dress-1.jpg";
 import dress2 from "@/assets/dress-2.jpg";
 import dress3 from "@/assets/dress-3.jpg";
 import dress4 from "@/assets/dress-4.jpg";
+import dress5 from "@/assets/dress-5.jpg";
+import dress6 from "@/assets/dress-6.jpg";
 
 const products: Product[] = [
   {
@@ -40,6 +42,22 @@ const products: Product[] = [
     originalPrice: 4399,
     image: dress4,
     category: "Custom Ethnic Wear"
+  },
+  {
+    id: "5",
+    name: "Lemon Yellow Floral Embroidered Cotton Maxi Dress",
+    price: 2689,
+    originalPrice: 5379,
+    image: dress5,
+    category: "Designer Drapes"
+  },
+  {
+    id: "6",
+    name: "Lavender Floral Embroidered Cotton Suit Set",
+    price: 2389,
+    originalPrice: 4779,
+    image: dress6,
+    category: "Designer Drapes"
   }
 ];
 
@@ -83,9 +101,6 @@ const OurCollection = ({ onAddToCart }: OurCollectionProps) => {
                   <h3 className="font-display text-lg text-foreground mb-1">
                     {product.name}
                   </h3>
-                  <p className="text-xs text-muted-foreground">
-                    {product.category}
-                  </p>
                 </div>
                 
                 <div className="flex items-center gap-2">

@@ -10,7 +10,7 @@ interface BottomNavigationProps {
 const BottomNavigation = ({ activeSection, onNavigate, cartCount, onCartClick }: BottomNavigationProps) => {
   const navItems = [
     { id: "hero", label: "Home", icon: Home },
-    { id: "collections", label: "Collections", icon: Sparkles },
+    { id: "collection", label: "Collections", icon: Sparkles },
     { id: "cart", label: "Cart", icon: ShoppingCart, isCart: true },
     { id: "connect", label: "WhatsApp", icon: MessageCircle, isWhatsApp: true },
     { id: "about", label: "About", icon: Info },

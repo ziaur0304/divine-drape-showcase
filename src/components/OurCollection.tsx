@@ -3,8 +3,8 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ShoppingCart, ZoomIn } from "lucide-react";
 import { Product } from "@/types/product";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { useState } from "react";
+import { ImageViewer } from "./ImageViewer";
 import dress1 from "@/assets/dress-1.jpg";
 import dress2 from "@/assets/dress-2.jpg";
 import dress3 from "@/assets/dress-3.jpg";
@@ -69,11 +69,6 @@ interface OurCollectionProps {
 
 const OurCollection = ({ onAddToCart }: OurCollectionProps) => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
-  const [zoom, setZoom] = useState(1);
-
-  const handleZoom = (delta: number) => {
-    setZoom(prev => Math.min(Math.max(prev + delta, 1), 3));
-  };
 
   return (
     <section id="collection" className="py-16 px-4 bg-gradient-subtle">
@@ -139,38 +134,12 @@ const OurCollection = ({ onAddToCart }: OurCollectionProps) => {
         </div>
       </div>
 
-      {/* Image Zoom Dialog */}
-      <Dialog open={!!selectedImage} onOpenChange={() => { setSelectedImage(null); setZoom(1); }}>
-        <DialogContent className="max-w-[95vw] max-h-[95vh] p-0 overflow-hidden bg-black/95 border-none">
-          <div className="relative w-full h-[95vh] flex items-center justify-center overflow-auto">
-            <img
-              src={selectedImage || ""}
-              alt="Product fullscreen"
-              className="max-w-full max-h-full object-contain transition-transform duration-200"
-              style={{ transform: `scale(${zoom})` }}
-            />
-          </div>
-          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 bg-background/80 backdrop-blur-sm rounded-full p-2">
-            <Button
-              variant="secondary"
-              size="sm"
-              onClick={() => handleZoom(-0.5)}
-              disabled={zoom <= 1}
-            >
-              -
-            </Button>
-            <span className="px-4 py-2 text-sm">{Math.round(zoom * 100)}%</span>
-            <Button
-              variant="secondary"
-              size="sm"
-              onClick={() => handleZoom(0.5)}
-              disabled={zoom >= 3}
-            >
-              +
-            </Button>
-          </div>
-        </DialogContent>
-      </Dialog>
+      <ImageViewer
+        src={selectedImage || ""}
+        alt="Product fullscreen"
+        isOpen={!!selectedImage}
+        onClose={() => setSelectedImage(null)}
+      />
     </section>
   );
 };

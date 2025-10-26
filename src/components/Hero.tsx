@@ -31,11 +31,6 @@ const Hero = ({ onEnter }: HeroProps) => {
             Customise your style, the ethnic way.
           </p>
 
-          {/* Video Call Info */}
-          <p className="text-base md:text-lg text-muted-foreground animate-slide-up" style={{ animationDelay: "0.4s" }}>
-            Customers can choose products via video call through WhatsApp
-          </p>
-
           {/* CTA Button */}
           <div className="animate-slide-up" style={{ animationDelay: "0.5s" }}>
             <Button

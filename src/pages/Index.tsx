@@ -74,7 +74,7 @@ const Index = () => {
   };
 
   const handleCheckoutSubmit = (data: { name: string; address: string; note: string }) => {
-    const whatsappNumber = "919394889709";
+    const whatsappNumber = "919957977221";
     
     const productList = cartItems
       .map((item, index) => `${index + 1}. ${item.name} - ₹${item.price}`)

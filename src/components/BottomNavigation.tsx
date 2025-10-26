@@ -17,7 +17,7 @@ const BottomNavigation = ({ activeSection, onNavigate, cartCount, onCartClick }:
   ];
 
   const handleWhatsAppClick = () => {
-    const whatsappNumber = "919394889709";
+    const whatsappNumber = "919957977221";
     const message = encodeURIComponent("Hi! I'm interested in your ethnic wear collection.");
     window.open(`https://wa.me/${whatsappNumber}?text=${message}`, "_blank");
   };

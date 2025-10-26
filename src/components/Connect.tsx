@@ -3,13 +3,13 @@ import { MessageCircle, Phone, Instagram, Facebook } from "lucide-react";
 
 const Connect = () => {
   const handleWhatsApp = () => {
-    const whatsappNumber = "919394889709";
+    const whatsappNumber = "919957977221";
     const message = encodeURIComponent("Hi! I'd like to know more about your collection.");
     window.open(`https://wa.me/${whatsappNumber}?text=${message}`, "_blank");
   };
 
   const handleCall = () => {
-    window.location.href = "tel:+919394889709";
+    window.location.href = "tel:+919957977221";
   };
 
   return (
@@ -41,7 +41,7 @@ const Connect = () => {
                   Chat with us for instant updates and video consultations
                 </p>
                 <p className="text-lg font-semibold text-primary mb-4">
-                  +91 93948 89709
+                  +91 99579 77221
                 </p>
               </div>
               <Button onClick={handleWhatsApp} variant="secondary" size="lg" className="w-full">
@@ -67,7 +67,7 @@ const Connect = () => {
                   Speak directly with our design consultants
                 </p>
                 <p className="text-lg font-semibold text-primary mb-4">
-                  +91 93948 89709
+                  +91 99579 77221
                 </p>
               </div>
               <Button onClick={handleCall} variant="luxury" size="lg" className="w-full">

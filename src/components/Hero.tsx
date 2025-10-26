@@ -12,8 +12,13 @@ const Hero = ({ onEnter }: HeroProps) => {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 text-center">
         <div className="max-w-3xl mx-auto space-y-8 animate-fade-in">
+          {/* Welcome Text */}
+          <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-primary animate-slide-up bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent animate-pulse">
+            Welcome to Ruby's Divine Drape
+          </h1>
+          
           {/* Logo */}
-          <div className="animate-zoom-in flex justify-center">
+          <div className="animate-zoom-in flex justify-center" style={{ animationDelay: "0.2s" }}>
             <img 
               src={logo} 
               alt="Ruby's Divine Drape Logo" 
@@ -22,17 +27,17 @@ const Hero = ({ onEnter }: HeroProps) => {
           </div>
 
           {/* Tagline */}
-          <p className="text-xl md:text-3xl text-primary font-light animate-slide-up">
+          <p className="text-xl md:text-3xl text-primary font-light animate-slide-up" style={{ animationDelay: "0.3s" }}>
             Customise your style, the ethnic way.
           </p>
 
           {/* Video Call Info */}
-          <p className="text-base md:text-lg text-muted-foreground animate-slide-up" style={{ animationDelay: "0.2s" }}>
+          <p className="text-base md:text-lg text-muted-foreground animate-slide-up" style={{ animationDelay: "0.4s" }}>
             Customers can choose products via video call through WhatsApp
           </p>
 
           {/* CTA Button */}
-          <div className="animate-slide-up" style={{ animationDelay: "0.3s" }}>
+          <div className="animate-slide-up" style={{ animationDelay: "0.5s" }}>
             <Button
               onClick={onEnter}
               variant="hero"

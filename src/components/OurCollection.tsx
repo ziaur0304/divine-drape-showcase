@@ -1,16 +1,28 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ShoppingCart, ZoomIn } from "lucide-react";
+import { ShoppingCart, MessageCircle } from "lucide-react";
 import { Product } from "@/types/product";
 import { useState } from "react";
-import { ImageViewer } from "./ImageViewer";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import dress1 from "@/assets/dress-1.jpg";
 import dress2 from "@/assets/dress-2.jpg";
 import dress3 from "@/assets/dress-3.jpg";
 import dress4 from "@/assets/dress-4.jpg";
 import dress5 from "@/assets/dress-5.jpg";
 import dress6 from "@/assets/dress-6.jpg";
+import dress7 from "@/assets/dress-7.jpg";
+import dress8 from "@/assets/dress-8.jpg";
+import dress9 from "@/assets/dress-9.jpg";
+import dress10 from "@/assets/dress-10.jpg";
+import dress11 from "@/assets/dress-11.jpg";
+import dress12 from "@/assets/dress-12.jpg";
 
 const products: Product[] = [
   {
@@ -60,6 +72,54 @@ const products: Product[] = [
     originalPrice: 4779,
     image: dress6,
     category: "Designer Drapes"
+  },
+  {
+    id: "7",
+    name: "Fuchsia and Teal Abstract Co-ord",
+    price: 2604,
+    originalPrice: 5208,
+    image: dress7,
+    category: "Designer Drapes"
+  },
+  {
+    id: "8",
+    name: "Aura Pink Festive Suit",
+    price: 2370,
+    originalPrice: 4740,
+    image: dress8,
+    category: "Custom Ethnic Wear"
+  },
+  {
+    id: "9",
+    name: "Ethereal Blossom Sundress",
+    price: 2370,
+    originalPrice: 4740,
+    image: dress9,
+    category: "Designer Drapes"
+  },
+  {
+    id: "10",
+    name: "Artisan Pink Tiered Dress",
+    price: 2212,
+    originalPrice: 4425,
+    image: dress10,
+    category: "Designer Drapes"
+  },
+  {
+    id: "11",
+    name: "The Floral Yoke Ruffle Dress",
+    price: 2212,
+    originalPrice: 4425,
+    image: dress11,
+    category: "Designer Drapes"
+  },
+  {
+    id: "12",
+    name: "Rose Garden Volume Dress",
+    price: 2212,
+    originalPrice: 4425,
+    image: dress12,
+    category: "Designer Drapes"
   }
 ];
 
@@ -68,7 +128,16 @@ interface OurCollectionProps {
 }
 
 const OurCollection = ({ onAddToCart }: OurCollectionProps) => {
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+
+  const handleWhatsApp = () => {
+    const whatsappNumber = "919957977221";
+    const productInfo = selectedProduct 
+      ? `Hi! I'd like more details about: ${selectedProduct.name} (₹${selectedProduct.price}). Can we schedule a video call?`
+      : "Hi! I'd like to know more about your collection. Can we schedule a video call?";
+    const message = encodeURIComponent(productInfo);
+    window.open(`https://wa.me/${whatsappNumber}?text=${message}`, "_blank");
+  };
 
   return (
     <section id="collection" className="py-16 px-4 bg-gradient-subtle">
@@ -89,7 +158,10 @@ const OurCollection = ({ onAddToCart }: OurCollectionProps) => {
               className="group overflow-hidden bg-card border-accent/20 hover:shadow-elegant transition-all duration-300 animate-fade-in"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className="relative aspect-[4/9] overflow-hidden cursor-pointer" onClick={() => setSelectedImage(product.image)}>
+              <div 
+                className="relative aspect-[4/9] overflow-hidden cursor-pointer" 
+                onClick={() => setSelectedProduct(product)}
+              >
                 <img
                   src={product.image}
                   alt={product.name}
@@ -98,9 +170,6 @@ const OurCollection = ({ onAddToCart }: OurCollectionProps) => {
                 <Badge className="absolute top-3 right-3 bg-primary text-primary-foreground shadow-glow">
                   50% OFF
                 </Badge>
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
-                  <ZoomIn className="h-8 w-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </div>
               </div>
               
               <div className="p-4 space-y-3">
@@ -134,12 +203,30 @@ const OurCollection = ({ onAddToCart }: OurCollectionProps) => {
         </div>
       </div>
 
-      <ImageViewer
-        src={selectedImage || ""}
-        alt="Product fullscreen"
-        isOpen={!!selectedImage}
-        onClose={() => setSelectedImage(null)}
-      />
+      <Dialog open={!!selectedProduct} onOpenChange={() => setSelectedProduct(null)}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle className="text-2xl font-display text-primary">
+              Contact for Details
+            </DialogTitle>
+            <DialogDescription className="text-base pt-4">
+              For more information about <span className="font-semibold text-foreground">{selectedProduct?.name}</span>, 
+              please contact us on WhatsApp to schedule a video call consultation.
+            </DialogDescription>
+          </DialogHeader>
+          <div className="flex flex-col gap-4 pt-4">
+            <Button
+              onClick={handleWhatsApp}
+              variant="luxury"
+              size="lg"
+              className="w-full"
+            >
+              <MessageCircle className="h-5 w-5 mr-2" />
+              Request Video Call on WhatsApp
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };

@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ShoppingCart, MessageCircle } from "lucide-react";
+import { ShoppingCart, MessageCircle, Phone } from "lucide-react";
 import { Product } from "@/types/product";
 import { useState } from "react";
 import {
@@ -133,10 +133,14 @@ const OurCollection = ({ onAddToCart }: OurCollectionProps) => {
   const handleWhatsApp = () => {
     const whatsappNumber = "919957977221";
     const productInfo = selectedProduct 
-      ? `Hi! I'd like more details about: ${selectedProduct.name} (₹${selectedProduct.price}). Can we schedule a video call?`
-      : "Hi! I'd like to know more about your collection. Can we schedule a video call?";
+      ? `Hi! I'd like more details about: ${selectedProduct.name} (₹${selectedProduct.price}).`
+      : "Hi! I'd like to know more about your collection.";
     const message = encodeURIComponent(productInfo);
     window.open(`https://wa.me/${whatsappNumber}?text=${message}`, "_blank");
+  };
+
+  const handleCall = () => {
+    window.location.href = "tel:+919957977221";
   };
 
   return (
@@ -211,18 +215,27 @@ const OurCollection = ({ onAddToCart }: OurCollectionProps) => {
             </DialogTitle>
             <DialogDescription className="text-base pt-4">
               For more information about <span className="font-semibold text-foreground">{selectedProduct?.name}</span>, 
-              please contact us on WhatsApp to schedule a video call consultation.
+              please reach out to us through WhatsApp or call.
             </DialogDescription>
           </DialogHeader>
-          <div className="flex flex-col gap-4 pt-4">
+          <div className="flex flex-col gap-3 pt-4">
             <Button
               onClick={handleWhatsApp}
-              variant="luxury"
+              variant="secondary"
               size="lg"
               className="w-full"
             >
               <MessageCircle className="h-5 w-5 mr-2" />
-              Request Video Call on WhatsApp
+              WhatsApp Us
+            </Button>
+            <Button
+              onClick={handleCall}
+              variant="luxury"
+              size="lg"
+              className="w-full"
+            >
+              <Phone className="h-5 w-5 mr-2" />
+              Call Now
             </Button>
           </div>
         </DialogContent>

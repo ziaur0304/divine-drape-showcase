@@ -29,7 +29,7 @@ const Footer = () => {
             <ul className="space-y-2 text-primary-foreground/80">
               <li>Lakhipur, Assam 783129</li>
               <li>India</li>
-              <li>+91 93948 89709</li>
+              <li>+91 99579 77221</li>
             </ul>
           </div>
         </div>

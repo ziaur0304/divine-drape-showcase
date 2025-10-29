@@ -121,14 +121,7 @@ const products: Product[] = [
     image: dress11,
     category: "Designer Drapes"
   },
-  {
-    id: "12",
-    name: "Rose Garden Volume Dress",
-    price: 2212,
-    originalPrice: 4425,
-    image: dress12,
-    category: "Designer Drapes"
-  },
+  
   {
     id: "13",
     name: "The Empress A-line Dress",
@@ -184,6 +177,15 @@ const products: Product[] = [
     originalPrice: 4110,
     image: dress18,
     category: "Custom Ethnic Wear"
+  },
+
+{
+    id: "12",
+    name: "Rose Garden Volume Dress",
+    price: 2212,
+    originalPrice: 4425,
+    image: dress12,
+    category: "Designer Drapes"
   },
   {
     id: "20",

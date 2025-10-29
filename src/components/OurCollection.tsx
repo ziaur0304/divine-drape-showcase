@@ -161,27 +161,27 @@ const products: Product[] = [
     category: "Designer Drapes"
   },
   {
-    id: "17",
+    id: "19",
     name: "The Empress A-line Dress - Marigold Bloom",
     price: 2055,
     originalPrice: 4110,
+    image: dress19,
+    category: "Designer Drapes"
+  },
+  {
+    id: "17",
+    name: "The Ivory Garden Floral Tunic",
+    price: 1897,
+    originalPrice: 3795,
     image: dress17,
     category: "Designer Drapes"
   },
   {
     id: "18",
-    name: "The Ivory Garden Floral Tunic",
-    price: 1897,
-    originalPrice: 3795,
-    image: dress18,
-    category: "Designer Drapes"
-  },
-  {
-    id: "19",
     name: "The Fuchsia Forest Gathered Dress",
     price: 2055,
     originalPrice: 4110,
-    image: dress19,
+    image: dress18,
     category: "Custom Ethnic Wear"
   }
 ];

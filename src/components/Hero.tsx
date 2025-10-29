@@ -13,7 +13,8 @@ const Hero = ({ onEnter }: HeroProps) => {
       <div className="relative z-10 container mx-auto px-6 text-center">
         <div className="max-w-3xl mx-auto space-y-8 animate-fade-in">
           {/* Welcome Text */}
-          <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-primary animate-typewriter overflow-hidden whitespace-nowrap border-r-4 border-primary mx-auto">
+          <h1 className=
+"font-display text-5x1 md:text-6x1 1g:t ext-7x1 font-bold text-primary animate-slide-up bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent animate-pulse">
             Welcome to Ruby's Divine Drape
           </h1>
           

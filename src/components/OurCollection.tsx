@@ -23,6 +23,13 @@ import dress9 from "@/assets/dress-9.jpg";
 import dress10 from "@/assets/dress-10.jpg";
 import dress11 from "@/assets/dress-11.jpg";
 import dress12 from "@/assets/dress-12.jpg";
+import dress13 from "@/assets/dress-13.jpg";
+import dress14 from "@/assets/dress-14.jpg";
+import dress15 from "@/assets/dress-15.jpg";
+import dress16 from "@/assets/dress-16.jpg";
+import dress17 from "@/assets/dress-17.jpg";
+import dress18 from "@/assets/dress-18.jpg";
+import dress19 from "@/assets/dress-19.jpg";
 
 const products: Product[] = [
   {
@@ -120,6 +127,62 @@ const products: Product[] = [
     originalPrice: 4425,
     image: dress12,
     category: "Designer Drapes"
+  },
+  {
+    id: "13",
+    name: "The Empress A-line Dress",
+    price: 4110,
+    originalPrice: 8220,
+    image: dress13,
+    category: "Designer Drapes"
+  },
+  {
+    id: "14",
+    name: "The Dusty Rose Elegance Set",
+    price: 3480,
+    originalPrice: 6960,
+    image: dress14,
+    category: "Custom Ethnic Wear"
+  },
+  {
+    id: "15",
+    name: "The Modern Muse Kurta Set",
+    price: 3480,
+    originalPrice: 6960,
+    image: dress15,
+    category: "Custom Ethnic Wear"
+  },
+  {
+    id: "16",
+    name: "Raspberry Bloom Tunic",
+    price: 3480,
+    originalPrice: 6960,
+    image: dress16,
+    category: "Designer Drapes"
+  },
+  {
+    id: "17",
+    name: "The Empress A-line Dress - Marigold Bloom",
+    price: 4110,
+    originalPrice: 8220,
+    image: dress17,
+    category: "Designer Drapes"
+  },
+  {
+    id: "18",
+    name: "The Ivory Garden Floral Tunic",
+    price: 3795,
+    originalPrice: 7590,
+    image: dress18,
+    category: "Designer Drapes"
+  },
+  {
+    id: "19",
+    name: "The Fuchsia Forest Gathered Dress",
+    price: 4110,
+    originalPrice: 8220,
+    image: dress19,
+    category: "Custom Ethnic Wear"
   }
 ];
 

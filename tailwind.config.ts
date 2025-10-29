@@ -106,6 +106,14 @@ export default {
           '0%, 100%': { filter: 'drop-shadow(0 0 10px hsl(42 85% 65% / 0.4))' },
           '50%': { filter: 'drop-shadow(0 0 20px hsl(42 85% 65% / 0.6))' },
         },
+        typewriter: {
+          '0%': { width: '0' },
+          '100%': { width: '100%' },
+        },
+        blink: {
+          '0%, 100%': { borderColor: 'transparent' },
+          '50%': { borderColor: 'hsl(var(--primary))' },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -115,6 +123,7 @@ export default {
         "zoom-in": "zoomIn 0.6s ease-out forwards",
         "pulse-soft": "pulse 3s ease-in-out infinite",
         "glow": "glow 2s ease-in-out infinite",
+        "typewriter": "typewriter 3s steps(32) 0.5s 1 normal both, blink 0.75s step-end infinite",
       },
     },
   },

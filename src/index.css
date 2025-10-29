@@ -64,6 +64,10 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-background text-foreground;
     font-family: 'Poppins', sans-serif;
@@ -131,5 +135,32 @@ All colors MUST be HSL.
     50% {
       filter: drop-shadow(0 0 20px hsl(42 85% 65% / 0.6));
     }
+  }
+  
+  @keyframes typewriter {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+  
+  @keyframes blink {
+    0%, 100% {
+      border-color: transparent;
+    }
+    50% {
+      border-color: hsl(var(--primary));
+    }
+  }
+  
+  .animate-typewriter {
+    animation: typewriter 3s steps(32) 0.5s 1 normal both, blink 0.75s step-end infinite;
+  }
+  
+  /* Smooth scroll for all elements */
+  * {
+    scroll-margin-top: 2rem;
   }
 }

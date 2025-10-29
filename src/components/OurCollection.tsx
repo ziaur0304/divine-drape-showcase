@@ -31,6 +31,11 @@ import dress17 from "@/assets/dress-17.jpg";
 import dress18 from "@/assets/dress-18.jpg";
 import dress19 from "@/assets/dress-19.jpg";
 import dress20 from "@/assets/dress-20.jpg";
+import dress21 from "@/assets/dress-21.jpg";
+import dress22 from "@/assets/dress-22.jpg";
+import dress23 from "@/assets/dress-23.jpg";
+import dress24 from "@/assets/dress-24.jpg";
+
 
 const products: Product[] = [
   {
@@ -194,7 +199,40 @@ const products: Product[] = [
     originalPrice: 2200,
     image: dress20,
     category: "Designer Drapes"
-  }  
+  }, 
+  {
+    id: "21",
+    name: "Pastel Garden Vine Kurta Set",
+    price: 1110,
+    originalPrice: 2220,
+    image: dress21,
+    category: "Designer Drapes"
+  },
+  {
+    id: "22",
+    name: "Pop-Sleeve Printed Lounge Set",
+    price: 952,
+    originalPrice: 1905,
+    image: dress22,
+    category: "Custom Ethnic Wear"
+  },
+
+{
+    id: "23",
+    name: "The Serene Sky Embroidered Suit Set",
+    price: 1740,
+    originalPrice: 3480,
+    image: dress23,
+    category: "Designer Drapes"
+  },
+  {
+    id: "24",
+    name: "The Rose Quartz Textured Suit",
+    price: 1100,
+    originalPrice: 2200,
+    image: dress24,
+    category: "Designer Drapes"
+  }
 ];
 
 interface OurCollectionProps {

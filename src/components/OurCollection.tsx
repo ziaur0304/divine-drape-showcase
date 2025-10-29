@@ -131,56 +131,56 @@ const products: Product[] = [
   {
     id: "13",
     name: "The Empress A-line Dress",
-    price: 4110,
-    originalPrice: 8220,
+    price: 2055,
+    originalPrice: 4110,
     image: dress13,
     category: "Designer Drapes"
   },
   {
     id: "14",
     name: "The Dusty Rose Elegance Set",
-    price: 3480,
-    originalPrice: 6960,
+    price: 1740,
+    originalPrice: 3480,
     image: dress14,
     category: "Custom Ethnic Wear"
   },
   {
     id: "15",
     name: "The Modern Muse Kurta Set",
-    price: 3480,
-    originalPrice: 6960,
+    price: 1740,
+    originalPrice: 3480,
     image: dress15,
     category: "Custom Ethnic Wear"
   },
   {
     id: "16",
     name: "Raspberry Bloom Tunic",
-    price: 3480,
-    originalPrice: 6960,
+    price: 1740,
+    originalPrice: 3480,
     image: dress16,
     category: "Designer Drapes"
   },
   {
     id: "17",
     name: "The Empress A-line Dress - Marigold Bloom",
-    price: 4110,
-    originalPrice: 8220,
+    price: 2055,
+    originalPrice: 4110,
     image: dress17,
     category: "Designer Drapes"
   },
   {
     id: "18",
     name: "The Ivory Garden Floral Tunic",
-    price: 3795,
-    originalPrice: 7590,
+    price: 1897,
+    originalPrice: 3795,
     image: dress18,
     category: "Designer Drapes"
   },
   {
     id: "19",
     name: "The Fuchsia Forest Gathered Dress",
-    price: 4110,
-    originalPrice: 8220,
+    price: 2055,
+    originalPrice: 4110,
     image: dress19,
     category: "Custom Ethnic Wear"
   }

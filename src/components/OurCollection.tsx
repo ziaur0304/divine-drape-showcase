@@ -30,6 +30,7 @@ import dress16 from "@/assets/dress-16.jpg";
 import dress17 from "@/assets/dress-17.jpg";
 import dress18 from "@/assets/dress-18.jpg";
 import dress19 from "@/assets/dress-19.jpg";
+import dress20 from "@/assets/dress-20.jpg";
 
 const products: Product[] = [
   {
@@ -183,7 +184,15 @@ const products: Product[] = [
     originalPrice: 4110,
     image: dress18,
     category: "Custom Ethnic Wear"
-  }
+  },
+  {
+    id: "20",
+    name: "The Poppy Meadow Dress",
+    price: 1100,
+    originalPrice: 2200,
+    image: dress20,
+    category: "Designer Drapes"
+  }  
 ];
 
 interface OurCollectionProps {

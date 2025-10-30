@@ -41,48 +41,48 @@ const products: Product[] = [
   {
     id: "1",
     name: "Peach Tiered Anarkali with Floral Embroidery",
-    price: 2374,
-    originalPrice: 4749,
+    price: 2370,
+    originalPrice: 4740,
     image: dress1,
     category: "Designer Drapes"
   },
   {
     id: "2",
     name: "Pastel Pink Embroidered Anarkali Dress",
-    price: 2689,
-    originalPrice: 5379,
+    price: 2685,
+    originalPrice: 5370,
     image: dress2,
     category: "Pre-Designed Sarees"
   },
   {
     id: "3",
     name: "Grey Floral Print Pleated Maxi Dress with Embellishment",
-    price: 1929,
-    originalPrice: 3859,
+    price: 1925,
+    originalPrice: 3850,
     image: dress3,
     category: "Designer Drapes"
   },
   {
     id: "4",
     name: "Yellow & Green Printed Anarkali Kurta Set with Dupatta - Cloth set in 3 pieces",
-    price: 1774,
-    originalPrice: 3549,
+    price: 1768,
+    originalPrice: 3536,
     image: dress4,
     category: "Custom Ethnic Wear"
   },
   {
     id: "5",
     name: "Lemon Yellow Floral Embroidered Cotton Maxi Dress",
-    price: 2689,
-    originalPrice: 5379,
+    price: 2685,
+    originalPrice: 5370,
     image: dress5,
     category: "Designer Drapes"
   },
   {
     id: "6",
     name: "Lavender Floral Embroidered Cotton Suit Set",
-    price: 2389,
-    originalPrice: 4779,
+    price: 2385,
+    originalPrice: 4770,
     image: dress6,
     category: "Designer Drapes"
   },
@@ -195,8 +195,8 @@ const products: Product[] = [
   {
     id: "20",
     name: "The Poppy Meadow Dress",
-    price: 1100,
-    originalPrice: 2200,
+    price: 1110,
+    originalPrice: 2220,
     image: dress20,
     category: "Designer Drapes"
   }, 
@@ -228,8 +228,8 @@ const products: Product[] = [
   {
     id: "24",
     name: "The Rose Quartz Textured Suit",
-    price: 1100,
-    originalPrice: 2200,
+    price: 1110,
+    originalPrice: 2220,
     image: dress24,
     category: "Designer Drapes"
   }

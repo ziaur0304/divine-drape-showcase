@@ -16,9 +16,9 @@ const CategoryCards = ({ onCategoryClick }: CategoryCardsProps) => {
     },
     {
       id: "pre-designed",
-      title: "Pre-Designed Sarees",
+      title: "Pre-Designed Costumes",
       icon: Shirt,
-      description: "Curated traditional sarees with timeless appeal",
+      description: "Curated traditional costumes with timeless appeal",
       gradient: "from-accent/20 to-secondary/20",
     },
     {

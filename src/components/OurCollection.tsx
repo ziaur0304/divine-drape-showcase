@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { ShoppingCart, MessageCircle, Phone } from "lucide-react";
 import { Product } from "@/types/product";
 import { useState } from "react";
+import Autoplay from "embla-carousel-autoplay";
 import {
   Dialog,
   DialogContent,
@@ -310,7 +311,18 @@ const OurCollection = ({ onAddToCart }: OurCollectionProps) => {
                 onClick={() => setSelectedProduct(product)}
               >
                 {product.images && product.images.length > 1 ? (
-                  <Carousel className="w-full h-full absolute inset-0">
+                  <Carousel 
+                    className="w-full h-full absolute inset-0"
+                    plugins={[
+                      Autoplay({
+                        delay: 1000,
+                        stopOnInteraction: false,
+                      }),
+                    ]}
+                    opts={{
+                      loop: true,
+                    }}
+                  >
                     <CarouselContent className="h-full">
                       {product.images.map((img, idx) => (
                         <CarouselItem key={idx} className="h-full">

@@ -311,13 +311,13 @@ const OurCollection = ({ onAddToCart }: OurCollectionProps) => {
               >
                 {product.images && product.images.length > 1 ? (
                   <Carousel className="w-full h-full">
-                    <CarouselContent>
+                    <CarouselContent className="h-full">
                       {product.images.map((img, idx) => (
-                        <CarouselItem key={idx}>
+                        <CarouselItem key={idx} className="h-full">
                           <img
                             src={img}
                             alt={`${product.name} - ${idx + 1}`}
-                            className="w-full h-full object-cover"
+                            className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
                           />
                         </CarouselItem>
                       ))}

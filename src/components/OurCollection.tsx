@@ -61,7 +61,7 @@ const products: Product[] = [
   },
   {
     id: "26",
-    name: "Paisley Bloom three piece Kurta",
+    name: "Paisley Bloom three piece Kurta Set",
     price: 1985,
     originalPrice: 3970,
     image: dress24_1,

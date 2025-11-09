@@ -51,7 +51,7 @@ import dress24_2 from "@/assets/dress-24-2.jpg";
 const products: Product[] = [
  {
     id: "25",
-    name: "The Serene Willow Dress",
+    name: "The Serene Willow Dress(Two piece)",
     price: 3750,
     originalPrice: 7500,
     image: dress23_1,
@@ -61,7 +61,7 @@ const products: Product[] = [
   },
   {
     id: "26",
-    name: "Paisley Bloom Kurta",
+    name: "Paisley Bloom three piece Kurta",
     price: 1985,
     originalPrice: 3970,
     image: dress24_1,

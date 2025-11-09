@@ -385,97 +385,102 @@ const OurCollection = ({ onAddToCart }: OurCollectionProps) => {
         </div>
       </div>
 
-      <Dialog open={!!selectedProduct} onOpenChange={() => setSelectedProduct(null)}>
-        <DialogContent className="sm:max-w-2xl">
-          <DialogHeader>
-            <DialogTitle className="text-2xl font-display text-primary">
-              {selectedProduct?.name}
-            </DialogTitle>
-          </DialogHeader>
-          
-          <div className="space-y-6">
-            {/* Product Image */}
-            <div className="relative aspect-[4/9] max-h-[500px] overflow-hidden rounded-lg">
-              {selectedProduct?.images && selectedProduct.images.length > 1 ? (
-                <Carousel 
-                  className="w-full h-full"
-                  plugins={[
-                    Autoplay({
-                      delay: 2000,
-                      stopOnInteraction: true,
-                    }),
-                  ]}
-                  opts={{
-                    loop: true,
-                  }}
-                >
-                  <CarouselContent className="h-full">
-                    {selectedProduct.images.map((img, idx) => (
-                      <CarouselItem key={idx} className="h-full">
-                        <img
-                          src={img}
-                          alt={`${selectedProduct.name} - ${idx + 1}`}
-                          className="w-full h-full object-cover"
-                        />
-                      </CarouselItem>
-                    ))}
-                  </CarouselContent>
-                  <CarouselPrevious className="left-2" />
-                  <CarouselNext className="right-2" />
-                </Carousel>
-              ) : (
-                <img
-                  src={selectedProduct?.image}
-                  alt={selectedProduct?.name}
-                  className="w-full h-full object-cover"
-                />
-              )}
-            </div>
+      <Dialog
+  open={!!selectedProduct}
+  onOpenChange={() => setSelectedProduct(null)}
+>
+  <DialogContent
+    className="max-w-[90vw] sm:max-w-2xl p-4"
+  >
+    <DialogHeader>
+      <DialogTitle className="text-xl sm:text-2xl font-display text-primary text-center">
+        {selectedProduct?.name}
+      </DialogTitle>
+    </DialogHeader>
 
-            {/* Pricing */}
-            {selectedProduct && (
-              <div className="flex items-center gap-3 justify-center">
-                <span className="text-xl text-muted-foreground line-through">
-                  ₹{selectedProduct.originalPrice}
-                </span>
-                <span className="text-2xl font-bold text-primary">
-                  ₹{selectedProduct.price}
-                </span>
-                <Badge className="bg-primary text-primary-foreground">
-                  50% OFF
-                </Badge>
-              </div>
-            )}
+    <div className="space-y-6">
+      {/* Product Image */}
+      <div className="relative aspect-[4/6] max-h-[400px] overflow-hidden rounded-lg">
+        {selectedProduct?.images && selectedProduct.images.length > 1 ? (
+          <Carousel
+            className="w-full h-full"
+            plugins={[
+              Autoplay({
+                delay: 2000,
+                stopOnInteraction: true,
+              }),
+            ]}
+            opts={{
+              loop: true,
+            }}
+          >
+            <CarouselContent className="h-full">
+              {selectedProduct.images.map((img, idx) => (
+                <CarouselItem key={idx} className="h-full">
+                  <img
+                    src={img}
+                    alt={`${selectedProduct.name} - ${idx + 1}`}
+                    className="w-full h-full object-cover"
+                  />
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="left-2" />
+            <CarouselNext className="right-2" />
+          </Carousel>
+        ) : (
+          <img
+            src={selectedProduct?.image}
+            alt={selectedProduct?.name}
+            className="w-full h-full object-cover"
+          />
+        )}
+      </div>
 
-            {/* Contact Description */}
-            <DialogDescription className="text-base text-center">
-              For more information or to place an order, please reach out to us through WhatsApp or call.
-            </DialogDescription>
+      {/* Pricing */}
+      {selectedProduct && (
+        <div className="flex items-center gap-2 justify-center">
+          <span className="text-sm sm:text-xl text-muted-foreground line-through">
+            ₹{selectedProduct.originalPrice}
+          </span>
+          <span className="text-lg sm:text-2xl font-bold text-primary">
+            ₹{selectedProduct.price}
+          </span>
+          <Badge className="bg-primary text-primary-foreground text-xs sm:text-sm">
+            50% OFF
+          </Badge>
+        </div>
+      )}
 
-            {/* Contact Buttons */}
-            <div className="flex flex-col gap-3">
-              <Button
-                onClick={handleWhatsApp}
-                variant="secondary"
-                size="lg"
-                className="w-full"
-              >
-                <MessageCircle className="h-5 w-5 mr-2" />
-                WhatsApp Us
-              </Button>
-              <Button
-                onClick={handleCall}
-                variant="luxury"
-                size="lg"
-                className="w-full"
-              >
-                <Phone className="h-5 w-5 mr-2" />
-                Call Now
-              </Button>
-            </div>
-          </div>
-        </DialogContent>
-      </Dialog>
+      {/* Contact Description */}
+      <DialogDescription className="text-sm sm:text-base text-center">
+        For more information or to place an order, please reach out to us through WhatsApp or call.
+      </DialogDescription>
+
+      {/* Contact Buttons */}
+      <div className="flex flex-col gap-3">
+        <Button
+          onClick={handleWhatsApp}
+          variant="secondary"
+          size="lg"
+          className="w-full text-sm sm:text-base"
+        >
+          <MessageCircle className="h-5 w-5 mr-2" />
+          WhatsApp Us
+        </Button>
+        <Button
+          onClick={handleCall}
+          variant="luxury"
+          size="lg"
+          className="w-full text-sm sm:text-base"
+        >
+          <Phone className="h-5 w-5 mr-2" />
+          Call Now
+        </Button>
+      </div>
+    </div>
+  </DialogContent>
+</Dialog>
     </section>
   );
 };

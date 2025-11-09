@@ -11,6 +11,13 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 import dress1 from "@/assets/dress-1.jpg";
 import dress2 from "@/assets/dress-2.jpg";
 import dress3 from "@/assets/dress-3.jpg";
@@ -35,6 +42,10 @@ import dress21 from "@/assets/dress-21.jpg";
 import dress22 from "@/assets/dress-22.jpg";
 import dress23 from "@/assets/dress-23.jpg";
 import dress24 from "@/assets/dress-24.jpg";
+import dress23_1 from "@/assets/dress-23-1.jpg";
+import dress23_2 from "@/assets/dress-23-2.jpg";
+import dress24_1 from "@/assets/dress-24-1.jpg";
+import dress24_2 from "@/assets/dress-24-2.jpg";
 
 
 const products: Product[] = [
@@ -232,6 +243,26 @@ const products: Product[] = [
     originalPrice: 2220,
     image: dress24,
     category: "Designer Drapes"
+  },
+  {
+    id: "25",
+    name: "The Serene Willow Dress",
+    price: 3750,
+    originalPrice: 7500,
+    image: dress23_1,
+    images: [dress23_1, dress23_2],
+    category: "Designer Drapes",
+    sizes: ["M", "L", "XL", "XXL"]
+  },
+  {
+    id: "26",
+    name: "Paisley Bloom Kurta",
+    price: 1985,
+    originalPrice: 3970,
+    image: dress24_1,
+    images: [dress24_1, dress24_2],
+    category: "Custom Ethnic Wear",
+    sizes: ["M", "L", "XL", "XXL"]
   }
 ];
 
@@ -278,11 +309,29 @@ const OurCollection = ({ onAddToCart }: OurCollectionProps) => {
                 className="relative aspect-[4/9] overflow-hidden cursor-pointer" 
                 onClick={() => setSelectedProduct(product)}
               >
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
-                />
+                {product.images && product.images.length > 1 ? (
+                  <Carousel className="w-full h-full">
+                    <CarouselContent>
+                      {product.images.map((img, idx) => (
+                        <CarouselItem key={idx}>
+                          <img
+                            src={img}
+                            alt={`${product.name} - ${idx + 1}`}
+                            className="w-full h-full object-cover"
+                          />
+                        </CarouselItem>
+                      ))}
+                    </CarouselContent>
+                    <CarouselPrevious className="left-2" />
+                    <CarouselNext className="right-2" />
+                  </Carousel>
+                ) : (
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                  />
+                )}
                 <Badge className="absolute top-3 right-3 bg-primary text-primary-foreground shadow-glow">
                   50% OFF
                 </Badge>
@@ -293,6 +342,11 @@ const OurCollection = ({ onAddToCart }: OurCollectionProps) => {
                   <h3 className="font-display text-lg text-foreground mb-1">
                     {product.name}
                   </h3>
+                  {product.sizes && (
+                    <p className="text-sm text-muted-foreground">
+                      Sizes: {product.sizes.join(", ")}
+                    </p>
+                  )}
                 </div>
                 
                 <div className="flex items-center gap-2">

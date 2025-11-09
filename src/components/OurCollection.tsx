@@ -269,7 +269,7 @@ const products: Product[] = [
     category: "Designer Drapes"
   },
 {
-    id: "25",
+    id: "27",
     name: "dress25",
     price: 1995,
     originalPrice: 3990,
@@ -277,7 +277,7 @@ const products: Product[] = [
     category: "Designer Drapes"
   },
 {
-    id: "26",
+    id: "28",
     name: dress26",
     price: 1773,
     originalPrice: 3546,
@@ -285,7 +285,7 @@ const products: Product[] = [
     category: "Designer Drapes"
   },
 {
-    id: "27",
+    id: "29",
     name: "dress27",
     price: 1425,
     originalPrice: 2850,

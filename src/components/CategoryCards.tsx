@@ -35,7 +35,7 @@ const CategoryCards = ({ onCategoryClick }: CategoryCardsProps) => {
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-playfair font-bold text-primary mb-4">
-            Explore Our Collections
+            
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Each piece crafted with care, tradition, and divine elegance

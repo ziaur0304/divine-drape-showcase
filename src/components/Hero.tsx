@@ -10,13 +10,13 @@ const Hero = ({ onEnter }: HeroProps) => {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-subtle"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-subtle py-8"
     >
-      <div className="relative z-10 container mx-auto px-6 text-center">
-        <div className="max-w-3xl mx-auto space-y-8 animate-fade-in">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 text-center">
+        <div className="max-w-3xl mx-auto space-y-4 sm:space-y-6 md:space-y-8 animate-fade-in">
           
           {/* Heading */}
-          <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-primary bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent animate-slide-up">
+          <h1 className="font-display text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-primary bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent animate-slide-up">
             Welcome to Ruby's Divine Drape
           </h1>
 
@@ -25,13 +25,13 @@ const Hero = ({ onEnter }: HeroProps) => {
             <img
               src={logo}
               alt="Logo of Ruby's Divine Drape Boutique"
-              className="w-64 h-64 md:w-80 md:h-80 object-contain"
+              className="w-48 h-48 sm:w-56 sm:h-56 md:w-80 md:h-80 object-contain"
             />
           </div>
 
           {/* Tagline */}
           <p
-            className="text-xl md:text-3xl text-primary font-light animate-slide-up"
+            className="text-lg sm:text-xl md:text-3xl text-primary font-light animate-slide-up"
             style={{ animationDelay: "0.3s" }}
           >
             Customise your style, the ethnic way.

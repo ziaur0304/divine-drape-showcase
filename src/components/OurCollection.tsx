@@ -50,6 +50,11 @@ import dress24_2 from "@/assets/dress-24-2.jpg";
 import dress25 from "@/assets/dress-25.jpg";
 import dress26 from "@/assets/dress-26.jpg";
 import dress27 from "@/assets/dress-27.jpg";
+import dress30 from "@/assets/dress-30.jpg";
+import dress31 from "@/assets/dress-31.jpg";
+import dress32 from "@/assets/dress-32.jpg";
+import dress33 from "@/assets/dress-33.jpg";
+import dress34 from "@/assets/dress-34.jpg";
 
 
 const products: Product[] = [
@@ -290,6 +295,46 @@ const products: Product[] = [
     price: 1425,
     originalPrice: 2850,
     image: dress27,
+    category: "Designer Drapes"
+  },
+{
+    id: "30",
+    name: "dress 28",
+    price: 1900,
+    originalPrice: 3800,
+    image: dress27,
+    category: "Designer Drapes"
+  },
+{
+    id: "31",
+    name: "dress 29",
+    price: 1900,
+    originalPrice: 3800,
+    image: dress27,
+    category: "Designer Drapes"
+  },
+{
+    id: "32",
+    name: "dress 30",
+    price: 2250,
+    originalPrice: 4500,
+    image: dress32,
+    category: "Designer Drapes"
+  },
+{
+    id: "33",
+    name: "dress 31",
+    price: 2077,
+    originalPrice: 4155,
+    image: dress33,
+    category: "Designer Drapes"
+  },
+{
+    id: "34",
+    name: "dress 32",
+    price: 2370,
+    originalPrice: 4740,
+    image: dress34,
     category: "Designer Drapes"
   }
 ];

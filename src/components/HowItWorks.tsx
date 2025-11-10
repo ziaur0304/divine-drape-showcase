@@ -20,7 +20,7 @@ const HowItWorks = () => {
       number: "03",
       icon: Sparkles,
       title: "Customize & Order",
-      description: "Work with us to customize your perfect drape and place your order",
+      description: "Connect with us to customize your perfect drape and place your order",
       color: "from-secondary/20 to-primary/10",
     },
   ];

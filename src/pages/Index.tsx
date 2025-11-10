@@ -126,8 +126,8 @@ const Index = () => {
       {showHero && <Hero onEnter={handleEnterBoutique} />}
       
       <div className={showHero ? "hidden" : ""}>
-        <CategoryCards onCategoryClick={handleCategoryClick} />
         <OurCollection onAddToCart={handleAddToCart} />
+        <CategoryCards onCategoryClick={handleCategoryClick} />
         <About />
         <HowItWorks />
         <VisitBoutique />

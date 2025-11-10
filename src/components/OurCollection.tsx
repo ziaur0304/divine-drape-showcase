@@ -302,7 +302,7 @@ const products: Product[] = [
     name: "dress 28",
     price: 1900,
     originalPrice: 3800,
-    image: dress27,
+    image: dress30,
     category: "Designer Drapes"
   },
 {
@@ -310,7 +310,7 @@ const products: Product[] = [
     name: "dress 29",
     price: 1900,
     originalPrice: 3800,
-    image: dress27,
+    image: dress31,
     category: "Designer Drapes"
   },
 {

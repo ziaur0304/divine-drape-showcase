@@ -18,17 +18,17 @@ const About = () => {
           <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
             <p className="animate-slide-up">
               Ruby's Divine Drape is a premium clothing hub where you get designers and pre-designed clothing — 
-              each piece crafted with care, tradition, and divine elegance.
+              each piece crafted with care, tradition and divine elegance.
             </p>
             
             <p className="animate-slide-up" style={{ animationDelay: "0.2s" }}>
-              Discover timeless ethnic drapes, custom styles, and one-on-one design consultations. 
+              Discover timeless ethnic drapes, custom styles and one-on-one design consultations. 
               We bring together the finest craftsmanship of traditional Indian ethnic wear with contemporary 
               design sensibilities.
             </p>
 
             <p className="animate-slide-up" style={{ animationDelay: "0.4s" }}>
-              Every saree in our collection is a celebration of heritage, meticulously curated to make you 
+              Every dress in our collection is a celebration of heritage, meticulously curated to make you 
               feel divine. Whether you're looking for a classic pre-designed piece or a bespoke creation 
               tailored to your vision, we're here to make your ethnic wear dreams come true.
             </p>

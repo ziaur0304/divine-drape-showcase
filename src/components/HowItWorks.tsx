@@ -13,7 +13,7 @@ const HowItWorks = () => {
       number: "02",
       icon: MessageCircle,
       title: "Connect on WhatsApp",
-      description: "Reach out to us for a personalized video call consultation",
+      description: "Reach out to us for a personalized consultation",
       color: "from-accent/20 to-secondary/20",
     },
     {

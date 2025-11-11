@@ -142,14 +142,7 @@ const products: Product[] = [
     image: dress34,
     category: "Designer Drapes"
   },
- {
-    id: "1",
-    name: "Peach Tiered Anarkali with Floral Embroidery",
-    price: 2370,
-    originalPrice: 4740,
-    image: dress1,
-    category: "Designer Drapes"
-  },
+ 
   {
     id: "2",
     name: "Pastel Pink Embroidered Anarkali Dress",
@@ -157,14 +150,6 @@ const products: Product[] = [
     originalPrice: 5370,
     image: dress2,
     category: "Pre-Designed Sarees"
-  },
-  {
-    id: "3",
-    name: "Grey Floral Print Pleated Maxi Dress with Embellishment",
-    price: 1925,
-    originalPrice: 3850,
-    image: dress3,
-    category: "Designer Drapes"
   },
   {
     id: "4",
@@ -180,14 +165,6 @@ const products: Product[] = [
     price: 2685,
     originalPrice: 5370,
     image: dress5,
-    category: "Designer Drapes"
-  },
-  {
-    id: "6",
-    name: "Lavender Floral Embroidered Cotton Suit Set",
-    price: 2385,
-    originalPrice: 4770,
-    image: dress6,
     category: "Designer Drapes"
   },
   {
@@ -335,6 +312,30 @@ const products: Product[] = [
     price: 1110,
     originalPrice: 2220,
     image: dress24,
+    category: "Designer Drapes"
+  },
+{
+    id: "3",
+    name: "Grey Floral Print Pleated Maxi Dress with Embellishment",
+    price: 1925,
+    originalPrice: 3850,
+    image: dress3,
+    category: "Designer Drapes"
+  },
+{
+    id: "6",
+    name: "Lavender Floral Embroidered Cotton Suit Set",
+    price: 2385,
+    originalPrice: 4770,
+    image: dress6,
+    category: "Designer Drapes"
+  },
+{
+    id: "1",
+    name: "Peach Tiered Anarkali with Floral Embroidery",
+    price: 2370,
+    originalPrice: 4740,
+    image: dress1,
     category: "Designer Drapes"
   }
 ];

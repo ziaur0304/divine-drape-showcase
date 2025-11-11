@@ -275,7 +275,8 @@ const products: Product[] = [
   },
 {
     id: "27",
-    name: "dress 25",
+    name: "Festive Red Ethnic Embroidered Set
+(3 piece)",
     price: 1995,
     originalPrice: 3990,
     image: dress25,
@@ -283,7 +284,7 @@ const products: Product[] = [
   },
 {
   id: "28",
-  name: "dress 26",
+  name: "Beige & Mauve Three-Piece Embroidered Set",
   price: 1773,
   originalPrice: 3546,
   image: dress26,
@@ -291,7 +292,7 @@ const products: Product[] = [
 },
 {
     id: "29",
-    name: "dress 27",
+    name: "The 'Wild Berry' Printed Kurta Set",
     price: 1425,
     originalPrice: 2850,
     image: dress27,
@@ -299,7 +300,7 @@ const products: Product[] = [
   },
 {
     id: "30",
-    name: "dress 28",
+    name: "Sleeveless Indigo Stripe Kurta with Palazzo & Dupatta",
     price: 1900,
     originalPrice: 3800,
     image: dress30,
@@ -307,7 +308,8 @@ const products: Product[] = [
   },
 {
     id: "31",
-    name: "dress 29",
+    name: "Sleeveless Red Stripe Kurta with Palazzo & Dupatta
+",
     price: 1900,
     originalPrice: 3800,
     image: dress31,
@@ -315,7 +317,7 @@ const products: Product[] = [
   },
 {
     id: "32",
-    name: "dress 30",
+    name: "Vibrant Teal Floral Fiesta Suit( 3 piece)",
     price: 2250,
     originalPrice: 4500,
     image: dress32,
@@ -323,7 +325,7 @@ const products: Product[] = [
   },
 {
     id: "33",
-    name: "dress 31",
+    name: "Fuchsia Pink Bandhani Print Dupatta Kurta Set with pant",
     price: 2077,
     originalPrice: 4155,
     image: dress33,
@@ -331,7 +333,7 @@ const products: Product[] = [
   },
 {
     id: "34",
-    name: "dress 32",
+    name: "The Coastal Mist Kurta and Dupatta set(3 piece)",
     price: 2370,
     originalPrice: 4740,
     image: dress34,

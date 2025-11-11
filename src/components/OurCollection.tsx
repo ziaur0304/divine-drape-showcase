@@ -78,6 +78,72 @@ const products: Product[] = [
     category: "Custom Ethnic Wear",
     sizes: ["M", "L", "XL", "XXL"]
   },
+{
+    id: "27",
+    name: "Festive Red Ethnic Embroidered Set
+(3 piece)",
+    price: 1995,
+    originalPrice: 3990,
+    image: dress25,
+    category: "DesignerDrapes"
+  },
+{
+  id: "28",
+  name: "Beige & Mauve Three-Piece Embroidered Set",
+  price: 1773,
+  originalPrice: 3546,
+  image: dress26,
+  category: "Designer Drapes"
+},
+{
+    id: "29",
+    name: "The 'Wild Berry' Printed Kurta Set",
+    price: 1425,
+    originalPrice: 2850,
+    image: dress27,
+    category: "Designer Drapes"
+  },
+{
+    id: "30",
+    name: "Sleeveless Indigo Stripe Kurta with Palazzo & Dupatta",
+    price: 1900,
+    originalPrice: 3800,
+    image: dress30,
+    category: "Designer Drapes"
+  },
+{
+    id: "31",
+    name: "Sleeveless Red Stripe Kurta with Palazzo & Dupatta
+",
+    price: 1900,
+    originalPrice: 3800,
+    image: dress31,
+    category: "Designer Drapes"
+  },
+{
+    id: "32",
+    name: "Vibrant Teal Floral Fiesta Suit( 3 piece)",
+    price: 2250,
+    originalPrice: 4500,
+    image: dress32,
+    category: "Designer Drapes"
+  },
+{
+    id: "33",
+    name: "Fuchsia Pink Bandhani Print Dupatta Kurta Set with pant",
+    price: 2077,
+    originalPrice: 4155,
+    image: dress33,
+    category: "Designer Drapes"
+  },
+{
+    id: "34",
+    name: "The Coastal Mist Kurta and Dupatta set(3 piece)",
+    price: 2370,
+    originalPrice: 4740,
+    image: dress34,
+    category: "Designer Drapes"
+  },
  {
     id: "1",
     name: "Peach Tiered Anarkali with Floral Embroidery",
@@ -271,72 +337,6 @@ const products: Product[] = [
     price: 1110,
     originalPrice: 2220,
     image: dress24,
-    category: "Designer Drapes"
-  },
-{
-    id: "27",
-    name: "Festive Red Ethnic Embroidered Set
-(3 piece)",
-    price: 1995,
-    originalPrice: 3990,
-    image: dress25,
-    category: "DesignerDrapes"
-  },
-{
-  id: "28",
-  name: "Beige & Mauve Three-Piece Embroidered Set",
-  price: 1773,
-  originalPrice: 3546,
-  image: dress26,
-  category: "Designer Drapes"
-},
-{
-    id: "29",
-    name: "The 'Wild Berry' Printed Kurta Set",
-    price: 1425,
-    originalPrice: 2850,
-    image: dress27,
-    category: "Designer Drapes"
-  },
-{
-    id: "30",
-    name: "Sleeveless Indigo Stripe Kurta with Palazzo & Dupatta",
-    price: 1900,
-    originalPrice: 3800,
-    image: dress30,
-    category: "Designer Drapes"
-  },
-{
-    id: "31",
-    name: "Sleeveless Red Stripe Kurta with Palazzo & Dupatta
-",
-    price: 1900,
-    originalPrice: 3800,
-    image: dress31,
-    category: "Designer Drapes"
-  },
-{
-    id: "32",
-    name: "Vibrant Teal Floral Fiesta Suit( 3 piece)",
-    price: 2250,
-    originalPrice: 4500,
-    image: dress32,
-    category: "Designer Drapes"
-  },
-{
-    id: "33",
-    name: "Fuchsia Pink Bandhani Print Dupatta Kurta Set with pant",
-    price: 2077,
-    originalPrice: 4155,
-    image: dress33,
-    category: "Designer Drapes"
-  },
-{
-    id: "34",
-    name: "The Coastal Mist Kurta and Dupatta set(3 piece)",
-    price: 2370,
-    originalPrice: 4740,
-    image: dress34,
     category: "Designer Drapes"
   }
 ];

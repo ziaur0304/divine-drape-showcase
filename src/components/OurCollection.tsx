@@ -3,7 +3,7 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ShoppingCart, MessageCircle, Phone } from "lucide-react";
 import { Product } from "@/types/product";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Autoplay from "embla-carousel-autoplay";
 import {
   Dialog,
@@ -347,6 +347,30 @@ interface OurCollectionProps {
 const OurCollection = ({ onAddToCart }: OurCollectionProps) => {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
+  // Handle browser back button to close dialog
+  useEffect(() => {
+    const handlePopState = () => {
+      setSelectedProduct(null);
+    };
+
+    if (selectedProduct) {
+      window.history.pushState({ dialogOpen: true }, "");
+      window.addEventListener("popstate", handlePopState);
+    }
+
+    return () => {
+      window.removeEventListener("popstate", handlePopState);
+    };
+  }, [selectedProduct]);
+
+  const handleCloseDialog = () => {
+    setSelectedProduct(null);
+    // Remove the history state if it exists
+    if (window.history.state?.dialogOpen) {
+      window.history.back();
+    }
+  };
+
   const handleWhatsApp = () => {
     const whatsappNumber = "919957977221";
     const productInfo = selectedProduct 
@@ -460,7 +484,7 @@ const OurCollection = ({ onAddToCart }: OurCollectionProps) => {
 
       <Dialog
   open={!!selectedProduct}
-  onOpenChange={() => setSelectedProduct(null)}
+  onOpenChange={(open) => !open && handleCloseDialog()}
 >
   <DialogContent
     className="max-w-[90vw] sm:max-w-2xl p-4"

@@ -497,7 +497,7 @@ const OurCollection = ({ onAddToCart }: OurCollectionProps) => {
 
     <div className="space-y-6">
       {/* Product Image */}
-      <div className="relative aspect-[4/6] max-h-[400px] overflow-hidden rounded-lg">
+      <div className="relative aspect-[4/6] max-h-[400px] overflow-hidden rounded-lg mx-auto">
         {selectedProduct?.images && selectedProduct.images.length > 1 ? (
           <Carousel
             className="w-full h-full"

@@ -80,8 +80,7 @@ const products: Product[] = [
   },
 {
     id: "27",
-    name: "Festive Red Ethnic Embroidered Set
-(3 piece)",
+    name: "Festive Red Ethnic Embroidered Set (3 piece)",
     price: 1995,
     originalPrice: 3990,
     image: dress25,
@@ -113,8 +112,7 @@ const products: Product[] = [
   },
 {
     id: "31",
-    name: "Sleeveless Red Stripe Kurta with Palazzo & Dupatta
-",
+    name: "Sleeveless Red Stripe Kurta with Palazzo & Dupatta",
     price: 1900,
     originalPrice: 3800,
     image: dress31,

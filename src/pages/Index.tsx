@@ -1,10 +1,10 @@
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { MessageCircle, BarChart3, Stethoscope, Users, TrendingUp, PenSquare, Trophy } from "lucide-react";
-import { WHATSAPP_URL } from "@/lib/config";
+import { MessageCircle, BarChart3, Stethoscope, Users, TrendingUp } from "lucide-react";
+
+const WHATSAPP_URL = "https://chat.whatsapp.com/HsabYdYM41ACoDqpBzh2C1?s=cl&p=a&mlu=2&amv=2";
 
 const openWhatsApp = () => window.open(WHATSAPP_URL, "_blank");
 
@@ -75,30 +75,6 @@ export default function Index() {
           </Button>
         </Card>
       </section>
-
-      {/* Action Buttons */}
-      <section className="px-4 pb-2 max-w-3xl mx-auto space-y-3">
-        <Button
-          asChild
-          className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-xl h-12 text-base font-semibold shadow-md hover:shadow-lg transition-all"
-        >
-          <Link to="/submit">
-            <PenSquare className="h-5 w-5 mr-2" />
-            Submit Your Mark
-          </Link>
-        </Button>
-        <Button
-          asChild
-          variant="outline"
-          className="w-full border-2 border-blue-600 text-blue-600 hover:bg-blue-50 rounded-xl h-12 text-base font-semibold shadow-sm hover:shadow-md transition-all bg-white"
-        >
-          <Link to="/live-rank">
-            <Trophy className="h-5 w-5 mr-2" />
-            Live State Rank
-          </Link>
-        </Button>
-      </section>
-
 
       {/* Who Can Participate */}
       <section className="px-4 py-6 max-w-3xl mx-auto reveal opacity-0">

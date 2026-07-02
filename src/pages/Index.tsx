@@ -76,6 +76,30 @@ export default function Index() {
         </Card>
       </section>
 
+      {/* Action Buttons */}
+      <section className="px-4 pb-2 max-w-3xl mx-auto space-y-3">
+        <Button
+          asChild
+          className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-xl h-12 text-base font-semibold shadow-md hover:shadow-lg transition-all"
+        >
+          <Link to="/submit">
+            <PenSquare className="h-5 w-5 mr-2" />
+            Submit Your Mark
+          </Link>
+        </Button>
+        <Button
+          asChild
+          variant="outline"
+          className="w-full border-2 border-blue-600 text-blue-600 hover:bg-blue-50 rounded-xl h-12 text-base font-semibold shadow-sm hover:shadow-md transition-all bg-white"
+        >
+          <Link to="/live-rank">
+            <Trophy className="h-5 w-5 mr-2" />
+            Live State Rank
+          </Link>
+        </Button>
+      </section>
+
+
       {/* Who Can Participate */}
       <section className="px-4 py-6 max-w-3xl mx-auto reveal opacity-0">
         <Card className="border-slate-100 p-6 rounded-2xl shadow-sm">

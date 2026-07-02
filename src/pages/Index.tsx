@@ -1,10 +1,10 @@
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { MessageCircle, BarChart3, Stethoscope, Users, TrendingUp } from "lucide-react";
-
-const WHATSAPP_URL = "https://chat.whatsapp.com/HsabYdYM41ACoDqpBzh2C1?s=cl&p=a&mlu=2&amv=2";
+import { MessageCircle, BarChart3, Stethoscope, Users, TrendingUp, PenSquare, Trophy } from "lucide-react";
+import { WHATSAPP_URL } from "@/lib/config";
 
 const openWhatsApp = () => window.open(WHATSAPP_URL, "_blank");
 

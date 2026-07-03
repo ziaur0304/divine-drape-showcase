@@ -17,6 +17,7 @@ interface Submission {
   id: string;
   full_name: string;
   marks: number;
+  category: string | null;
   created_at: string;
 }
 
@@ -52,7 +53,7 @@ export default function LiveRank() {
     setLoading(true);
     const { data, error } = await supabase
       .from("neet_submissions")
-      .select("id, full_name, marks, created_at")
+      .select("id, full_name, marks, category, created_at")
       .order("marks", { ascending: false })
       .limit(1000);
     if (!error && data) {
@@ -157,8 +158,9 @@ export default function LiveRank() {
           <Table>
             <TableHeader className="bg-blue-50/60">
               <TableRow>
-                <TableHead className="w-20 text-slate-700 font-semibold">Rank</TableHead>
+                <TableHead className="w-16 text-slate-700 font-semibold">Rank</TableHead>
                 <TableHead className="text-slate-700 font-semibold">Name</TableHead>
+                <TableHead className="text-slate-700 font-semibold">Category</TableHead>
                 <TableHead className="text-right text-slate-700 font-semibold">
                   Marks
                 </TableHead>
@@ -167,13 +169,13 @@ export default function LiveRank() {
             <TableBody>
               {loading && ranked.length === 0 ? (
                 <TableRow>
-                  <TableCell colSpan={3} className="text-center text-slate-500 py-8">
+                  <TableCell colSpan={4} className="text-center text-slate-500 py-8">
                     Loading…
                   </TableCell>
                 </TableRow>
               ) : ranked.length === 0 ? (
                 <TableRow>
-                  <TableCell colSpan={3} className="text-center text-slate-500 py-8">
+                  <TableCell colSpan={4} className="text-center text-slate-500 py-8">
                     No submissions yet. Be the first to submit!
                   </TableCell>
                 </TableRow>
@@ -182,6 +184,9 @@ export default function LiveRank() {
                   <TableRow key={r.id}>
                     <TableCell className="font-bold text-blue-600">#{r.rank}</TableCell>
                     <TableCell className="text-slate-800">{r.full_name}</TableCell>
+                    <TableCell className="text-slate-600 text-sm">
+                      {r.category ?? "—"}
+                    </TableCell>
                     <TableCell className="text-right font-semibold text-slate-900">
                       {r.marks}
                     </TableCell>

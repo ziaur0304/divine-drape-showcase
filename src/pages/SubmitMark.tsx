@@ -1,28 +1,70 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { ArrowLeft, AlertTriangle, ShieldAlert } from "lucide-react";
+import { Link } from "react-router-dom";
+import { ArrowLeft, MessageCircle, CheckCircle2 } from "lucide-react";
+import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogDescription,
-  DialogFooter,
-} from "@/components/ui/dialog";
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+
+const CATEGORIES = ["UR", "EWS", "OBC", "SC", "ST(P)", "ST(H)"] as const;
+const WHATSAPP_NUMBER = "919365248667";
+
+const schema = z.object({
+  full_name: z
+    .string()
+    .trim()
+    .min(1, "Full name is required")
+    .max(100, "Full name must be 100 characters or fewer"),
+  expected_score: z
+    .number({ invalid_type_error: "Expected score must be a number" })
+    .int("Expected score must be a whole number")
+    .min(300, "Expected score must be at least 300")
+    .max(720, "Expected score cannot exceed 720"),
+  category: z.enum(CATEGORIES, {
+    errorMap: () => ({ message: "Please select a category" }),
+  }),
+});
 
 export default function SubmitMark() {
-  const navigate = useNavigate();
   const [fullName, setFullName] = useState("");
-  const [marks, setMarks] = useState("");
-  const [showClosed, setShowClosed] = useState(false);
+  const [score, setScore] = useState("");
+  const [category, setCategory] = useState<string>("");
+  const [error, setError] = useState<string | null>(null);
+  const [sent, setSent] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setShowClosed(true);
+    setError(null);
+
+    const parsed = schema.safeParse({
+      full_name: fullName,
+      expected_score: score === "" ? NaN : Number(score),
+      category,
+    });
+
+    if (!parsed.success) {
+      setError(parsed.error.errors[0]?.message ?? "Please check your inputs");
+      return;
+    }
+
+    const { full_name, expected_score, category: cat } = parsed.data;
+    const message =
+      `Hello! Here are my details:\n\n` +
+      `Full Name: ${full_name}\n` +
+      `Expected Score: ${expected_score}\n` +
+      `Category: ${cat}`;
+
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank", "noopener,noreferrer");
+    setSent(true);
   };
 
   return (
@@ -43,43 +85,29 @@ export default function SubmitMark() {
         </div>
       </header>
 
-      <section className="px-4 pt-6 pb-10 max-w-2xl mx-auto space-y-5">
+      <section className="px-4 pt-6 pb-10 max-w-xl mx-auto space-y-5">
         <div>
           <h2 className="text-2xl md:text-3xl font-bold text-slate-900 leading-tight">
-            Submissions Temporarily Closed
+            Submit Your Mark
           </h2>
-          <p className="text-sm text-slate-500 mt-2">
-            We are working on a secure OTP verification system. Kindly stay tuned.
+          <p className="text-sm text-slate-500 mt-2 leading-relaxed">
+            Fill in your details. On submit, WhatsApp will open with a pre-filled message
+            to our verification number. Tap <span className="font-semibold">Send</span> in
+            WhatsApp to complete your submission.
           </p>
         </div>
 
-        <Card className="p-5 rounded-2xl border-amber-200 bg-amber-50 shadow-sm">
-          <div className="flex items-start gap-3">
-            <div className="rounded-full bg-amber-100 p-2 shrink-0">
-              <AlertTriangle className="h-5 w-5 text-amber-600" />
-            </div>
-            <div className="space-y-2 text-sm text-amber-900 leading-relaxed">
-              <p className="font-bold text-amber-800 text-base">Notice</p>
-              <p>
-                New responses are no longer being accepted at this time. Please check back
-                soon.
-              </p>
-            </div>
-          </div>
-        </Card>
-
-        <Card className="p-6 rounded-2xl border-slate-100 shadow-sm opacity-70">
+        <Card className="p-6 rounded-2xl border-slate-100 shadow-sm">
           <form onSubmit={handleSubmit} className="space-y-5">
             <div className="space-y-2">
               <Label htmlFor="full_name" className="text-slate-700">
-                Full Name of the Aspirant <span className="text-red-500">*</span>
+                Full Name <span className="text-red-500">*</span>
               </Label>
               <Input
                 id="full_name"
                 type="text"
-                disabled
                 maxLength={100}
-                placeholder="Submissions closed"
+                placeholder="Enter your full name"
                 value={fullName}
                 onChange={(e) => setFullName(e.target.value)}
                 className="rounded-lg"
@@ -87,65 +115,71 @@ export default function SubmitMark() {
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="marks" className="text-slate-700">
-                Expected NEET Marks <span className="text-red-500">*</span>
+              <Label htmlFor="score" className="text-slate-700">
+                Expected Score (300 – 720) <span className="text-red-500">*</span>
               </Label>
               <Input
-                id="marks"
+                id="score"
                 type="number"
-                disabled
-                min={0}
+                min={300}
                 max={720}
                 inputMode="numeric"
-                placeholder="Submissions closed"
-                value={marks}
-                onChange={(e) => setMarks(e.target.value)}
+                placeholder="e.g. 620"
+                value={score}
+                onChange={(e) => setScore(e.target.value)}
                 className="rounded-lg"
               />
             </div>
 
+            <div className="space-y-2">
+              <Label htmlFor="category" className="text-slate-700">
+                Category <span className="text-red-500">*</span>
+              </Label>
+              <Select value={category} onValueChange={setCategory}>
+                <SelectTrigger id="category" className="rounded-lg">
+                  <SelectValue placeholder="Select your category" />
+                </SelectTrigger>
+                <SelectContent>
+                  {CATEGORIES.map((c) => (
+                    <SelectItem key={c} value={c}>
+                      {c}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+
+            {error && (
+              <p className="text-sm font-medium text-red-600 bg-red-50 border border-red-200 rounded-lg px-3 py-2">
+                {error}
+              </p>
+            )}
+
             <Button
               type="submit"
-              className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-xl h-12 text-base font-semibold shadow-md hover:shadow-lg transition-all"
+              className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-xl h-12 text-base font-semibold shadow-md hover:shadow-lg transition-all inline-flex items-center gap-2"
             >
-              Submit
+              <MessageCircle className="h-5 w-5" />
+              Submit via WhatsApp
             </Button>
+
+            {sent && (
+              <div className="flex items-start gap-3 rounded-xl bg-green-50 border border-green-200 p-4 text-sm text-green-800">
+                <CheckCircle2 className="h-5 w-5 shrink-0 text-green-600 mt-0.5" />
+                <p className="leading-relaxed">
+                  Please tap the <span className="font-semibold">Send</span> button in
+                  WhatsApp to complete your submission.
+                </p>
+              </div>
+            )}
           </form>
         </Card>
-      </section>
 
-      <Dialog
-        open={showClosed}
-        onOpenChange={(open) => {
-          setShowClosed(open);
-          if (!open) navigate("/");
-        }}
-      >
-        <DialogContent className="sm:max-w-md rounded-2xl">
-          <DialogHeader className="items-center text-center">
-            <div className="rounded-full bg-red-100 p-3 mb-2">
-              <ShieldAlert className="h-8 w-8 text-red-600" />
-            </div>
-            <DialogTitle className="text-xl">Submissions Closed</DialogTitle>
-            <DialogDescription className="text-slate-600 leading-relaxed pt-2">
-              Sorry, we are not taking responses anymore because of some fatherless
-              spammers who deliberately tried to ruin this initiative. Kindly stay tuned.
-              We are coming back with a secure OTP verification system.
-            </DialogDescription>
-          </DialogHeader>
-          <DialogFooter className="sm:justify-center mt-2">
-            <Button
-              onClick={() => {
-                setShowClosed(false);
-                navigate("/");
-              }}
-              className="rounded-xl h-11 bg-blue-600 hover:bg-blue-700 text-white"
-            >
-              Close
-            </Button>
-          </DialogFooter>
-        </DialogContent>
-      </Dialog>
+        <p className="text-xs text-slate-400 text-center leading-relaxed">
+          Your details are shared only through WhatsApp and are not stored on any server
+          or database.
+        </p>
+      </section>
     </main>
   );
 }

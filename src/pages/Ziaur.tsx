@@ -64,10 +64,8 @@ export default function Ziaur() {
       .insert({
         full_name: parsed.data.full_name,
         marks: parsed.data.expected_score,
-        // category column added via migration; not yet in generated types
         category: parsed.data.category,
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      } as any);
+      });
     setSaving(false);
 
     if (insertError) {

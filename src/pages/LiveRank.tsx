@@ -53,7 +53,7 @@ export default function LiveRank() {
     setLoading(true);
     const { data, error } = await supabase
       .from("neet_submissions")
-      .select("id, full_name, marks, created_at")
+      .select("id, full_name, marks, category, created_at")
       .order("marks", { ascending: false })
       .limit(1000);
     if (!error && data) {

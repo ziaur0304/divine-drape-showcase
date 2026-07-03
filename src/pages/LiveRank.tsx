@@ -17,6 +17,7 @@ interface Submission {
   id: string;
   full_name: string;
   marks: number;
+  category: string | null;
   created_at: string;
 }
 

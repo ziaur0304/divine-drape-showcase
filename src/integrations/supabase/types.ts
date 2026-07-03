@@ -16,18 +16,21 @@ export type Database = {
     Tables: {
       neet_submissions: {
         Row: {
+          category: string | null
           created_at: string
           full_name: string
           id: string
           marks: number
         }
         Insert: {
+          category?: string | null
           created_at?: string
           full_name: string
           id?: string
           marks: number
         }
         Update: {
+          category?: string | null
           created_at?: string
           full_name?: string
           id?: string

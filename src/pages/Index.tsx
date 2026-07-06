@@ -90,23 +90,14 @@ export default function Index() {
       <section className="px-4 pt-6 pb-2 max-w-3xl mx-auto space-y-3">
         <Button
           asChild
-          className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-xl h-12 text-base font-semibold shadow-md hover:shadow-lg transition-all"
+          className="w-full bg-gradient-to-r from-blue-900 to-blue-700 hover:from-blue-950 hover:to-blue-800 text-white rounded-xl h-14 text-base font-bold shadow-lg hover:shadow-xl transition-all"
         >
-          <Link to="/submit">
-            <PenSquare className="h-5 w-5 mr-2" />
-            Submit Your Mark
-          </Link>
-        </Button>
-        <Button
-          asChild
-          variant="outline"
-          className="w-full border-2 border-blue-600 text-blue-600 hover:bg-blue-50 rounded-xl h-12 text-base font-semibold shadow-sm hover:shadow-md transition-all bg-white"
-        >
-          <Link to="/live-rank">
+          <Link to="/check-rank">
             <Trophy className="h-5 w-5 mr-2" />
-            Live State Rank
+            Check State Rank
           </Link>
         </Button>
+
 
         <Card className="relative overflow-hidden border-0 bg-gradient-to-br from-amber-50 via-orange-50 to-amber-100 p-5 rounded-2xl shadow-lg">
           <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-400 via-orange-500 to-amber-400" />

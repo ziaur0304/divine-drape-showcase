@@ -108,19 +108,30 @@ export default function Index() {
           </Link>
         </Button>
 
-        <Card className="border-blue-100 bg-blue-50/50 p-4 rounded-2xl">
-          <p className="text-sm text-slate-700 leading-relaxed text-center">
-            The more students submit their mark, more will be the authenticity of the Rank.
-            Please share this website with your friend who is expecting a medical college
-            this year.
+        <Card className="relative overflow-hidden border-0 bg-gradient-to-br from-amber-50 via-orange-50 to-amber-100 p-5 rounded-2xl shadow-lg">
+          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-400 via-orange-500 to-amber-400" />
+          <div className="flex items-start gap-3 mb-3">
+            <div className="shrink-0 w-8 h-8 rounded-full bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center shadow-md">
+              <span className="text-white text-sm">📢</span>
+            </div>
+            <h4 className="text-base font-bold text-amber-900 pt-1">Special Notice</h4>
+          </div>
+          <p className="text-sm text-amber-950/80 leading-relaxed mb-4">
+            If you want to know your most accurate position in the ranking, encourage every
+            student you know who is expecting a good NEET score to submit their marks. The
+            more students who participate, the more accurate your estimated state rank will
+            be.
           </p>
           <Button
             onClick={shareOnWhatsApp}
-            className="w-full mt-3 bg-green-600 hover:bg-green-700 text-white rounded-xl h-11 text-sm font-semibold shadow-md hover:shadow-lg transition-all"
+            className="w-full bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white rounded-xl h-12 text-base font-bold shadow-lg hover:shadow-xl transition-all"
           >
-            <Share2 className="h-4 w-4 mr-2" />
+            <Share2 className="h-5 w-5 mr-2" />
             Share on WhatsApp
           </Button>
+          <p className="text-xs text-center text-amber-900/60 mt-3">
+            Share this website on WhatsApp by clicking the button above 👇
+          </p>
         </Card>
       </section>
 

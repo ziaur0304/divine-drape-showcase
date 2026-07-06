@@ -74,7 +74,7 @@ export default function Index() {
           </div>
           <div className="flex flex-col items-end text-right">
             <span className="text-[10px] uppercase tracking-wider text-slate-400 font-medium">
-              Total Aspirants Visited
+              Total Visits
             </span>
             <div className="flex items-center gap-1.5 text-blue-600 font-bold">
               <Eye className="h-3.5 w-3.5" />

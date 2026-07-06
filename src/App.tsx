@@ -4,6 +4,7 @@ import Index from "./pages/Index";
 import SubmitMark from "./pages/SubmitMark";
 import LiveRank from "./pages/LiveRank";
 import Ziaur from "./pages/Ziaur";
+import RankPredictor from "./pages/RankPredictor";
 import NotFound from "./pages/NotFound";
 
 const App = () => (
@@ -13,6 +14,7 @@ const App = () => (
       <Route path="/" element={<Index />} />
       <Route path="/submit" element={<SubmitMark />} />
       <Route path="/live-rank" element={<LiveRank />} />
+      <Route path="/check-rank" element={<RankPredictor />} />
       <Route path="/ziaur" element={<Ziaur />} />
       <Route path="*" element={<NotFound />} />
     </Routes>

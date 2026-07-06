@@ -130,8 +130,36 @@ export default function Index() {
             Share on WhatsApp
           </Button>
           <p className="text-xs text-center text-amber-900/60 mt-3">
-            Share this website on WhatsApp by clicking the button above 👇
+            Share this website on WhatsApp by clicking the button above
           </p>
+        </Card>
+
+        {/* Join WhatsApp Group */}
+        <Card className="border-blue-100 bg-gradient-to-br from-blue-50 to-white p-5 rounded-2xl shadow-sm">
+          <div className="flex items-start gap-3 mb-3">
+            <div className="shrink-0 w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center shadow-md">
+              <MessageCircle className="h-4 w-4 text-white" />
+            </div>
+            <h4 className="text-base font-bold text-slate-900 pt-1">
+              Join Assam Future Doctors 2026
+            </h4>
+          </div>
+          <p className="text-sm text-slate-700 leading-relaxed mb-4">
+            Join our WhatsApp group, "Assam Future Doctors 2026 🩺," to receive all the latest
+            updates, important announcements, and complete guidance regarding NEET counselling
+            for admission to MBBS, BDS, and BAMS courses in Assam.
+          </p>
+          <p className="text-sm text-slate-700 leading-relaxed mb-4">
+            We'll support and guide you throughout the counselling process until you secure your
+            medical college.
+          </p>
+          <Button
+            onClick={() => window.open("https://chat.whatsapp.com/HsabYdYM41ACoDqpBzh2C1", "_blank")}
+            className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-xl h-12 text-base font-semibold shadow-md hover:shadow-lg transition-all"
+          >
+            <MessageCircle className="h-5 w-5 mr-2" />
+            Join WhatsApp Group
+          </Button>
         </Card>
       </section>
 

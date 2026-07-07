@@ -5,14 +5,13 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import {
   MessageCircle,
-  BarChart3,
-  Stethoscope,
-  Users,
-  TrendingUp,
-  PenSquare,
   Trophy,
   Share2,
   Eye,
+  GraduationCap,
+  ShieldCheck,
+  Check,
+  Phone,
 } from "lucide-react";
 import { WHATSAPP_URL } from "@/lib/config";
 import { supabase } from "@/integrations/supabase/client";

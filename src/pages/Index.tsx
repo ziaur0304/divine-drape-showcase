@@ -17,7 +17,7 @@ import { WHATSAPP_URL } from "@/lib/config";
 import { supabase } from "@/integrations/supabase/client";
 
 const SITE_URL = "https://rddonline.in";
-const SHARE_MESSAGE = `Check out RDD Online — Assam NEET 2026 Unofficial Merit List. Submit your marks and see your expected state rank: ${SITE_URL}`;
+const SHARE_MESSAGE = `Check out RDD Online — Assam RE-NEET 2026 Unofficial Merit List. Submit your marks and see your expected state rank: ${SITE_URL}`;
 
 const openWhatsApp = () => window.open(WHATSAPP_URL, "_blank");
 const shareOnWhatsApp = () =>
@@ -107,7 +107,7 @@ export default function Index() {
             <h4 className="text-base font-bold text-amber-900 pt-1">Special Notice</h4>
           </div>
           <p className="text-sm text-amber-950/80 leading-relaxed mb-4">
-            Share this to your friends who is anxious about his assam state rank in NEET 2026
+            Share this to your friends who is anxious about his assam state rank in RE-NEET 2026
           </p>
           <Button
             onClick={shareOnWhatsApp}
@@ -133,7 +133,7 @@ export default function Index() {
           </div>
           <p className="text-sm text-slate-700 leading-relaxed mb-4">
             Join our WhatsApp group, "Assam Future Doctors 2026 🩺," to receive all the latest
-            updates, important announcements, and complete guidance regarding NEET counselling
+            updates, important announcements, and complete guidance regarding RE-NEET counselling
             for admission to MBBS, BDS, and BAMS courses in Assam.
           </p>
           <p className="text-sm text-slate-700 leading-relaxed mb-4">
@@ -171,7 +171,7 @@ export default function Index() {
                   Premium Counselling Support
                 </Badge>
                 <h2 className="text-xl md:text-2xl font-bold text-slate-900 leading-tight">
-                  Need Help with NEET UG Counselling for admission into MBBS/BDS/BAMS?
+                  Need Help with RE-NEET UG Counselling for admission into MBBS/BDS/BAMS?
                 </h2>
               </div>
             </div>
@@ -214,7 +214,7 @@ export default function Index() {
               <Button
                 onClick={() =>
                   window.open(
-                    "https://wa.me/919365248667?text=Hello%21%20I%20would%20like%20to%20enroll%20in%20the%20%E2%82%B9299%20NEET%20UG%20Paid%20Counselling.%20Please%20guide%20me%20with%20the%20next%20steps.",
+                    "https://wa.me/919365248667?text=Hello%21%20I%20would%20like%20to%20enroll%20in%20the%20%E2%82%B9299%20RE-NEET%20UG%20Paid%20Counselling.%20Please%20guide%20me%20with%20the%20next%20steps.",
                     "_blank"
                   )
                 }
@@ -224,7 +224,7 @@ export default function Index() {
                 Get Counselling – ₹299
               </Button>
               <p className="text-xs text-center text-slate-400">
-                Trusted guidance for Assam NEET aspirants. Limited slots available.
+                Trusted guidance for Assam RE-NEET aspirants. Limited slots available.
               </p>
             </div>
           </div>
@@ -253,9 +253,9 @@ export default function Index() {
           <h4 className="font-bold text-slate-900">RDD Online</h4>
           <p className="text-sm text-slate-500 mt-1">Rank • Dream • Destination</p>
           <p className="text-sm text-slate-400 mt-1">
-            Turning your NEET rank into your medical destination.
+            Turning your RE-NEET rank into your medical destination.
           </p>
-          <p className="text-xs text-slate-400 mt-4">Made with ❤️ for Assam NEET Aspirants</p>
+          <p className="text-xs text-slate-400 mt-4">Made with ❤️ for Assam RE-NEET Aspirants</p>
         </div>
       </footer>
 

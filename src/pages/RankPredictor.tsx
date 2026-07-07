@@ -42,7 +42,7 @@ export default function RankPredictor() {
 
   useEffect(() => {
     document.title = "Assam State Rank Predictor 2026 | RDD Online";
-    const desc = "Estimate your Assam NEET UG 2026 state rank instantly based on your marks and historical counselling data.";
+    const desc = "Estimate your Assam RE-NEET UG 2026 state rank instantly based on your marks and historical counselling data.";
     let meta = document.querySelector('meta[name="description"]');
     if (!meta) {
       meta = document.createElement("meta");
@@ -98,13 +98,13 @@ export default function RankPredictor() {
       <section className="max-w-3xl mx-auto px-4 pt-8 pb-6 animate-fade-in">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-50 border border-amber-200 mb-4">
           <Sparkles className="h-3.5 w-3.5 text-amber-600" />
-          <span className="text-xs font-semibold text-amber-800 uppercase tracking-wider">NEET UG 2026</span>
+          <span className="text-xs font-semibold text-amber-800 uppercase tracking-wider">RE-NEET UG 2026</span>
         </div>
         <h2 className="text-3xl md:text-4xl font-bold text-blue-950 leading-tight mb-3">
           Assam State Rank<br />Predictor 2026
         </h2>
         <p className="text-slate-600 leading-relaxed mb-4">
-          Enter your NEET UG 2026 marks to instantly estimate your Assam State Rank.
+          Enter your RE-NEET UG 2026 marks to instantly estimate your Assam State Rank.
         </p>
         <div className="rounded-xl bg-slate-50 border border-slate-200 p-4 text-xs text-slate-600 leading-relaxed">
           <strong className="text-slate-800">Disclaimer:</strong> This is an estimated Assam State Rank
@@ -120,7 +120,7 @@ export default function RankPredictor() {
           <form onSubmit={handleSubmit} className="space-y-5">
             <div>
               <label htmlFor="marks" className="block text-sm font-semibold text-slate-800 mb-2">
-                Enter Your NEET Marks
+                Enter Your RE-NEET Marks
               </label>
               <Input
                 id="marks"

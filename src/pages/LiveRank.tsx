@@ -116,7 +116,7 @@ export default function LiveRank() {
             Live Assam Unofficial State Rank
           </h2>
           <p className="text-sm text-slate-500 mt-2 leading-relaxed">
-            Live rankings based on the responses submitted by NEET aspirants. This is an
+            Live rankings based on the responses submitted by RE-NEET aspirants. This is an
             unofficial merit list created to help students estimate their expected state
             rank.
           </p>

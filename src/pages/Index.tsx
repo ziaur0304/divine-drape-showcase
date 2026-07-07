@@ -108,10 +108,7 @@ export default function Index() {
             <h4 className="text-base font-bold text-amber-900 pt-1">Special Notice</h4>
           </div>
           <p className="text-sm text-amber-950/80 leading-relaxed mb-4">
-            If you want to know your most accurate position in the ranking, encourage every
-            student you know who is expecting a good NEET score to submit their marks. The
-            more students who participate, the more accurate your estimated state rank will
-            be.
+            Share this to your friends who is anxious about his assam state rank in NEET 2026
           </p>
           <Button
             onClick={shareOnWhatsApp}

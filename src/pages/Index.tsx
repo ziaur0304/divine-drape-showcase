@@ -5,14 +5,13 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import {
   MessageCircle,
-  BarChart3,
-  Stethoscope,
-  Users,
-  TrendingUp,
-  PenSquare,
   Trophy,
   Share2,
   Eye,
+  GraduationCap,
+  ShieldCheck,
+  Check,
+  Phone,
 } from "lucide-react";
 import { WHATSAPP_URL } from "@/lib/config";
 import { supabase } from "@/integrations/supabase/client";
@@ -108,10 +107,7 @@ export default function Index() {
             <h4 className="text-base font-bold text-amber-900 pt-1">Special Notice</h4>
           </div>
           <p className="text-sm text-amber-950/80 leading-relaxed mb-4">
-            If you want to know your most accurate position in the ranking, encourage every
-            student you know who is expecting a good NEET score to submit their marks. The
-            more students who participate, the more accurate your estimated state rank will
-            be.
+            Share this to your friends who is anxious about his assam state rank in NEET 2026
           </p>
           <Button
             onClick={shareOnWhatsApp}
@@ -154,136 +150,85 @@ export default function Index() {
         </Card>
       </section>
 
-      {/* Hero Section */}
-      <section className="px-4 pt-4 pb-6 max-w-3xl mx-auto">
-        <Card className="bg-gradient-to-br from-blue-50 to-white border-blue-100 p-6 md:p-8 shadow-sm rounded-2xl">
-          <Badge className="bg-blue-600 hover:bg-blue-600 text-white mb-4">
-            Community Initiative
-          </Badge>
-          <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-3 leading-tight">
-            Assam NEET 2026<br />Unofficial Merit List
-          </h2>
-          <p className="text-slate-600 mb-6 leading-relaxed">
-            The NEET exam is over, but the wait for the official Assam State Merit List can
-            feel stressful. Many students are wondering:
-          </p>
-          <ul className="space-y-2 mb-6 text-slate-700">
-            <li className="flex items-start gap-2">
-              <span className="text-blue-500 mt-1">›</span>
-              <span>Will I get MBBS?</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-blue-500 mt-1">›</span>
-              <span>What will be the cutoff?</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-blue-500 mt-1">›</span>
-              <span>What could be my Assam state rank?</span>
-            </li>
-          </ul>
-          <p className="text-slate-600 leading-relaxed">
-            Instead of waiting anxiously, let's estimate it together. We are creating an{" "}
-            <strong>Unofficial Assam NEET 2026 Merit List</strong> by collecting NEET scores
-            from students across Assam. The larger our database, the more accurate the
-            expected state rank and cutoff analysis will be.
-          </p>
-        </Card>
-      </section>
+      {/* Premium Counselling Advertisement */}
+      <section className="px-4 pt-4 pb-6 max-w-3xl mx-auto reveal opacity-0">
+        <Card className="relative overflow-hidden border-0 rounded-3xl shadow-2xl bg-white/70 backdrop-blur-xl">
+          {/* Decorative gradient orbs */}
+          <div className="absolute -top-20 -right-20 w-64 h-64 bg-blue-600/10 rounded-full blur-3xl" />
+          <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-amber-400/15 rounded-full blur-3xl" />
 
-      {/* Who Can Participate */}
-      <section className="px-4 py-6 max-w-3xl mx-auto reveal opacity-0">
-        <Card className="border-slate-100 p-6 rounded-2xl shadow-sm">
-          <h3 className="text-xl font-bold text-slate-900 mb-4">Who Can Participate?</h3>
-          <p className="text-sm text-slate-500 mb-4">
-            Only Assam NEET 2026 aspirants who expect the following scores or above:
-          </p>
-          <div className="grid grid-cols-2 gap-3">
-            {[
-              { cat: "UR", score: "490+" },
-              { cat: "EWS", score: "480+" },
-              { cat: "OBC", score: "410+" },
-              { cat: "SC", score: "400+" },
-              { cat: "ST (P)", score: "360+" },
-              { cat: "ST (H)", score: "310+" },
-            ].map((item) => (
-              <div
-                key={item.cat}
-                className="flex justify-between items-center bg-slate-50 rounded-lg px-4 py-3"
-              >
-                <span className="font-semibold text-slate-700 text-sm">{item.cat}</span>
-                <span className="text-blue-600 font-bold text-sm">{item.score}</span>
+          {/* Top accent line */}
+          <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-blue-900 via-blue-600 to-amber-400" />
+
+          <div className="relative p-6 md:p-8 space-y-6">
+            {/* Header */}
+            <div className="flex items-start gap-4">
+              <div className="shrink-0 w-12 h-12 rounded-2xl bg-gradient-to-br from-blue-900 to-blue-700 flex items-center justify-center shadow-lg">
+                <GraduationCap className="h-6 w-6 text-white" />
               </div>
-            ))}
+              <div>
+                <Badge className="bg-amber-100 hover:bg-amber-100 text-amber-800 border-amber-200 mb-2">
+                  Premium Counselling Support
+                </Badge>
+                <h2 className="text-xl md:text-2xl font-bold text-slate-900 leading-tight">
+                  Need Help with NEET UG Counselling for admission into MBBS/BDS/BAMS?
+                </h2>
+              </div>
+            </div>
+
+            {/* Description */}
+            <p className="text-slate-600 leading-relaxed">
+              Confused about registration, choice filling, seat allotment, documents or the
+              counselling process? Get complete personalized counselling support for just{" "}
+              <span className="font-bold text-amber-600">₹299</span>. Our expert team will
+              guide you through every stage of the admission process—from registration to final
+              college admission.
+            </p>
+
+            {/* What's Included */}
+            <div className="bg-slate-50/80 backdrop-blur-sm rounded-2xl p-5 border border-slate-100">
+              <h3 className="text-sm font-bold text-slate-900 uppercase tracking-wider mb-4 flex items-center gap-2">
+                <ShieldCheck className="h-4 w-4 text-blue-600" />
+                What's Included
+              </h3>
+              <ul className="space-y-3">
+                {[
+                  "Personalized counselling guidance",
+                  "College and choice filling assistance",
+                  "Document verification support",
+                  "24×7 WhatsApp & call support",
+                  "Dedicated guidance until your admission is complete",
+                ].map((benefit) => (
+                  <li key={benefit} className="flex items-start gap-3 text-sm text-slate-700">
+                    <div className="shrink-0 w-5 h-5 rounded-full bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center mt-0.5">
+                      <Check className="h-3 w-3 text-white" />
+                    </div>
+                    <span>{benefit}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* CTA */}
+            <div className="space-y-3">
+              <Button
+                onClick={() =>
+                  window.open(
+                    "https://wa.me/919365248667?text=Hello%21%20I%20would%20like%20to%20enroll%20in%20the%20%E2%82%B9299%20NEET%20UG%20Paid%20Counselling.%20Please%20guide%20me%20with%20the%20next%20steps.",
+                    "_blank"
+                  )
+                }
+                className="w-full bg-gradient-to-r from-blue-900 via-blue-700 to-blue-900 hover:from-blue-950 hover:via-blue-800 hover:to-blue-950 text-white rounded-2xl h-14 text-base font-bold shadow-xl shadow-blue-900/20 hover:shadow-2xl hover:shadow-blue-900/30 transition-all duration-300 hover:-translate-y-0.5"
+              >
+                <Phone className="h-5 w-5 mr-2" />
+                Get Counselling – ₹299
+              </Button>
+              <p className="text-xs text-center text-slate-400">
+                Trusted guidance for Assam NEET aspirants. Limited slots available.
+              </p>
+            </div>
           </div>
-          <p className="text-xs text-slate-400 mt-4 leading-relaxed">
-            These are only participation criteria for this community initiative. They are
-            NOT official cutoff marks and do not guarantee admission.
-          </p>
         </Card>
-      </section>
-
-      {/* How It Works (updated flow) */}
-      <section className="px-4 py-6 max-w-3xl mx-auto reveal opacity-0">
-        <h3 className="text-xl font-bold text-slate-900 mb-5 text-center">How It Works</h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {[
-            {
-              step: "Step 1",
-              title: "Tap Submit Your Mark",
-              desc: "Enter your Full Name, Expected Score and Category on the form.",
-            },
-            {
-              step: "Step 2",
-              title: "Send Details on WhatsApp",
-              desc: "Your details open in WhatsApp. Just tap Send to submit them to us.",
-            },
-            {
-              step: "Step 3",
-              title: "We Verify & Add",
-              desc: "Duplicates and fake entries are removed. Genuine entries are added to the merit list.",
-            },
-            {
-              step: "Step 4",
-              title: "Check Live State Rank",
-              desc: "View the live unofficial merit list with expected cutoff and state rank.",
-            },
-          ].map((item) => (
-            <Card
-              key={item.step}
-              className="border-slate-100 p-5 rounded-2xl shadow-sm hover:shadow-md transition-shadow"
-            >
-              <span className="text-xs font-bold text-blue-500 uppercase tracking-wider">
-                {item.step}
-              </span>
-              <h4 className="font-bold text-slate-900 mt-1 mb-1">{item.title}</h4>
-              <p className="text-sm text-slate-500">{item.desc}</p>
-            </Card>
-          ))}
-        </div>
-      </section>
-
-      {/* Why Participate */}
-      <section className="px-4 py-6 max-w-3xl mx-auto reveal opacity-0">
-        <h3 className="text-xl font-bold text-slate-900 mb-5 text-center">
-          Why Participate?
-        </h3>
-        <div className="grid grid-cols-2 gap-4">
-          {[
-            { icon: BarChart3, title: "Better Cutoff Estimation", desc: "Data-driven predictions" },
-            { icon: Stethoscope, title: "Admission Chances", desc: "Know where you stand" },
-            { icon: Users, title: "Help Aspirants", desc: "Support thousands in Assam" },
-            { icon: TrendingUp, title: "Accurate Analysis", desc: "More data = better results" },
-          ].map((item) => (
-            <Card
-              key={item.title}
-              className="border-slate-100 p-5 rounded-2xl shadow-sm text-center hover:shadow-md transition-shadow"
-            >
-              <item.icon className="h-6 w-6 text-blue-500 mx-auto mb-2" />
-              <h4 className="font-semibold text-slate-900 text-sm">{item.title}</h4>
-              <p className="text-xs text-slate-500 mt-1">{item.desc}</p>
-            </Card>
-          ))}
-        </div>
       </section>
 
       {/* Disclaimer */}

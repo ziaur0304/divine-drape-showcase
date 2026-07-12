@@ -6,6 +6,7 @@ import LiveRank from "./pages/LiveRank";
 import Ziaur from "./pages/Ziaur";
 import RankPredictor from "./pages/RankPredictor";
 import CollegeProfiles from "./pages/CollegeProfiles";
+import ClosingRanks from "./pages/ClosingRanks";
 import NotFound from "./pages/NotFound";
 
 const App = () => (
@@ -17,6 +18,7 @@ const App = () => (
       <Route path="/live-rank" element={<LiveRank />} />
       <Route path="/check-rank" element={<RankPredictor />} />
       <Route path="/college-profiles" element={<CollegeProfiles />} />
+      <Route path="/closing-ranks" element={<ClosingRanks />} />
       <Route path="/ziaur" element={<Ziaur />} />
       <Route path="*" element={<NotFound />} />
     </Routes>

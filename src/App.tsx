@@ -6,6 +6,7 @@ import LiveRank from "./pages/LiveRank";
 import Ziaur from "./pages/Ziaur";
 import RankPredictor from "./pages/RankPredictor";
 import CollegeProfiles from "./pages/CollegeProfiles";
+import ClosingRanks from "./pages/ClosingRanks";
 import NotFound from "./pages/NotFound";
 
 const App = () => (

@@ -18,6 +18,7 @@ const App = () => (
       <Route path="/live-rank" element={<LiveRank />} />
       <Route path="/check-rank" element={<RankPredictor />} />
       <Route path="/college-profiles" element={<CollegeProfiles />} />
+      <Route path="/closing-ranks" element={<ClosingRanks />} />
       <Route path="/ziaur" element={<Ziaur />} />
       <Route path="*" element={<NotFound />} />
     </Routes>

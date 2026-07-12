@@ -13,6 +13,7 @@ import {
   Check,
   Phone,
   Building2,
+  BarChart3,
 } from "lucide-react";
 import { WHATSAPP_URL } from "@/lib/config";
 import { supabase } from "@/integrations/supabase/client";

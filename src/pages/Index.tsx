@@ -109,6 +109,17 @@ export default function Index() {
           </Link>
         </Button>
 
+        <Button
+          asChild
+          variant="outline"
+          className="w-full border-blue-200 bg-white hover:bg-blue-50 text-blue-700 rounded-xl h-14 text-base font-bold shadow-sm hover:shadow-md transition-all"
+        >
+          <Link to="/closing-ranks">
+            <BarChart3 className="h-5 w-5 mr-2" />
+            Closing Ranks
+          </Link>
+        </Button>
+
         <Card className="relative overflow-hidden border-0 bg-gradient-to-br from-amber-50 via-orange-50 to-amber-100 p-5 rounded-2xl shadow-lg">
           <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-400 via-orange-500 to-amber-400" />
           <div className="flex items-start gap-3 mb-3">

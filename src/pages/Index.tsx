@@ -15,6 +15,7 @@ import {
   Building2,
   BarChart3,
   ScanLine,
+  FileText,
 } from "lucide-react";
 import { WHATSAPP_URL } from "@/lib/config";
 import { supabase } from "@/integrations/supabase/client";
@@ -130,6 +131,17 @@ export default function Index() {
           <Link to="/omr-scanner">
             <ScanLine className="h-5 w-5 mr-2" />
             OMR Scanner
+          </Link>
+        </Button>
+
+        <Button
+          asChild
+          variant="outline"
+          className="w-full border-emerald-200 bg-white hover:bg-emerald-50 text-emerald-700 rounded-xl h-14 text-base font-bold shadow-sm hover:shadow-md transition-all"
+        >
+          <Link to="/documents-required">
+            <FileText className="h-5 w-5 mr-2" />
+            List of Documents required for counselling
           </Link>
         </Button>
 

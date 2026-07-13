@@ -8,6 +8,7 @@ import RankPredictor from "./pages/RankPredictor";
 import CollegeProfiles from "./pages/CollegeProfiles";
 import ClosingRanks from "./pages/ClosingRanks";
 import OmrScanner from "./pages/OmrScanner";
+import DocumentsRequired from "./pages/DocumentsRequired";
 import NotFound from "./pages/NotFound";
 
 const App = () => (
@@ -21,6 +22,7 @@ const App = () => (
       <Route path="/college-profiles" element={<CollegeProfiles />} />
       <Route path="/closing-ranks" element={<ClosingRanks />} />
       <Route path="/omr-scanner" element={<OmrScanner />} />
+      <Route path="/documents-required" element={<DocumentsRequired />} />
       <Route path="/ziaur" element={<Ziaur />} />
       <Route path="*" element={<NotFound />} />
     </Routes>

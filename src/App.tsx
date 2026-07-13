@@ -22,6 +22,7 @@ const App = () => (
       <Route path="/college-profiles" element={<CollegeProfiles />} />
       <Route path="/closing-ranks" element={<ClosingRanks />} />
       <Route path="/omr-scanner" element={<OmrScanner />} />
+      <Route path="/documents-required" element={<DocumentsRequired />} />
       <Route path="/ziaur" element={<Ziaur />} />
       <Route path="*" element={<NotFound />} />
     </Routes>

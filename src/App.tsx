@@ -8,6 +8,7 @@ import RankPredictor from "./pages/RankPredictor";
 import CollegeProfiles from "./pages/CollegeProfiles";
 import ClosingRanks from "./pages/ClosingRanks";
 import OmrScanner from "./pages/OmrScanner";
+import DocumentsRequired from "./pages/DocumentsRequired";
 import NotFound from "./pages/NotFound";
 
 const App = () => (

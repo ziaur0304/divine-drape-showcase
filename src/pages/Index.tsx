@@ -141,7 +141,10 @@ export default function Index() {
         >
           <Link to="/documents-required">
             <FileText className="h-5 w-5 mr-2" />
-            List of Documents required for counselling
+            <span className="flex flex-col items-start leading-tight">
+              <span>List of Documents</span>
+              <span className="text-sm">required for counselling</span>
+            </span>
           </Link>
         </Button>
 

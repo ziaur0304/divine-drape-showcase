@@ -361,7 +361,7 @@ export default function ClosingRanks() {
         )}
 
         <p className="text-xs text-slate-400 text-center">
-          Data source: Assam RE-NEET UG 2025 Round 3 closing ranks. For guidance only.
+          Data source: Assam NEET UG 2025 Round 3 closing ranks. For guidance only.
         </p>
 
         <div className="pt-2">

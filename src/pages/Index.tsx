@@ -8,10 +8,6 @@ import {
   Trophy,
   Share2,
   Eye,
-  GraduationCap,
-  ShieldCheck,
-  Check,
-  Phone,
   Building2,
   BarChart3,
   ScanLine,
@@ -200,102 +196,6 @@ export default function Index() {
         </Card>
       </section>
 
-      {/* Premium Counselling Advertisement */}
-      <section className="px-4 pt-4 pb-6 max-w-3xl mx-auto reveal opacity-0">
-        <Card className="relative overflow-hidden border-0 rounded-3xl shadow-2xl bg-white/70 backdrop-blur-xl">
-          {/* Decorative gradient orbs */}
-          <div className="absolute -top-20 -right-20 w-64 h-64 bg-blue-600/10 rounded-full blur-3xl" />
-          <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-amber-400/15 rounded-full blur-3xl" />
-
-          {/* Top accent line */}
-          <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-blue-900 via-blue-600 to-amber-400" />
-
-          <div className="relative p-6 md:p-8 space-y-6">
-            {/* Header */}
-            <div className="flex items-start gap-4">
-              <div className="shrink-0 w-12 h-12 rounded-2xl bg-gradient-to-br from-blue-900 to-blue-700 flex items-center justify-center shadow-lg">
-                <GraduationCap className="h-6 w-6 text-white" />
-              </div>
-              <div>
-                <Badge className="bg-amber-100 hover:bg-amber-100 text-amber-800 border-amber-200 mb-2">
-                  Premium Counselling Support
-                </Badge>
-                <h2 className="text-xl md:text-2xl font-bold text-slate-900 leading-tight">
-                  Need Help with RE-NEET UG Counselling for admission into MBBS/BDS/BAMS?
-                </h2>
-              </div>
-            </div>
-
-            {/* Description */}
-            <p className="text-slate-600 leading-relaxed">
-              Confused about registration, choice filling, seat allotment, documents or the
-              counselling process? Get complete personalized counselling support for just{" "}
-              <span className="font-bold text-amber-600">₹299</span>. Our expert team will
-              guide you through every stage of the admission process—from registration to final
-              college admission.
-            </p>
-
-            {/* What's Included */}
-            <div className="bg-slate-50/80 backdrop-blur-sm rounded-2xl p-5 border border-slate-100">
-              <h3 className="text-sm font-bold text-slate-900 uppercase tracking-wider mb-4 flex items-center gap-2">
-                <ShieldCheck className="h-4 w-4 text-blue-600" />
-                What's Included
-              </h3>
-              <ul className="space-y-3">
-                {[
-                  "Personalized counselling guidance",
-                  "College and choice filling assistance",
-                  "Document verification support",
-                  "24×7 WhatsApp & call support",
-                  "Dedicated guidance until your admission is complete",
-                ].map((benefit) => (
-                  <li key={benefit} className="flex items-start gap-3 text-sm text-slate-700">
-                    <div className="shrink-0 w-5 h-5 rounded-full bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center mt-0.5">
-                      <Check className="h-3 w-3 text-white" />
-                    </div>
-                    <span>{benefit}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* CTA */}
-            <div className="space-y-3">
-              <Button
-                onClick={() =>
-                  window.open(
-                    "https://wa.me/919365248667?text=Hello%21%20I%20would%20like%20to%20enroll%20in%20the%20%E2%82%B9299%20RE-NEET%20UG%20Paid%20Counselling.%20Please%20guide%20me%20with%20the%20next%20steps.",
-                    "_blank"
-                  )
-                }
-                className="w-full bg-gradient-to-r from-blue-900 via-blue-700 to-blue-900 hover:from-blue-950 hover:via-blue-800 hover:to-blue-950 text-white rounded-2xl h-14 text-base font-bold shadow-xl shadow-blue-900/20 hover:shadow-2xl hover:shadow-blue-900/30 transition-all duration-300 hover:-translate-y-0.5"
-              >
-                <Phone className="h-5 w-5 mr-2" />
-                Get Counselling – ₹299
-              </Button>
-              <p className="text-xs text-center text-slate-400">
-                Trusted guidance for Assam RE-NEET aspirants. Limited slots available.
-              </p>
-            </div>
-          </div>
-        </Card>
-      </section>
-
-      {/* Disclaimer */}
-      <section className="px-4 py-6 max-w-3xl mx-auto reveal opacity-0">
-        <Card className="bg-slate-50 border-slate-200 p-6 rounded-2xl">
-          <h3 className="text-sm font-bold text-slate-700 uppercase tracking-wider mb-3">
-            Disclaimer
-          </h3>
-          <p className="text-sm text-slate-500 leading-relaxed">
-            This is an independent community initiative by <strong>RDD Online</strong>{" "}
-            (Rank • Dream • Destination). It is <strong>not affiliated</strong> with NTA,
-            MCC, DME Assam, or any government authority. The unofficial merit list and
-            cutoff analysis are created using voluntarily submitted student data and are
-            intended only for guidance.
-          </p>
-        </Card>
-      </section>
 
       {/* Footer */}
       <footer className="border-t border-slate-100 mt-4 py-8 px-4 text-center">

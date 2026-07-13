@@ -13,6 +13,7 @@ import {
   Check,
   Phone,
   Building2,
+  BarChart3,
 } from "lucide-react";
 import { WHATSAPP_URL } from "@/lib/config";
 import { supabase } from "@/integrations/supabase/client";
@@ -106,6 +107,17 @@ export default function Index() {
           <Link to="/college-profiles">
             <Building2 className="h-5 w-5 mr-2" />
             College Profiles
+          </Link>
+        </Button>
+
+        <Button
+          asChild
+          variant="outline"
+          className="w-full border-blue-200 bg-white hover:bg-blue-50 text-blue-700 rounded-xl h-14 text-base font-bold shadow-sm hover:shadow-md transition-all"
+        >
+          <Link to="/closing-ranks">
+            <BarChart3 className="h-5 w-5 mr-2" />
+            Closing Ranks
           </Link>
         </Button>
 

@@ -188,6 +188,42 @@ export default function ClosingRanks() {
           </p>
         </div>
 
+        {/* Premium counselling CTA */}
+        <Card className="relative overflow-hidden rounded-2xl border-blue-200 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900 text-white shadow-lg shadow-blue-900/10">
+          <div className="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 rounded-full bg-white/10 blur-2xl" />
+          <div className="absolute bottom-0 left-0 -mb-4 -ml-4 w-20 h-20 rounded-full bg-blue-400/20 blur-2xl" />
+          <div className="relative p-5 md:p-6">
+            <div className="flex items-start gap-3">
+              <div className="shrink-0 w-11 h-11 rounded-xl bg-white/15 backdrop-blur-sm flex items-center justify-center border border-white/20">
+                <Sparkles className="h-5 w-5 text-white" />
+              </div>
+              <div className="flex-1 min-w-0">
+                <h3 className="text-lg md:text-xl font-bold text-white leading-tight">
+                  Need End-to-End Premium Counselling Guidance?
+                </h3>
+                <p className="text-sm text-blue-100 mt-2 leading-relaxed">
+                  Get personalized counselling, choice filling assistance, document guidance, DME portal support, and priority WhatsApp support.
+                </p>
+              </div>
+            </div>
+            <div className="mt-5">
+              <Button
+                asChild
+                className="w-full md:w-auto bg-white hover:bg-blue-50 text-blue-700 font-semibold rounded-xl shadow-md hover:shadow-lg transition-all duration-200 h-12 px-6"
+              >
+                <a
+                  href="https://wa.me/919365248667?text=Hi%20RDD%20Online,%20I%20want%20to%20enroll%20in%20the%20Premium%20Counselling%20Guidance"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <MessageCircle className="h-5 w-5 mr-2 fill-current" />
+                  Click Here
+                </a>
+              </Button>
+            </div>
+          </div>
+        </Card>
+
         {/* Searchable college selector */}
         <Card className="p-4 rounded-2xl border-slate-100 shadow-sm relative">
           <label className="text-xs font-semibold text-slate-600 uppercase tracking-wider">

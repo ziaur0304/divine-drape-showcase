@@ -90,7 +90,7 @@ export default function Index() {
       <section className="px-4 pt-6 pb-2 max-w-3xl mx-auto space-y-3">
         <Button
           asChild
-          className="w-full bg-gradient-to-r from-blue-900 to-blue-700 hover:from-blue-950 hover:to-blue-800 text-white rounded-xl h-14 text-base font-bold shadow-lg hover:shadow-xl transition-all"
+          className="w-full bg-gradient-to-r from-indigo-600 to-blue-700 hover:from-indigo-700 hover:to-blue-800 text-white rounded-xl h-14 text-base font-bold shadow-lg hover:shadow-xl transition-all"
         >
           <Link to="/check-rank">
             <Trophy className="h-5 w-5 mr-2" />
@@ -100,8 +100,7 @@ export default function Index() {
 
         <Button
           asChild
-          variant="outline"
-          className="w-full border-blue-200 bg-white hover:bg-blue-50 text-blue-700 rounded-xl h-14 text-base font-bold shadow-sm hover:shadow-md transition-all"
+          className="w-full bg-gradient-to-r from-teal-500 to-cyan-600 hover:from-teal-600 hover:to-cyan-700 text-white rounded-xl h-14 text-base font-bold shadow-lg hover:shadow-xl transition-all"
         >
           <Link to="/college-profiles">
             <Building2 className="h-5 w-5 mr-2" />
@@ -111,8 +110,7 @@ export default function Index() {
 
         <Button
           asChild
-          variant="outline"
-          className="w-full border-blue-200 bg-white hover:bg-blue-50 text-blue-700 rounded-xl h-14 text-base font-bold shadow-sm hover:shadow-md transition-all"
+          className="w-full bg-gradient-to-r from-violet-600 to-purple-700 hover:from-violet-700 hover:to-purple-800 text-white rounded-xl h-14 text-base font-bold shadow-lg hover:shadow-xl transition-all"
         >
           <Link to="/closing-ranks">
             <BarChart3 className="h-5 w-5 mr-2" />
@@ -122,8 +120,7 @@ export default function Index() {
 
         <Button
           asChild
-          variant="outline"
-          className="w-full border-blue-200 bg-white hover:bg-blue-50 text-blue-700 rounded-xl h-14 text-base font-bold shadow-sm hover:shadow-md transition-all"
+          className="w-full bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white rounded-xl h-14 text-base font-bold shadow-lg hover:shadow-xl transition-all"
         >
           <Link to="/omr-scanner">
             <ScanLine className="h-5 w-5 mr-2" />
@@ -133,14 +130,13 @@ export default function Index() {
 
         <Button
           asChild
-          variant="outline"
-          className="w-full border-emerald-200 bg-white hover:bg-emerald-50 text-emerald-700 rounded-xl h-14 text-base font-bold shadow-sm hover:shadow-md transition-all"
+          className="w-full bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white rounded-xl h-14 text-base font-bold shadow-lg hover:shadow-xl transition-all"
         >
           <Link to="/documents-required">
             <FileText className="h-5 w-5 mr-2" />
             <span className="flex flex-col items-start leading-tight">
               <span>List of Documents</span>
-              <span className="text-sm">required for counselling</span>
+              <span className="text-sm font-medium opacity-95">required for counselling</span>
             </span>
           </Link>
         </Button>
@@ -152,11 +148,12 @@ export default function Index() {
               "_blank"
             )
           }
-          className="w-full bg-gradient-to-r from-blue-900 to-blue-700 hover:from-blue-950 hover:to-blue-800 text-white rounded-xl h-14 text-base font-bold shadow-lg hover:shadow-xl transition-all"
+          className="w-full bg-gradient-to-r from-rose-600 to-red-700 hover:from-rose-700 hover:to-red-800 text-white rounded-xl h-14 text-base font-bold shadow-lg hover:shadow-xl transition-all"
         >
           <Download className="h-5 w-5 mr-2" />
           Download Annexures
         </Button>
+
 
         <Card className="relative overflow-hidden border-0 bg-gradient-to-br from-amber-50 via-orange-50 to-amber-100 p-5 rounded-2xl shadow-lg">
           <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-400 via-orange-500 to-amber-400" />

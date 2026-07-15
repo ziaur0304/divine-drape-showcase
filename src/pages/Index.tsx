@@ -12,6 +12,7 @@ import {
   BarChart3,
   ScanLine,
   FileText,
+  Download,
 } from "lucide-react";
 import { WHATSAPP_URL } from "@/lib/config";
 import { supabase } from "@/integrations/supabase/client";
@@ -142,6 +143,19 @@ export default function Index() {
               <span className="text-sm">required for counselling</span>
             </span>
           </Link>
+        </Button>
+
+        <Button
+          onClick={() =>
+            window.open(
+              "https://dme.assam.gov.in/sites/default/files/swf_utility_folder/departments/dme_lipl_in_oid_8/menu/document/mbbs_bds_annexures_bond.pdf",
+              "_blank"
+            )
+          }
+          className="w-full bg-gradient-to-r from-blue-900 to-blue-700 hover:from-blue-950 hover:to-blue-800 text-white rounded-xl h-14 text-base font-bold shadow-lg hover:shadow-xl transition-all"
+        >
+          <Download className="h-5 w-5 mr-2" />
+          Download Annexures
         </Button>
 
         <Card className="relative overflow-hidden border-0 bg-gradient-to-br from-amber-50 via-orange-50 to-amber-100 p-5 rounded-2xl shadow-lg">

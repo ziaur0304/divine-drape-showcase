@@ -18,7 +18,7 @@ import { WHATSAPP_URL } from "@/lib/config";
 import { supabase } from "@/integrations/supabase/client";
 
 const SITE_URL = "https://rddonline.in";
-const SHARE_MESSAGE = `Check out RDD Online — Assam RE-NEET 2026 Unofficial Merit List. Submit your marks and see your expected state rank: ${SITE_URL}`;
+const SHARE_MESSAGE = `Check out RDD Online — The biggest and most organised platform in Assam for NEET UG Counselling Guidance: ${SITE_URL}`;
 
 const openWhatsApp = () => window.open(WHATSAPP_URL, "_blank");
 const shareOnWhatsApp = () =>

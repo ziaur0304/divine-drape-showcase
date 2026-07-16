@@ -119,8 +119,7 @@ export const colleges: College[] = [
     patientFlow: { score: 1 },
     hostelConditions: {
       score: 4,
-      description:
-        "Hostel infrastructure is very good, but due to limited seats available in the hostel, all first-year students may not get hostel allotment.",
+      description: "Hostel is available in good condition.",
     },
     hostelFood: { score: 2 },
     sportsFacilities: {

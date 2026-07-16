@@ -30,6 +30,7 @@ const DOCUMENTS = [
   "Declaration by the Parent/Guardian",
   "Annexures",
   "Certificate for Reservation (EWS Certificate / Caste Certificate)",
+  "Signature",
   "Character Certificate*",
   "Gap Certificate* (if applicable)",
 ];

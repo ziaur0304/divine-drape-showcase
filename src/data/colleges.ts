@@ -134,7 +134,7 @@ export const colleges: College[] = [
     studentOpinion: {
       quote:
         "I took admission here for city life. I would suggest: don't sacrifice your career just for city life. If you are getting an older and more established college, you'll have much better opportunities for learning and clinical exposure.",
-      name: "Deepjyoti Taye",
+      name: "Naseer Hussain",
       designation: "MBBS 1st Year, PMCH",
     },
     closingRanksLink: "/closing-ranks",

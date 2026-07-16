@@ -20,6 +20,7 @@ const ANNEXURE_URL =
 const DOCUMENTS = [
   "PRC (Permanent Resident Certificate)",
   "NEET UG 2026 Admit Card",
+  "NEET Score Card",
   "NEET UG 2026 OMR Sheet",
   "Class 10 Admit Card",
   "Class 10 Mark Sheet and Pass Certificate",

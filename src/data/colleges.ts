@@ -1,0 +1,179 @@
+export type Rating = {
+  score: number;
+  description?: string;
+};
+
+export type College = {
+  id: string;
+  name: string;
+  shortName: string;
+  overview: string;
+  established: string;
+  pgCourses: string;
+  libraryAvailable: string;
+  cadaver: Rating;
+  attendanceStrictness: Rating;
+  facultySupport: Rating;
+  patientFlow: Rating;
+  hostelConditions: Rating;
+  hostelFood: Rating;
+  sportsFacilities: Rating;
+  collegeFest: string;
+  locality: string;
+  distanceFromGuwahati: string;
+  studentOpinion: {
+    quote: string;
+    name: string;
+    designation: string;
+  };
+  closingRanksLink: string;
+  campusPhotosLink: string;
+};
+
+export const colleges: College[] = [
+  {
+    id: "gmch",
+    name: "Gauhati Medical College & Hospital",
+    shortName: "GMCH",
+    overview:
+      "As Assam's premier medical institution located in the state capital, Gauhati Medical College & Hospital combines academic excellence with one of the busiest tertiary care hospitals in Northeast India. The college is recognized for its diverse clinical exposure, advanced healthcare facilities, and significant contribution to medical education, research, and specialized patient care.",
+    established: "1960",
+    pgCourses: "Available",
+    libraryAvailable: "Yes",
+    cadaver: { score: 5 },
+    attendanceStrictness: { score: 5 },
+    facultySupport: { score: 3 },
+    patientFlow: { score: 5 },
+    hostelConditions: {
+      score: 3,
+      description:
+        "Two boys hostels (Hostel 4 and Hostel 2) and three girls hostels (Hostel 3, Hostel 7 and Additional Girl's Hostel) for UG students.",
+    },
+    hostelFood: { score: 4 },
+    sportsFacilities: {
+      score: 3,
+      description:
+        "No outdoor playground on campus. Horuhojai Stadium is booked for intra-college sports events during college week. Badminton and Volleyball courts are available inside the hostels.",
+    },
+    collegeFest: "Plexus",
+    locality:
+      "Gauhati Medical College & Hospital (GMCH) is situated in Bhangagarh, one of Guwahati's most prominent and well-connected localities. The campus enjoys excellent road connectivity and is surrounded by pharmacies, banks, restaurants, shopping centres, and essential services, making daily life convenient for students. Its close proximity to the Guwahati Railway Station, ISBT, Lokpriya Gopinath Bordoloi International Airport, and major commercial areas ensures easy accessibility for patients, faculty, and visitors from across Assam and the Northeast.",
+    distanceFromGuwahati: "Itself situated at Guwahati",
+    studentOpinion: {
+      quote:
+        "Studying at GMCH has been a rewarding experience. The clinical exposure is exceptional, with a diverse patient load that helps build confidence and practical skills from an early stage. The campus is busy and academically demanding, but the supportive faculty, experienced seniors, and easy access to essential facilities in the surrounding area make student life both enriching and memorable.",
+      name: "Dhritajit Medhi",
+      designation: "Intern, GMCH",
+    },
+    closingRanksLink: "/closing-ranks",
+    campusPhotosLink:
+      "https://drive.google.com/drive/folders/1td4i2_eg5FiiqOFOdK31f9-oV7j4QjIy",
+  },
+  {
+    id: "amch",
+    name: "Assam Medical College, Dibrugarh",
+    shortName: "AMCH",
+    overview:
+      "Assam Medical College & Hospital is the oldest medical college in Northeast India and a pioneer in medical education in the region, previously known as John Berry White Medical School. Renowned for its rich academic heritage, high patient inflow and extensive clinical exposure, the institution has produced generations of healthcare professionals while serving as a major referral center for Upper Assam and neighboring states.",
+    established: "1947",
+    pgCourses: "Available",
+    libraryAvailable: "Yes",
+    cadaver: { score: 5 },
+    attendanceStrictness: { score: 5 },
+    facultySupport: { score: 4 },
+    patientFlow: { score: 5 },
+    hostelConditions: { score: 4 },
+    hostelFood: { score: 4 },
+    sportsFacilities: {
+      score: 5,
+      description:
+        "AMCH is the best college for sports in all of Assam. Facilities for every indoor and outdoor sport are available on campus.",
+    },
+    collegeFest: "Synapse",
+    locality:
+      "Situated in the heart of Dibrugarh, popularly known as the 'Tea City of India,' Assam Medical College enjoys a well-developed urban locality with a peaceful environment. The campus is surrounded by lush tea gardens, residential neighborhoods, pharmacies, restaurants, supermarkets, banks, and essential services, making day-to-day student life convenient. The college is well connected by road, rail, and air, with Dibrugarh Railway Station and Dibrugarh Airport offering easy access to other parts of Assam and India. As Dibrugarh serves as the healthcare and commercial hub of Upper Assam, students benefit from excellent clinical exposure while enjoying a safe, student-friendly atmosphere with plenty of recreational and dining options nearby.",
+    distanceFromGuwahati:
+      "Approx 450 KM (Distance from the city is the only weak point for this college — otherwise it is the best medical college of Assam)",
+    studentOpinion: {
+      quote:
+        "Living around AMCH is comfortable because everything we need — food, transport, pharmacies, and study essentials — is easily available nearby. The calm surroundings, greenery, and friendly atmosphere make it a great place to focus on medical studies while still enjoying city conveniences.",
+      name: "Ajijur Rahman",
+      designation: "MBBS 4th Year, AMCH",
+    },
+    closingRanksLink: "/closing-ranks",
+    campusPhotosLink:
+      "https://drive.google.com/drive/folders/157EMfR2y8rAbJkMLihjDBfDtX1X13AF3",
+  },
+  {
+    id: "pmch",
+    name: "Pragjyotishpur Medical College",
+    shortName: "PMCH",
+    overview:
+      "As one of Assam's newest government medical colleges, Pragjyotishpur Medical College & Hospital is still in its early stages of development. While the institution offers modern infrastructure and significant growth potential, students may currently experience the challenges common to newly established medical colleges, including evolving academic systems, ongoing infrastructure expansion, and comparatively lower clinical exposure than long-established institutions. However, with continued government investment and expansion, the college is expected to strengthen its academic and healthcare services in the coming years.",
+    established: "2025",
+    pgCourses: "Not Available",
+    libraryAvailable: "Yes",
+    cadaver: { score: 1 },
+    attendanceStrictness: { score: 5 },
+    facultySupport: { score: 4 },
+    patientFlow: { score: 1 },
+    hostelConditions: {
+      score: 4,
+      description:
+        "Hostel infrastructure is very good, but due to limited seats available in the hostel, all first-year students may not get hostel allotment.",
+    },
+    hostelFood: { score: 2 },
+    sportsFacilities: {
+      score: 1,
+      description:
+        "Only some indoor sports facilities are available. No playground is available on campus.",
+    },
+    collegeFest: "Mridangam",
+    locality:
+      "PMCH is located on the outskirts of Guwahati, where the surrounding area is still undergoing development. While the peaceful environment can be beneficial for studies, students may find the locality lacking in vibrant social life and modern amenities. Public transport is available but may not be as frequent or convenient as in central Guwahati, especially during late hours. Options for cafés, shopping malls, entertainment, and recreational activities are limited nearby, requiring students to travel into the city. During the monsoon season, some surrounding roads may also experience waterlogging and traffic delays, making daily commuting less convenient.",
+    distanceFromGuwahati: "Itself situated at Guwahati",
+    studentOpinion: {
+      quote:
+        "I took admission here for city life. I would suggest: don't sacrifice your career just for city life. If you are getting an older and more established college, you'll have much better opportunities for learning and clinical exposure.",
+      name: "Deepjyoti Taye",
+      designation: "MBBS 1st Year, PMCH",
+    },
+    closingRanksLink: "/closing-ranks",
+    campusPhotosLink:
+      "https://drive.google.com/drive/folders/1UASXljlIM_h3zwvBSRtMv0XNgwQKbcAQ",
+  },
+  {
+    id: "jmch",
+    name: "Jorhat Medical College",
+    shortName: "JMCH",
+    overview:
+      "Jorhat Medical College & Hospital has grown into one of Assam's prominent government medical institutions, serving as a major tertiary care center for Upper Assam and neighboring regions. The college offers good clinical exposure and expanding postgraduate programs, but it still trails older institutions like AMCH and GMCH in terms of legacy, alumni network, and long-established academic reputation. Nevertheless, JMCH continues to strengthen its infrastructure, research activities, and healthcare services, making it a preferred choice for many MBBS aspirants in the state.",
+    established: "2009",
+    pgCourses: "Available",
+    libraryAvailable: "Yes",
+    cadaver: { score: 5 },
+    attendanceStrictness: { score: 5 },
+    facultySupport: { score: 4 },
+    patientFlow: { score: 5 },
+    hostelConditions: { score: 4 },
+    hostelFood: { score: 4 },
+    sportsFacilities: {
+      score: 3,
+      description:
+        "A playground is available but not large enough. Free gym facility is available for students.",
+    },
+    collegeFest: "Esperenza",
+    locality:
+      "Jorhat Medical College is located in the culturally rich city of Jorhat, one of the major urban centers of Upper Assam. The locality offers a peaceful and student-friendly environment with easy access to essential amenities such as pharmacies, grocery stores, restaurants, banks, and public transport. Unlike larger metropolitan cities, Jorhat has a slower pace of life, making it suitable for focused academic pursuits. The city is well connected by road, rail, and air, ensuring convenient travel for students. Although nightlife and large entertainment hubs are limited, the locality provides a safe and comfortable atmosphere for medical education.",
+    distanceFromGuwahati: "Approx 300 KM",
+    studentOpinion: {
+      quote:
+        "The locality is peaceful and convenient for students, with most daily necessities available nearby. However, Jorhat isn't a very happening city, so entertainment options are limited. On the positive side, the calm environment makes it easier to stay focused on academics.",
+      name: "Shajid Ahmed",
+      designation: "MBBS 3rd Year, JMCH",
+    },
+    closingRanksLink: "/closing-ranks",
+    campusPhotosLink:
+      "https://drive.google.com/drive/folders/19vRD_loq8T3-54tXJCLUd4uPn3z95FGv",
+  },
+];

@@ -307,38 +307,40 @@ function CollegeProfile({ college }: { college: College }) {
       </section>
 
       {/* Campus Photos */}
-      <section>
-        <Card className="relative overflow-hidden border-0 rounded-3xl bg-gradient-to-br from-teal-500 via-cyan-600 to-blue-600 p-6 md:p-8 text-white shadow-xl">
-          <div className="absolute -top-16 -left-16 w-56 h-56 bg-white/10 rounded-full blur-3xl" />
-          <div className="relative flex flex-col md:flex-row md:items-center gap-4 md:justify-between">
-            <div className="flex items-start gap-3">
-              <div className="shrink-0 w-12 h-12 rounded-2xl bg-white/20 backdrop-blur flex items-center justify-center">
-                <Images className="h-6 w-6" />
+      {college.campusPhotosLink && (
+        <section>
+          <Card className="relative overflow-hidden border-0 rounded-3xl bg-gradient-to-br from-teal-500 via-cyan-600 to-blue-600 p-6 md:p-8 text-white shadow-xl">
+            <div className="absolute -top-16 -left-16 w-56 h-56 bg-white/10 rounded-full blur-3xl" />
+            <div className="relative flex flex-col md:flex-row md:items-center gap-4 md:justify-between">
+              <div className="flex items-start gap-3">
+                <div className="shrink-0 w-12 h-12 rounded-2xl bg-white/20 backdrop-blur flex items-center justify-center">
+                  <Images className="h-6 w-6" />
+                </div>
+                <div>
+                  <h3 className="text-xl md:text-2xl font-bold">Campus Photos</h3>
+                  <p className="text-white/85 text-sm mt-1">
+                    Explore the campus, hostels & student life.
+                  </p>
+                </div>
               </div>
-              <div>
-                <h3 className="text-xl md:text-2xl font-bold">Campus Photos</h3>
-                <p className="text-white/85 text-sm mt-1">
-                  Explore the campus, hostels & student life.
-                </p>
-              </div>
-            </div>
-            <Button
-              asChild
-              size="lg"
-              className="bg-white text-cyan-700 hover:bg-white/90 rounded-xl font-bold shadow-lg"
-            >
-              <a
-                href={college.campusPhotosLink}
-                target="_blank"
-                rel="noopener noreferrer"
+              <Button
+                asChild
+                size="lg"
+                className="bg-white text-cyan-700 hover:bg-white/90 rounded-xl font-bold shadow-lg"
               >
-                Open Gallery
-                <ExternalLink className="h-4 w-4 ml-2" />
-              </a>
-            </Button>
-          </div>
-        </Card>
-      </section>
+                <a
+                  href={college.campusPhotosLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Open Gallery
+                  <ExternalLink className="h-4 w-4 ml-2" />
+                </a>
+              </Button>
+            </div>
+          </Card>
+        </section>
+      )}
     </div>
   );
 }

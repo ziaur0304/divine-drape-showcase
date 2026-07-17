@@ -7,6 +7,7 @@ import Ziaur from "./pages/Ziaur";
 import RankPredictor from "./pages/RankPredictor";
 import CollegeProfiles from "./pages/CollegeProfiles";
 import ClosingRanks from "./pages/ClosingRanks";
+import RoundwiseAIR from "./pages/RoundwiseAIR";
 import OmrScanner from "./pages/OmrScanner";
 import DocumentsRequired from "./pages/DocumentsRequired";
 import NotFound from "./pages/NotFound";

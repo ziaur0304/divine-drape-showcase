@@ -26,7 +26,6 @@ export type College = {
     name: string;
     designation: string;
   };
-  closingRanksLink: string;
   campusPhotosLink: string;
 };
 
@@ -65,7 +64,6 @@ export const colleges: College[] = [
       name: "Dhritajit Medhi",
       designation: "Intern, GMCH",
     },
-    closingRanksLink: "/closing-ranks",
     campusPhotosLink:
       "https://drive.google.com/drive/folders/1td4i2_eg5FiiqOFOdK31f9-oV7j4QjIy",
   },
@@ -100,7 +98,6 @@ export const colleges: College[] = [
       name: "Ajijur Rahman",
       designation: "MBBS 4th Year, AMCH",
     },
-    closingRanksLink: "/closing-ranks",
     campusPhotosLink:
       "https://drive.google.com/drive/folders/157EMfR2y8rAbJkMLihjDBfDtX1X13AF3",
   },
@@ -137,7 +134,6 @@ export const colleges: College[] = [
       name: "Naseer Hussain",
       designation: "MBBS 1st Year, PMCH",
     },
-    closingRanksLink: "/closing-ranks",
     campusPhotosLink:
       "https://drive.google.com/drive/folders/1UASXljlIM_h3zwvBSRtMv0XNgwQKbcAQ",
   },
@@ -171,7 +167,6 @@ export const colleges: College[] = [
       name: "Shajid Ahmed",
       designation: "MBBS 3rd Year, JMCH",
     },
-    closingRanksLink: "/closing-ranks",
     campusPhotosLink:
       "https://drive.google.com/drive/folders/19vRD_loq8T3-54tXJCLUd4uPn3z95FGv",
   },

@@ -12,6 +12,7 @@ import {
   BarChart3,
   FileText,
   Download,
+  Layers,
 } from "lucide-react";
 import { WHATSAPP_URL } from "@/lib/config";
 import { supabase } from "@/integrations/supabase/client";

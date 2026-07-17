@@ -10,7 +10,6 @@ import {
   Eye,
   Building2,
   BarChart3,
-  ScanLine,
   FileText,
   Download,
 } from "lucide-react";
@@ -115,16 +114,6 @@ export default function Index() {
           <Link to="/closing-ranks">
             <BarChart3 className="h-5 w-5 mr-2" />
             Last Year's Closing Rank
-          </Link>
-        </Button>
-
-        <Button
-          asChild
-          className="w-full bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white rounded-xl h-14 text-base font-bold shadow-lg hover:shadow-xl transition-all"
-        >
-          <Link to="/omr-scanner">
-            <ScanLine className="h-5 w-5 mr-2" />
-            OMR Scanner
           </Link>
         </Button>
 

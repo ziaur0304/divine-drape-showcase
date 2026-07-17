@@ -9,7 +9,7 @@ import {
   Share2,
   Eye,
   Building2,
-  BarChart3,
+  
   FileText,
   Download,
   Layers,
@@ -108,15 +108,6 @@ export default function Index() {
           </Link>
         </Button>
 
-        <Button
-          asChild
-          className="w-full bg-gradient-to-r from-violet-600 to-purple-700 hover:from-violet-700 hover:to-purple-800 text-white rounded-xl h-14 text-base font-bold shadow-lg hover:shadow-xl transition-all"
-        >
-          <Link to="/closing-ranks">
-            <BarChart3 className="h-5 w-5 mr-2" />
-            Last Year's Closing Rank
-          </Link>
-        </Button>
 
         <Button
           asChild

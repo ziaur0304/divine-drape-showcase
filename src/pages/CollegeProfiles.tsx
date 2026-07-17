@@ -244,33 +244,6 @@ function CollegeProfile({ college }: { college: College }) {
         />
       </section>
 
-      {/* Previous Closing Ranks */}
-      <section>
-        <Card className="relative overflow-hidden border-0 rounded-3xl bg-gradient-to-br from-violet-600 via-purple-600 to-fuchsia-600 p-6 md:p-8 text-white shadow-xl">
-          <div className="absolute -top-16 -right-16 w-56 h-56 bg-white/10 rounded-full blur-3xl" />
-          <div className="relative flex flex-col md:flex-row md:items-center gap-4 md:justify-between">
-            <div>
-              <h3 className="text-xl md:text-2xl font-bold">
-                Previous Years' Closing Ranks
-              </h3>
-              <p className="text-white/80 text-sm mt-1">
-                See historical cut-offs and plan your choice filling.
-              </p>
-            </div>
-            <Button
-              asChild
-              size="lg"
-              className="bg-white text-violet-700 hover:bg-white/90 rounded-xl font-bold shadow-lg"
-            >
-              <Link to={college.closingRanksLink}>
-                View Closing Ranks
-                <ExternalLink className="h-4 w-4 ml-2" />
-              </Link>
-            </Button>
-          </div>
-        </Card>
-      </section>
-
       {/* Ratings */}
       <section>
         <h3 className="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">

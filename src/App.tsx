@@ -22,6 +22,7 @@ const App = () => (
       <Route path="/check-rank" element={<RankPredictor />} />
       <Route path="/college-profiles" element={<CollegeProfiles />} />
       <Route path="/closing-ranks" element={<ClosingRanks />} />
+      <Route path="/roundwise-air" element={<RoundwiseAIR />} />
       <Route path="/omr-scanner" element={<OmrScanner />} />
       <Route path="/documents-required" element={<DocumentsRequired />} />
       <Route path="/ziaur" element={<Ziaur />} />

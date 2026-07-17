@@ -7,6 +7,7 @@ import Ziaur from "./pages/Ziaur";
 import RankPredictor from "./pages/RankPredictor";
 import CollegeProfiles from "./pages/CollegeProfiles";
 import ClosingRanks from "./pages/ClosingRanks";
+import RoundwiseAIR from "./pages/RoundwiseAIR";
 import OmrScanner from "./pages/OmrScanner";
 import DocumentsRequired from "./pages/DocumentsRequired";
 import NotFound from "./pages/NotFound";
@@ -21,6 +22,7 @@ const App = () => (
       <Route path="/check-rank" element={<RankPredictor />} />
       <Route path="/college-profiles" element={<CollegeProfiles />} />
       <Route path="/closing-ranks" element={<ClosingRanks />} />
+      <Route path="/roundwise-air" element={<RoundwiseAIR />} />
       <Route path="/omr-scanner" element={<OmrScanner />} />
       <Route path="/documents-required" element={<DocumentsRequired />} />
       <Route path="/ziaur" element={<Ziaur />} />

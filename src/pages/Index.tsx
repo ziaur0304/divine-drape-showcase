@@ -114,7 +114,7 @@ export default function Index() {
         >
           <Link to="/closing-ranks">
             <BarChart3 className="h-5 w-5 mr-2" />
-            Last Year's Closing Rank
+            Collegewise closing rank of 3rd round
           </Link>
         </Button>
 

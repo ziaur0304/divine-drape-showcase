@@ -186,6 +186,10 @@ export default function ClosingRanks() {
             Select a college to view last year's closing state ranks and All India
             Ranks across all categories.
           </p>
+          <p className="text-xs text-amber-600 mt-2 leading-relaxed">
+            We can't assure that it is 100% accurate. Please use this as reference
+            only.
+          </p>
         </div>
 
         {/* Premium counselling CTA */}

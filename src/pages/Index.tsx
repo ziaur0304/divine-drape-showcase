@@ -86,8 +86,38 @@ export default function Index() {
         </div>
       </header>
 
+      {/* Premium Membership Banner */}
+      <section className="px-4 pt-4 max-w-3xl mx-auto">
+        <Link
+          to="/premium-membership"
+          className="group relative block overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all"
+        >
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-900 via-blue-700 to-blue-900" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(251,191,36,0.35),transparent_60%)]" />
+          <div className="absolute -top-8 -right-8 w-32 h-32 rounded-full bg-amber-400/20 blur-2xl" />
+          <div className="absolute -bottom-8 -left-8 w-28 h-28 rounded-full bg-amber-300/20 blur-2xl" />
+          <div className="relative p-5 md:p-6">
+            <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-400/20 border border-amber-300/40 text-amber-200 text-[10px] font-bold uppercase tracking-wider mb-3">
+              <span>Exclusive</span>
+            </div>
+            <h3 className="text-lg md:text-xl font-extrabold text-white leading-snug">
+              🎓 Join Premium Membership and Get One-to-One Guidance for Only{" "}
+              <span className="bg-gradient-to-r from-amber-300 to-yellow-200 bg-clip-text text-transparent">
+                ₹299
+              </span>
+            </h3>
+            <p className="text-sm text-blue-100 mt-2 leading-relaxed">
+              Expert counselling support for Assam MBBS, BDS & BAMS admissions.
+            </p>
+            <div className="mt-4 inline-flex items-center justify-center h-11 px-6 rounded-xl bg-gradient-to-r from-amber-400 to-yellow-500 group-hover:from-amber-300 group-hover:to-yellow-400 text-blue-900 font-bold text-sm shadow-lg transition-all">
+              Join Now →
+            </div>
+          </div>
+        </Link>
+      </section>
+
       {/* Top Action Buttons */}
-      <section className="px-4 pt-6 pb-2 max-w-3xl mx-auto space-y-3">
+      <section className="px-4 pt-4 pb-2 max-w-3xl mx-auto space-y-3">
         <Button
           asChild
           className="w-full bg-gradient-to-r from-indigo-600 to-blue-700 hover:from-indigo-700 hover:to-blue-800 text-white rounded-xl h-14 text-base font-bold shadow-lg hover:shadow-xl transition-all"

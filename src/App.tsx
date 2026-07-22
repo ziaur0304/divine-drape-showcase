@@ -10,6 +10,8 @@ import ClosingRanks from "./pages/ClosingRanks";
 import RoundwiseAIR from "./pages/RoundwiseAIR";
 import OmrScanner from "./pages/OmrScanner";
 import DocumentsRequired from "./pages/DocumentsRequired";
+import PremiumMembership from "./pages/PremiumMembership";
+import PaymentSuccess from "./pages/PaymentSuccess";
 import NotFound from "./pages/NotFound";
 
 const App = () => (
@@ -26,6 +28,8 @@ const App = () => (
       <Route path="/omr-scanner" element={<OmrScanner />} />
       <Route path="/documents-required" element={<DocumentsRequired />} />
       <Route path="/ziaur" element={<Ziaur />} />
+      <Route path="/premium-membership" element={<PremiumMembership />} />
+      <Route path="/payment-success" element={<PaymentSuccess />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   </BrowserRouter>

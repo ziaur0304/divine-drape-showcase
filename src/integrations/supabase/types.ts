@@ -14,6 +14,57 @@ export type Database = {
   }
   public: {
     Tables: {
+      flood_donations: {
+        Row: {
+          amount: number
+          created_at: string
+          currency: string
+          display_publicly: boolean
+          donor_email: string | null
+          donor_name: string
+          donor_phone: string | null
+          id: string
+          message: string | null
+          razorpay_order_id: string
+          razorpay_payment_id: string | null
+          razorpay_signature: string | null
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          amount: number
+          created_at?: string
+          currency?: string
+          display_publicly?: boolean
+          donor_email?: string | null
+          donor_name: string
+          donor_phone?: string | null
+          id?: string
+          message?: string | null
+          razorpay_order_id: string
+          razorpay_payment_id?: string | null
+          razorpay_signature?: string | null
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          amount?: number
+          created_at?: string
+          currency?: string
+          display_publicly?: boolean
+          donor_email?: string | null
+          donor_name?: string
+          donor_phone?: string | null
+          id?: string
+          message?: string | null
+          razorpay_order_id?: string
+          razorpay_payment_id?: string | null
+          razorpay_signature?: string | null
+          status?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       neet_submissions: {
         Row: {
           category: string | null

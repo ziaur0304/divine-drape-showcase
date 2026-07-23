@@ -406,8 +406,8 @@ export default function FloodRelief() {
       <section id="donate" className="max-w-5xl mx-auto px-4 py-10">
         <Card className="rounded-3xl border-0 shadow-2xl overflow-hidden">
           <div className="h-2 bg-gradient-to-r from-blue-700 via-cyan-500 to-emerald-500" />
-          <div className="p-6 md:p-8 grid md:grid-cols-2 gap-8">
-            <div>
+          <div className="p-6 md:p-8">
+            <div className="max-w-2xl mx-auto">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-bold uppercase tracking-wider">
                 <Heart className="h-3.5 w-3.5" /> Donate Now
               </div>

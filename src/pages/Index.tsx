@@ -93,6 +93,27 @@ export default function Index() {
         </Link>
       </section>
 
+      {/* Header */}
+      <header className="border-b border-slate-100 bg-white/80 backdrop-blur-sm sticky top-0 z-50">
+        <div className="max-w-3xl mx-auto px-4 py-3 flex items-center justify-between gap-3">
+          <div>
+            <h1 className="text-xl font-bold text-blue-600">RDD Online</h1>
+            <p className="text-xs text-slate-500">Rank • Dream • Destination</p>
+          </div>
+          <div className="flex flex-col items-end text-right">
+            <span className="text-[10px] uppercase tracking-wider text-slate-400 font-medium">
+              Total Visits
+            </span>
+            <div className="flex items-center gap-1.5 text-blue-600 font-bold">
+              <Eye className="h-3.5 w-3.5" />
+              <span className="text-sm tabular-nums">
+                {visits === null ? "…" : visits.toLocaleString()}
+              </span>
+            </div>
+          </div>
+        </div>
+      </header>
+
       {/* Top Action Buttons */}
       <section className="px-4 pt-4 pb-2 max-w-3xl mx-auto space-y-3">
         <Button

@@ -489,30 +489,6 @@ export default function FloodRelief() {
                 <ShieldCheck className="h-4 w-4 text-emerald-600" /> Secured by Razorpay · SSL Encrypted
               </div>
             </div>
-
-            <div className="rounded-2xl bg-gradient-to-br from-blue-50 to-cyan-50 p-6 border border-blue-100">
-              <h4 className="font-bold text-slate-900">Prefer UPI?</h4>
-              <p className="text-sm text-slate-600 mt-1">Scan or send directly to our verified UPI ID.</p>
-              <div className="mt-4 rounded-2xl bg-white p-4 flex items-center justify-center">
-                <img
-                  alt="UPI QR code"
-                  className="w-44 h-44 rounded-xl"
-                  src={`https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encodeURIComponent(`upi://pay?pa=${UPI_ID}&pn=RDD%20Online%20Flood%20Relief&cu=INR`)}`}
-                />
-              </div>
-              <div className="mt-4 flex items-center gap-2 rounded-xl border border-blue-200 bg-white px-3 h-11">
-                <span className="text-sm font-mono text-slate-800 flex-1 truncate">{UPI_ID}</span>
-                <button
-                  onClick={copyUpi}
-                  className="inline-flex items-center gap-1 text-xs font-semibold text-blue-700 hover:text-blue-900"
-                >
-                  {copied ? <><Check className="h-4 w-4" /> Copied</> : <><Copy className="h-4 w-4" /> Copy</>}
-                </button>
-              </div>
-              <p className="mt-3 text-xs text-slate-500">
-                After paying via UPI, please share the payment screenshot on WhatsApp so we can add you to the donor list.
-              </p>
-            </div>
           </div>
         </Card>
       </section>

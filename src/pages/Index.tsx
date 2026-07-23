@@ -86,31 +86,29 @@ export default function Index() {
         </div>
       </header>
 
-      {/* Premium Membership Banner */}
+      {/* Assam Flood Relief Banner */}
       <section className="px-4 pt-4 max-w-3xl mx-auto">
         <Link
-          to="/premium-membership"
+          to="/flood-relief"
           className="group relative block overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all"
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-900 via-blue-700 to-blue-900" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(251,191,36,0.35),transparent_60%)]" />
-          <div className="absolute -top-8 -right-8 w-32 h-32 rounded-full bg-amber-400/20 blur-2xl" />
-          <div className="absolute -bottom-8 -left-8 w-28 h-28 rounded-full bg-amber-300/20 blur-2xl" />
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-800 via-blue-600 to-cyan-600" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.25),transparent_60%)]" />
+          <div className="absolute -top-8 -right-8 w-32 h-32 rounded-full bg-white/15 blur-2xl" />
+          <div className="absolute -bottom-8 -left-8 w-28 h-28 rounded-full bg-cyan-300/25 blur-2xl" />
           <div className="relative p-5 md:p-6">
-            <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-400/20 border border-amber-300/40 text-amber-200 text-[10px] font-bold uppercase tracking-wider mb-3">
-              <span>Exclusive</span>
+            <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/15 border border-white/30 text-white text-[10px] font-bold uppercase tracking-wider mb-3 animate-pulse">
+              🚨 Urgent Crisis
             </div>
             <h3 className="text-lg md:text-xl font-extrabold text-white leading-snug">
-              🎓 Join Premium Membership and Get One-to-One Guidance for Only{" "}
-              <span className="bg-gradient-to-r from-amber-300 to-yellow-200 bg-clip-text text-transparent">
-                ₹299
-              </span>
+              Assam Flood Relief Fund
             </h3>
-            <p className="text-sm text-blue-100 mt-2 leading-relaxed">
-              Expert counselling support for Assam MBBS, BDS & BAMS admissions.
+            <p className="text-sm text-blue-50 mt-2 leading-relaxed">
+              Stand with the people of Upper Assam. Your donation delivers food, water,
+              medicines and shelter to families in urgent need.
             </p>
-            <div className="mt-4 inline-flex items-center justify-center h-11 px-6 rounded-xl bg-gradient-to-r from-amber-400 to-yellow-500 group-hover:from-amber-300 group-hover:to-yellow-400 text-blue-900 font-bold text-sm shadow-lg transition-all">
-              Join Now →
+            <div className="mt-4 inline-flex items-center justify-center h-11 px-6 rounded-xl bg-white group-hover:bg-blue-50 text-blue-700 font-bold text-sm shadow-lg transition-all">
+              ❤️ Donate Now →
             </div>
           </div>
         </Link>

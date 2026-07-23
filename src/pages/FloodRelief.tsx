@@ -14,7 +14,6 @@ import {
   Baby,
   BedDouble,
   ShieldCheck,
-  Copy,
   Check,
   Loader2,
   HandHeart,
@@ -48,7 +47,6 @@ declare global {
 }
 
 const GOAL_AMOUNT = 500000; // ₹5,00,000 goal
-const UPI_ID = "rddonline@upi";
 const WHATSAPP_URL = "https://wa.me/919365248667?text=Hi%20RDD%20Online,%20I%20want%20to%20volunteer%20for%20Assam%20Flood%20Relief";
 
 const SUGGESTED = [100, 250, 500, 1000, 2500, 5000];
@@ -113,7 +111,6 @@ export default function FloodRelief() {
   const [message, setMessage] = useState("");
   const [displayPublicly, setDisplayPublicly] = useState(true);
   const [submitting, setSubmitting] = useState(false);
-  const [copied, setCopied] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [thanks, setThanks] = useState<{ paymentId: string; amount: number } | null>(null);
   const [showAll, setShowAll] = useState(false);
@@ -144,17 +141,6 @@ export default function FloodRelief() {
   }, [donations]);
 
   const effectiveAmount = customAmount ? Number(customAmount) : amount;
-
-  const copyUpi = async () => {
-    try {
-      await navigator.clipboard.writeText(UPI_ID);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 1800);
-      toast.success("UPI ID copied");
-    } catch {
-      toast.error("Copy failed");
-    }
-  };
 
   const handleDonate = async () => {
     if (!Number.isFinite(effectiveAmount) || effectiveAmount < 10) {
@@ -406,8 +392,8 @@ export default function FloodRelief() {
       <section id="donate" className="max-w-5xl mx-auto px-4 py-10">
         <Card className="rounded-3xl border-0 shadow-2xl overflow-hidden">
           <div className="h-2 bg-gradient-to-r from-blue-700 via-cyan-500 to-emerald-500" />
-          <div className="p-6 md:p-8 grid md:grid-cols-2 gap-8">
-            <div>
+          <div className="p-6 md:p-8">
+            <div className="max-w-2xl mx-auto">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-bold uppercase tracking-wider">
                 <Heart className="h-3.5 w-3.5" /> Donate Now
               </div>
@@ -488,30 +474,6 @@ export default function FloodRelief() {
               <div className="mt-3 flex items-center justify-center gap-1.5 text-xs text-slate-500">
                 <ShieldCheck className="h-4 w-4 text-emerald-600" /> Secured by Razorpay · SSL Encrypted
               </div>
-            </div>
-
-            <div className="rounded-2xl bg-gradient-to-br from-blue-50 to-cyan-50 p-6 border border-blue-100">
-              <h4 className="font-bold text-slate-900">Prefer UPI?</h4>
-              <p className="text-sm text-slate-600 mt-1">Scan or send directly to our verified UPI ID.</p>
-              <div className="mt-4 rounded-2xl bg-white p-4 flex items-center justify-center">
-                <img
-                  alt="UPI QR code"
-                  className="w-44 h-44 rounded-xl"
-                  src={`https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encodeURIComponent(`upi://pay?pa=${UPI_ID}&pn=RDD%20Online%20Flood%20Relief&cu=INR`)}`}
-                />
-              </div>
-              <div className="mt-4 flex items-center gap-2 rounded-xl border border-blue-200 bg-white px-3 h-11">
-                <span className="text-sm font-mono text-slate-800 flex-1 truncate">{UPI_ID}</span>
-                <button
-                  onClick={copyUpi}
-                  className="inline-flex items-center gap-1 text-xs font-semibold text-blue-700 hover:text-blue-900"
-                >
-                  {copied ? <><Check className="h-4 w-4" /> Copied</> : <><Copy className="h-4 w-4" /> Copy</>}
-                </button>
-              </div>
-              <p className="mt-3 text-xs text-slate-500">
-                After paying via UPI, please share the payment screenshot on WhatsApp so we can add you to the donor list.
-              </p>
             </div>
           </div>
         </Card>

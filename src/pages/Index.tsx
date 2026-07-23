@@ -65,32 +65,11 @@ export default function Index() {
 
   return (
     <main className="min-h-screen bg-white text-slate-900">
-      {/* Header */}
-      <header className="border-b border-slate-100 bg-white/80 backdrop-blur-sm sticky top-0 z-50">
-        <div className="max-w-3xl mx-auto px-4 py-3 flex items-center justify-between gap-3">
-          <div>
-            <h1 className="text-xl font-bold text-blue-600">RDD Online</h1>
-            <p className="text-xs text-slate-500">Rank • Dream • Destination</p>
-          </div>
-          <div className="flex flex-col items-end text-right">
-            <span className="text-[10px] uppercase tracking-wider text-slate-400 font-medium">
-              Total Visits
-            </span>
-            <div className="flex items-center gap-1.5 text-blue-600 font-bold">
-              <Eye className="h-3.5 w-3.5" />
-              <span className="text-sm tabular-nums">
-                {visits === null ? "…" : visits.toLocaleString()}
-              </span>
-            </div>
-          </div>
-        </div>
-      </header>
-
-      {/* Assam Flood Relief Banner */}
-      <section className="px-4 pt-4 max-w-3xl mx-auto">
+      {/* Assam Flood Relief Banner — topmost for visibility */}
+      <section className="relative overflow-hidden">
         <Link
           to="/flood-relief"
-          className="group relative block overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all"
+          className="group relative block overflow-hidden transition-all"
         >
           <div className="absolute inset-0 bg-gradient-to-br from-blue-800 via-blue-600 to-cyan-600" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.25),transparent_60%)]" />
@@ -113,6 +92,27 @@ export default function Index() {
           </div>
         </Link>
       </section>
+
+      {/* Header */}
+      <header className="border-b border-slate-100 bg-white/80 backdrop-blur-sm sticky top-0 z-50">
+        <div className="max-w-3xl mx-auto px-4 py-3 flex items-center justify-between gap-3">
+          <div>
+            <h1 className="text-xl font-bold text-blue-600">RDD Online</h1>
+            <p className="text-xs text-slate-500">Rank • Dream • Destination</p>
+          </div>
+          <div className="flex flex-col items-end text-right">
+            <span className="text-[10px] uppercase tracking-wider text-slate-400 font-medium">
+              Total Visits
+            </span>
+            <div className="flex items-center gap-1.5 text-blue-600 font-bold">
+              <Eye className="h-3.5 w-3.5" />
+              <span className="text-sm tabular-nums">
+                {visits === null ? "…" : visits.toLocaleString()}
+              </span>
+            </div>
+          </div>
+        </div>
+      </header>
 
       {/* Top Action Buttons */}
       <section className="px-4 pt-4 pb-2 max-w-3xl mx-auto space-y-3">

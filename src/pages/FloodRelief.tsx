@@ -14,7 +14,6 @@ import {
   Baby,
   BedDouble,
   ShieldCheck,
-  Copy,
   Check,
   Loader2,
   HandHeart,
@@ -48,7 +47,6 @@ declare global {
 }
 
 const GOAL_AMOUNT = 500000; // ₹5,00,000 goal
-const UPI_ID = "rddonline@upi";
 const WHATSAPP_URL = "https://wa.me/919365248667?text=Hi%20RDD%20Online,%20I%20want%20to%20volunteer%20for%20Assam%20Flood%20Relief";
 
 const SUGGESTED = [100, 250, 500, 1000, 2500, 5000];
@@ -113,7 +111,6 @@ export default function FloodRelief() {
   const [message, setMessage] = useState("");
   const [displayPublicly, setDisplayPublicly] = useState(true);
   const [submitting, setSubmitting] = useState(false);
-  const [copied, setCopied] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [thanks, setThanks] = useState<{ paymentId: string; amount: number } | null>(null);
   const [showAll, setShowAll] = useState(false);
@@ -144,17 +141,6 @@ export default function FloodRelief() {
   }, [donations]);
 
   const effectiveAmount = customAmount ? Number(customAmount) : amount;
-
-  const copyUpi = async () => {
-    try {
-      await navigator.clipboard.writeText(UPI_ID);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 1800);
-      toast.success("UPI ID copied");
-    } catch {
-      toast.error("Copy failed");
-    }
-  };
 
   const handleDonate = async () => {
     if (!Number.isFinite(effectiveAmount) || effectiveAmount < 10) {

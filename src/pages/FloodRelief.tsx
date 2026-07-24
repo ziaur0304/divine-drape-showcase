@@ -229,6 +229,97 @@ export default function FloodRelief() {
         </div>
       </header>
 
+      {/* Donate */}
+      <section id="donate" className="max-w-5xl mx-auto px-4 py-10">
+        <Card className="rounded-3xl border-0 shadow-2xl overflow-hidden">
+          <div className="h-2 bg-gradient-to-r from-blue-700 via-cyan-500 to-emerald-500" />
+          <div className="p-6 md:p-8">
+            <div className="max-w-2xl mx-auto">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-bold uppercase tracking-wider">
+                <Heart className="h-3.5 w-3.5" /> Donate Now
+              </div>
+              <h3 className="mt-3 text-2xl md:text-3xl font-bold">Every contribution counts</h3>
+              <p className="mt-2 text-slate-600 text-sm">
+                Secure payments via UPI, Cards, Net Banking & Wallets — powered by Razorpay.
+              </p>
+
+              <div className="mt-5">
+                <Label className="text-sm">Choose an amount</Label>
+                <div className="mt-2 grid grid-cols-3 gap-2">
+                  {SUGGESTED.map((v) => (
+                    <button
+                      key={v}
+                      type="button"
+                      onClick={() => { setAmount(v); setCustomAmount(""); }}
+                      className={`h-11 rounded-xl border-2 font-bold transition-all ${
+                        !customAmount && amount === v
+                          ? "border-blue-600 bg-blue-600 text-white shadow-md"
+                          : "border-slate-200 bg-white text-slate-700 hover:border-blue-300"
+                      }`}
+                    >
+                      ₹{v.toLocaleString("en-IN")}
+                    </button>
+                  ))}
+                </div>
+                <div className="mt-3">
+                  <Input
+                    inputMode="numeric"
+                    placeholder="Custom amount (₹)"
+                    value={customAmount}
+                    onChange={(e) => setCustomAmount(e.target.value.replace(/[^\d]/g, ""))}
+                    className="h-11 rounded-xl"
+                  />
+                </div>
+              </div>
+
+              <div className="mt-4 grid gap-3">
+                <div>
+                  <Label htmlFor="name" className="text-sm">Full Name *</Label>
+                  <Input id="name" value={name} onChange={(e) => setName(e.target.value)} className="mt-1 h-11 rounded-xl" placeholder="Your name" />
+                </div>
+                <div className="grid grid-cols-2 gap-3">
+                  <div>
+                    <Label htmlFor="email" className="text-sm">Email</Label>
+                    <Input id="email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} className="mt-1 h-11 rounded-xl" placeholder="Optional" />
+                  </div>
+                  <div>
+                    <Label htmlFor="phone" className="text-sm">Phone</Label>
+                    <Input id="phone" value={phone} onChange={(e) => setPhone(e.target.value)} className="mt-1 h-11 rounded-xl" placeholder="Optional" />
+                  </div>
+                </div>
+                <div>
+                  <Label htmlFor="msg" className="text-sm">Message of support (optional)</Label>
+                  <Textarea id="msg" value={message} onChange={(e) => setMessage(e.target.value)} className="mt-1 rounded-xl" placeholder="A short note for the community" rows={2} />
+                </div>
+                <label className="flex items-start gap-2 text-sm text-slate-700 cursor-pointer">
+                  <Checkbox
+                    checked={displayPublicly}
+                    onCheckedChange={(v) => setDisplayPublicly(Boolean(v))}
+                    className="mt-0.5"
+                  />
+                  <span>Display my name publicly on the donors list</span>
+                </label>
+              </div>
+
+              <Button
+                onClick={handleDonate}
+                disabled={submitting}
+                className="mt-5 w-full h-14 rounded-xl bg-gradient-to-r from-blue-700 to-cyan-600 hover:from-blue-800 hover:to-cyan-700 text-white text-base font-bold shadow-lg"
+              >
+                {submitting ? (
+                  <><Loader2 className="h-5 w-5 mr-2 animate-spin" /> Processing…</>
+                ) : (
+                  <><Heart className="h-5 w-5 mr-2" /> Donate ₹{(effectiveAmount || 0).toLocaleString("en-IN")}</>
+                )}
+              </Button>
+              <div className="mt-3 flex items-center justify-center gap-1.5 text-xs text-slate-500">
+                <ShieldCheck className="h-4 w-4 text-emerald-600" /> Secured by Razorpay · SSL Encrypted
+              </div>
+            </div>
+          </div>
+        </Card>
+      </section>
+
       {/* Hero */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-700 via-blue-600 to-cyan-600" />
@@ -386,97 +477,6 @@ export default function FloodRelief() {
             </Card>
           ))}
         </div>
-      </section>
-
-      {/* Donate */}
-      <section id="donate" className="max-w-5xl mx-auto px-4 py-10">
-        <Card className="rounded-3xl border-0 shadow-2xl overflow-hidden">
-          <div className="h-2 bg-gradient-to-r from-blue-700 via-cyan-500 to-emerald-500" />
-          <div className="p-6 md:p-8">
-            <div className="max-w-2xl mx-auto">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-bold uppercase tracking-wider">
-                <Heart className="h-3.5 w-3.5" /> Donate Now
-              </div>
-              <h3 className="mt-3 text-2xl md:text-3xl font-bold">Every contribution counts</h3>
-              <p className="mt-2 text-slate-600 text-sm">
-                Secure payments via UPI, Cards, Net Banking & Wallets — powered by Razorpay.
-              </p>
-
-              <div className="mt-5">
-                <Label className="text-sm">Choose an amount</Label>
-                <div className="mt-2 grid grid-cols-3 gap-2">
-                  {SUGGESTED.map((v) => (
-                    <button
-                      key={v}
-                      type="button"
-                      onClick={() => { setAmount(v); setCustomAmount(""); }}
-                      className={`h-11 rounded-xl border-2 font-bold transition-all ${
-                        !customAmount && amount === v
-                          ? "border-blue-600 bg-blue-600 text-white shadow-md"
-                          : "border-slate-200 bg-white text-slate-700 hover:border-blue-300"
-                      }`}
-                    >
-                      ₹{v.toLocaleString("en-IN")}
-                    </button>
-                  ))}
-                </div>
-                <div className="mt-3">
-                  <Input
-                    inputMode="numeric"
-                    placeholder="Custom amount (₹)"
-                    value={customAmount}
-                    onChange={(e) => setCustomAmount(e.target.value.replace(/[^\d]/g, ""))}
-                    className="h-11 rounded-xl"
-                  />
-                </div>
-              </div>
-
-              <div className="mt-4 grid gap-3">
-                <div>
-                  <Label htmlFor="name" className="text-sm">Full Name *</Label>
-                  <Input id="name" value={name} onChange={(e) => setName(e.target.value)} className="mt-1 h-11 rounded-xl" placeholder="Your name" />
-                </div>
-                <div className="grid grid-cols-2 gap-3">
-                  <div>
-                    <Label htmlFor="email" className="text-sm">Email</Label>
-                    <Input id="email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} className="mt-1 h-11 rounded-xl" placeholder="Optional" />
-                  </div>
-                  <div>
-                    <Label htmlFor="phone" className="text-sm">Phone</Label>
-                    <Input id="phone" value={phone} onChange={(e) => setPhone(e.target.value)} className="mt-1 h-11 rounded-xl" placeholder="Optional" />
-                  </div>
-                </div>
-                <div>
-                  <Label htmlFor="msg" className="text-sm">Message of support (optional)</Label>
-                  <Textarea id="msg" value={message} onChange={(e) => setMessage(e.target.value)} className="mt-1 rounded-xl" placeholder="A short note for the community" rows={2} />
-                </div>
-                <label className="flex items-start gap-2 text-sm text-slate-700 cursor-pointer">
-                  <Checkbox
-                    checked={displayPublicly}
-                    onCheckedChange={(v) => setDisplayPublicly(Boolean(v))}
-                    className="mt-0.5"
-                  />
-                  <span>Display my name publicly on the donors list</span>
-                </label>
-              </div>
-
-              <Button
-                onClick={handleDonate}
-                disabled={submitting}
-                className="mt-5 w-full h-14 rounded-xl bg-gradient-to-r from-blue-700 to-cyan-600 hover:from-blue-800 hover:to-cyan-700 text-white text-base font-bold shadow-lg"
-              >
-                {submitting ? (
-                  <><Loader2 className="h-5 w-5 mr-2 animate-spin" /> Processing…</>
-                ) : (
-                  <><Heart className="h-5 w-5 mr-2" /> Donate ₹{(effectiveAmount || 0).toLocaleString("en-IN")}</>
-                )}
-              </Button>
-              <div className="mt-3 flex items-center justify-center gap-1.5 text-xs text-slate-500">
-                <ShieldCheck className="h-4 w-4 text-emerald-600" /> Secured by Razorpay · SSL Encrypted
-              </div>
-            </div>
-          </div>
-        </Card>
       </section>
 
       {/* Transparency */}

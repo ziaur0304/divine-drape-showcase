@@ -258,14 +258,27 @@ export default function PremiumMembership() {
                 </div>
 
                 <div className="mt-6 flex items-baseline gap-2">
-                  <span
-                    className={`text-5xl font-extrabold ${
-                      p.highlight ? "text-amber-700" : "text-blue-700"
-                    }`}
-                  >
-                    {p.price}
-                  </span>
-                  <span className="text-slate-500 text-sm">/ one-time</span>
+                  {p.originalPrice ? (
+                    <>
+                      <span className="text-2xl font-semibold text-slate-400 line-through">
+                        {p.originalPrice}
+                      </span>
+                      <span className="text-5xl font-extrabold text-emerald-600">
+                        {p.price}
+                      </span>
+                    </>
+                  ) : (
+                    <span
+                      className={`text-5xl font-extrabold ${
+                        p.highlight ? "text-amber-700" : "text-blue-700"
+                      }`}
+                    >
+                      {p.price}
+                    </span>
+                  )}
+                  {!p.originalPrice && (
+                    <span className="text-slate-500 text-sm">/ one-time</span>
+                  )}
                 </div>
 
                 <ul className="mt-6 space-y-3">

@@ -84,7 +84,7 @@ export default function Index() {
               Get Expert RE-NEET Counselling Guidance
             </h3>
             <p className="text-sm text-amber-50 mt-2 leading-relaxed">
-              Join Premium Membership starting at ₹299. Step-by-step counselling support,
+              Join Premium Plus Membership at ₹1999. Step-by-step counselling support,
               choice filling help, and document verification guidance.
             </p>
             <div className="mt-4 inline-flex items-center justify-center h-11 px-6 rounded-xl bg-white group-hover:bg-amber-50 text-amber-700 font-bold text-sm shadow-lg transition-all">

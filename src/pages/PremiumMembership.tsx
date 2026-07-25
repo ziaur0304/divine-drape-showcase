@@ -23,33 +23,19 @@ import {
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 
-type PlanKey = "premium_plus";
-
-const PLANS: Record<
-  PlanKey,
-  {
-    title: string;
-    price: string;
-    priceValue: number;
-    tagline: string;
-    features: string[];
-    accent: string;
-  }
-> = {
-  premium_plus: {
-    title: "Premium Plus Membership",
-    price: "₹1999",
-    priceValue: 1999,
-    tagline: "Done-for-you counselling — we handle the portal",
-    features: [
-      "Our team will fill your Registration Form on the DME Assam portal",
-      "Our team will complete your Choice Filling on the DME Assam portal according to your preferences",
-      "Personalized college selection strategy based on your rank, category and preferences",
-      "Dedicated one-to-one counselling support throughout the admission process",
-      "Hassle-free counselling experience with expert assistance",
-    ],
-    accent: "from-amber-500 via-yellow-500 to-amber-600",
-  },
+const PLAN = {
+  title: "Premium Plus Membership",
+  price: "₹1999",
+  priceValue: 1999,
+  tagline: "Done-for-you counselling — we handle the portal",
+  features: [
+    "Our team will fill your Registration Form on the DME Assam portal",
+    "Our team will complete your Choice Filling on the DME Assam portal according to your preferences",
+    "Personalized college selection strategy based on your rank, category and preferences",
+    "Dedicated one-to-one counselling support throughout the admission process",
+    "Hassle-free counselling experience with expert assistance",
+  ],
+  accent: "from-amber-500 via-yellow-500 to-amber-600",
 };
 
 declare global {
@@ -72,20 +58,12 @@ function loadRazorpay(): Promise<boolean> {
 export default function PremiumMembership() {
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
-  const [selectedPlan, setSelectedPlan] = useState<PlanKey>("premium");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [submitting, setSubmitting] = useState(false);
 
-  const openCheckout = (plan: PlanKey) => {
-    if (plan === "premium") {
-      window.open(PREMIUM_WHATSAPP_URL, "_blank", "noopener,noreferrer");
-      return;
-    }
-    setSelectedPlan(plan);
-    setOpen(true);
-  };
+  const openCheckout = () => setOpen(true);
 
   const handlePay = async () => {
     if (!name.trim() || !email.trim() || !phone.trim()) {
@@ -110,7 +88,7 @@ export default function PremiumMembership() {
         "create-razorpay-order",
         {
           body: {
-            plan: selectedPlan,
+            plan: "premium_plus",
             name: name.trim(),
             email: email.trim(),
             phone: phone.trim(),
@@ -182,116 +160,71 @@ export default function PremiumMembership() {
         </div>
       </header>
 
-      <section className="px-4 pt-10 pb-6 max-w-5xl mx-auto text-center">
+      <section className="px-4 pt-10 pb-6 max-w-3xl mx-auto text-center">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-blue-100 to-amber-100 text-blue-800 text-xs font-semibold uppercase tracking-wider mb-4">
           <Sparkles className="h-3.5 w-3.5 text-amber-600" />
           Premium Membership
         </div>
         <h2 className="text-3xl md:text-5xl font-bold text-slate-900 leading-tight">
-          Choose the Guidance That Fits{" "}
+          Expert RE-NEET Counselling{" "}
           <span className="bg-gradient-to-r from-blue-700 via-blue-600 to-amber-600 bg-clip-text text-transparent">
-            Your Journey
+            Support
           </span>
         </h2>
         <p className="text-slate-600 mt-4 max-w-2xl mx-auto text-base md:text-lg">
-          Expert one-to-one counselling for Assam MBBS, BDS & BAMS admissions.
+          One-to-one counselling for Assam MBBS, BDS & BAMS admissions.
           Secure payments powered by Razorpay.
         </p>
       </section>
 
-      <section className="px-4 pb-16 max-w-5xl mx-auto grid md:grid-cols-2 gap-6">
-        {(Object.keys(PLANS) as PlanKey[]).map((key) => {
-          const p = PLANS[key];
-          return (
-            <Card
-              key={key}
-              className={`relative overflow-hidden rounded-3xl border-0 shadow-xl transition-all hover:shadow-2xl hover:-translate-y-1 ${
-                p.highlight
-                  ? "bg-gradient-to-br from-white via-amber-50 to-yellow-50 ring-2 ring-amber-400"
-                  : "bg-white ring-1 ring-blue-100"
-              }`}
-            >
-              {p.highlight && (
-                <div className="absolute top-4 right-4 flex items-center gap-1 px-3 py-1 rounded-full bg-gradient-to-r from-amber-500 to-yellow-600 text-white text-[10px] font-bold uppercase tracking-wider shadow-md">
-                  <Crown className="h-3 w-3" />
-                  Most Popular
-                </div>
-              )}
-              <div className={`h-2 bg-gradient-to-r ${p.accent}`} />
-              <div className="p-7">
-                <div className="flex items-center gap-3">
-                  <div
-                    className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${p.accent} flex items-center justify-center shadow-lg`}
-                  >
-                    {p.highlight ? (
-                      <Crown className="h-6 w-6 text-white" />
-                    ) : (
-                      <Sparkles className="h-6 w-6 text-white" />
-                    )}
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-slate-900">{p.title}</h3>
-                    <p className="text-xs text-slate-500">{p.tagline}</p>
-                  </div>
-                </div>
-
-                <div className="mt-6 flex items-baseline gap-2">
-                  {p.originalPrice ? (
-                    <>
-                      <span className="text-2xl font-semibold text-slate-400 line-through">
-                        {p.originalPrice}
-                      </span>
-                      <span className="text-5xl font-extrabold text-emerald-600">
-                        {p.price}
-                      </span>
-                    </>
-                  ) : (
-                    <span
-                      className={`text-5xl font-extrabold ${
-                        p.highlight ? "text-amber-700" : "text-blue-700"
-                      }`}
-                    >
-                      {p.price}
-                    </span>
-                  )}
-                  {!p.originalPrice && (
-                    <span className="text-slate-500 text-sm">/ one-time</span>
-                  )}
-                </div>
-
-                <ul className="mt-6 space-y-3">
-                  {p.features.map((f) => (
-                    <li key={f} className="flex items-start gap-2.5">
-                      <span
-                        className={`shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center ${
-                          p.highlight
-                            ? "bg-amber-100 text-amber-700"
-                            : "bg-blue-100 text-blue-700"
-                        }`}
-                      >
-                        <Check className="h-3.5 w-3.5" strokeWidth={3} />
-                      </span>
-                      <span className="text-sm text-slate-700 leading-relaxed">
-                        {f}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-
-                <Button
-                  onClick={() => openCheckout(key)}
-                  className={`w-full mt-7 h-12 rounded-xl font-bold text-base shadow-lg hover:shadow-xl transition-all ${
-                    p.highlight
-                      ? "bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-600 hover:to-yellow-700 text-white"
-                      : "bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-700 hover:to-blue-900 text-white"
-                  }`}
-                >
-                  {p.highlight ? "Buy Premium Plus" : "Join Free"}
-                </Button>
+      <section className="px-4 pb-16 max-w-3xl mx-auto">
+        <Card className="relative overflow-hidden rounded-3xl border-0 shadow-xl transition-all hover:shadow-2xl hover:-translate-y-1 bg-gradient-to-br from-white via-amber-50 to-yellow-50 ring-2 ring-amber-400">
+          <div className="absolute top-4 right-4 flex items-center gap-1 px-3 py-1 rounded-full bg-gradient-to-r from-amber-500 to-yellow-600 text-white text-[10px] font-bold uppercase tracking-wider shadow-md">
+            <Crown className="h-3 w-3" />
+            Most Popular
+          </div>
+          <div className={`h-2 bg-gradient-to-r ${PLAN.accent}`} />
+          <div className="p-7">
+            <div className="flex items-center gap-3">
+              <div
+                className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${PLAN.accent} flex items-center justify-center shadow-lg`}
+              >
+                <Crown className="h-6 w-6 text-white" />
               </div>
-            </Card>
-          );
-        })}
+              <div>
+                <h3 className="text-xl font-bold text-slate-900">{PLAN.title}</h3>
+                <p className="text-xs text-slate-500">{PLAN.tagline}</p>
+              </div>
+            </div>
+
+            <div className="mt-6 flex items-baseline gap-2">
+              <span className="text-5xl font-extrabold text-amber-700">
+                {PLAN.price}
+              </span>
+              <span className="text-slate-500 text-sm">/ one-time</span>
+            </div>
+
+            <ul className="mt-6 space-y-3">
+              {PLAN.features.map((f) => (
+                <li key={f} className="flex items-start gap-2.5">
+                  <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center bg-amber-100 text-amber-700">
+                    <Check className="h-3.5 w-3.5" strokeWidth={3} />
+                  </span>
+                  <span className="text-sm text-slate-700 leading-relaxed">
+                    {f}
+                  </span>
+                </li>
+              ))}
+            </ul>
+
+            <Button
+              onClick={openCheckout}
+              className="w-full mt-7 h-12 rounded-xl font-bold text-base shadow-lg hover:shadow-xl transition-all bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-600 hover:to-yellow-700 text-white"
+            >
+              Buy Premium Plus
+            </Button>
+          </div>
+        </Card>
       </section>
 
       <section className="max-w-5xl mx-auto px-4 pb-14">
@@ -305,7 +238,7 @@ export default function PremiumMembership() {
         <DialogContent className="sm:max-w-md rounded-2xl">
           <DialogHeader>
             <DialogTitle className="text-xl">
-              {PLANS[selectedPlan].title} — {PLANS[selectedPlan].price}
+              {PLAN.title} — {PLAN.price}
             </DialogTitle>
             <DialogDescription>
               Enter your details to continue to secure payment.
@@ -348,14 +281,14 @@ export default function PremiumMembership() {
             <Button
               onClick={handlePay}
               disabled={submitting}
-              className="w-full h-12 rounded-xl bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-700 hover:to-blue-900 text-white font-semibold"
+              className="w-full h-12 rounded-xl bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-600 hover:to-yellow-700 text-white font-semibold"
             >
               {submitting ? (
                 <>
                   <Loader2 className="h-4 w-4 mr-2 animate-spin" /> Processing…
                 </>
               ) : (
-                `Pay ${PLANS[selectedPlan].price} Securely`
+                `Pay ${PLAN.price} Securely`
               )}
             </Button>
           </DialogFooter>

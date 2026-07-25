@@ -308,7 +308,7 @@ export default function PremiumMembership() {
                       : "bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-700 hover:to-blue-900 text-white"
                   }`}
                 >
-                  {p.highlight ? "Buy Premium Plus" : "Buy Premium"}
+                  {p.highlight ? "Buy Premium Plus" : "Join Free"}
                 </Button>
               </div>
             </Card>

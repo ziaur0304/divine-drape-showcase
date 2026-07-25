@@ -25,22 +25,28 @@ import { supabase } from "@/integrations/supabase/client";
 
 type PlanKey = "premium" | "premium_plus";
 
+const PREMIUM_WHATSAPP_URL =
+  "https://chat.whatsapp.com/Igk3PVep7R14ah4MvvR4Lg?s=cl&p=a&ilr=1&amv=2";
+
 const PLANS: Record<
   PlanKey,
   {
     title: string;
     price: string;
+    originalPrice?: string;
     priceValue: number;
     tagline: string;
     features: string[];
     accent: string;
     highlight?: boolean;
+    cta: string;
   }
 > = {
   premium: {
     title: "Premium Membership",
-    price: "₹299",
-    priceValue: 299,
+    price: "FREE",
+    originalPrice: "₹299",
+    priceValue: 0,
     tagline: "Complete step-by-step counselling guidance",
     features: [
       "Complete step-by-step counselling guidance",
@@ -51,6 +57,7 @@ const PLANS: Record<
       "Personalized support throughout the admission process",
     ],
     accent: "from-blue-600 to-blue-800",
+    cta: "Join Premium",
   },
   premium_plus: {
     title: "Premium Plus Membership",
@@ -66,6 +73,7 @@ const PLANS: Record<
     ],
     accent: "from-amber-500 via-yellow-500 to-amber-600",
     highlight: true,
+    cta: "Buy Premium Plus",
   },
 };
 

@@ -23,40 +23,19 @@ import {
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 
-type PlanKey = "premium" | "premium_plus";
-
-const PREMIUM_WHATSAPP_URL =
-  "https://chat.whatsapp.com/Igk3PVep7R14ah4MvvR4Lg?s=cl&p=a&ilr=1&amv=2";
+type PlanKey = "premium_plus";
 
 const PLANS: Record<
   PlanKey,
   {
     title: string;
     price: string;
-    originalPrice?: string;
     priceValue: number;
     tagline: string;
     features: string[];
     accent: string;
-    highlight?: boolean;
   }
 > = {
-  premium: {
-    title: "Premium Membership",
-    price: "FREE",
-    originalPrice: "₹299",
-    priceValue: 0,
-    tagline: "Complete step-by-step counselling guidance",
-    features: [
-      "Complete step-by-step counselling guidance",
-      "Registration guidance",
-      "Choice Filling guidance",
-      "Document Verification guidance",
-      "Guidance in every counselling round",
-      "Personalized support throughout the admission process",
-    ],
-    accent: "from-blue-600 to-blue-800",
-  },
   premium_plus: {
     title: "Premium Plus Membership",
     price: "₹1999",
@@ -70,7 +49,6 @@ const PLANS: Record<
       "Hassle-free counselling experience with expert assistance",
     ],
     accent: "from-amber-500 via-yellow-500 to-amber-600",
-    highlight: true,
   },
 };
 

@@ -257,14 +257,21 @@ export default function PremiumMembership() {
                 </div>
 
                 <div className="mt-6 flex items-baseline gap-2">
+                  {p.originalPrice && (
+                    <span className="text-2xl font-semibold text-slate-400 line-through">
+                      {p.originalPrice}
+                    </span>
+                  )}
                   <span
                     className={`text-5xl font-extrabold ${
-                      p.highlight ? "text-amber-700" : "text-blue-700"
+                      p.highlight ? "text-amber-700" : "text-emerald-600"
                     }`}
                   >
                     {p.price}
                   </span>
-                  <span className="text-slate-500 text-sm">/ one-time</span>
+                  {!p.originalPrice && (
+                    <span className="text-slate-500 text-sm">/ one-time</span>
+                  )}
                 </div>
 
                 <ul className="mt-6 space-y-3">
@@ -287,14 +294,18 @@ export default function PremiumMembership() {
                 </ul>
 
                 <Button
-                  onClick={() => openCheckout(key)}
+                  onClick={() =>
+                    key === "premium"
+                      ? window.open(PREMIUM_WHATSAPP_URL, "_blank")
+                      : openCheckout(key)
+                  }
                   className={`w-full mt-7 h-12 rounded-xl font-bold text-base shadow-lg hover:shadow-xl transition-all ${
                     p.highlight
                       ? "bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-600 hover:to-yellow-700 text-white"
                       : "bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-700 hover:to-blue-900 text-white"
                   }`}
                 >
-                  {p.highlight ? "Buy Premium Plus" : "Buy Premium"}
+                  {p.cta}
                 </Button>
               </div>
             </Card>

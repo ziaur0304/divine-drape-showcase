@@ -101,6 +101,10 @@ export default function PremiumMembership() {
   const [submitting, setSubmitting] = useState(false);
 
   const openCheckout = (plan: PlanKey) => {
+    if (plan === "premium") {
+      window.open(PREMIUM_WHATSAPP_URL, "_blank", "noopener,noreferrer");
+      return;
+    }
     setSelectedPlan(plan);
     setOpen(true);
   };

@@ -25,11 +25,15 @@ import { supabase } from "@/integrations/supabase/client";
 
 type PlanKey = "premium" | "premium_plus";
 
+const PREMIUM_WHATSAPP_URL =
+  "https://chat.whatsapp.com/Igk3PVep7R14ah4MvvR4Lg?s=cl&p=a&ilr=1&amv=2";
+
 const PLANS: Record<
   PlanKey,
   {
     title: string;
     price: string;
+    originalPrice?: string;
     priceValue: number;
     tagline: string;
     features: string[];
@@ -39,8 +43,9 @@ const PLANS: Record<
 > = {
   premium: {
     title: "Premium Membership",
-    price: "₹299",
-    priceValue: 299,
+    price: "FREE",
+    originalPrice: "₹299",
+    priceValue: 0,
     tagline: "Complete step-by-step counselling guidance",
     features: [
       "Complete step-by-step counselling guidance",

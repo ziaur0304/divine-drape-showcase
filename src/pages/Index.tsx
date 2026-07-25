@@ -96,8 +96,10 @@ export default function Index() {
 
       {/* Premium Membership Banner */}
       <section className="relative overflow-hidden">
-        <Link
-          to="/premium-membership"
+        <a
+          href="https://chat.whatsapp.com/Igk3PVep7R14ah4MvvR4Lg?s=cl&p=a&ilr=1&amv=2"
+          target="_blank"
+          rel="noopener noreferrer"
           className="group relative block overflow-hidden transition-all"
         >
           <div className="absolute inset-0 bg-gradient-to-br from-amber-500 via-yellow-500 to-amber-600" />
@@ -106,20 +108,20 @@ export default function Index() {
           <div className="absolute -bottom-8 -right-8 w-28 h-28 rounded-full bg-amber-200/25 blur-2xl" />
           <div className="relative p-5 md:p-6">
             <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/15 border border-white/30 text-white text-[10px] font-bold uppercase tracking-wider mb-3">
-              <Crown className="h-3 w-3" /> Premium
+              <Crown className="h-3 w-3" /> Premium — Now Free
             </div>
             <h3 className="text-lg md:text-xl font-extrabold text-white leading-snug">
               Get Expert RE-NEET Counselling Guidance
             </h3>
             <p className="text-sm text-amber-50 mt-2 leading-relaxed">
-              Join Premium Membership starting at ₹299. Step-by-step counselling support,
-              choice filling help, and document verification guidance.
+              Premium Membership is now completely free (was ₹299). Join our WhatsApp group for
+              step-by-step counselling support, choice filling help, and document verification guidance.
             </p>
             <div className="mt-4 inline-flex items-center justify-center h-11 px-6 rounded-xl bg-white group-hover:bg-amber-50 text-amber-700 font-bold text-sm shadow-lg transition-all">
               Join Premium →
             </div>
           </div>
-        </Link>
+        </a>
       </section>
 
       {/* Header */}

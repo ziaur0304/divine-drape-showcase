@@ -8,7 +8,6 @@ import {
   Download,
   Phone,
   ShieldCheck,
-  Info,
 } from "lucide-react";
 
 const PREMIUM_URL =
@@ -121,23 +120,6 @@ export default function DocumentsRequired() {
           </div>
         </section>
 
-        {/* Important Note */}
-        <Card className="bg-blue-50 border-blue-100 p-5 rounded-2xl animate-fade-in-delay-4">
-          <div className="flex items-start gap-3">
-            <div className="shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center">
-              <Info className="h-4 w-4" />
-            </div>
-            <div>
-              <h3 className="text-sm font-bold text-blue-900 mb-1">Important Note</h3>
-              <p className="text-sm text-blue-900/80 leading-relaxed">
-                Character Certificate and Gap Certificate are not required during the
-                counselling process. However, you may be required to submit them at the
-                time of admission/reporting to the allotted college, depending on the
-                requirements of the respective college.
-              </p>
-            </div>
-          </div>
-        </Card>
       </div>
 
       {/* Bottom spacer for mobile */}

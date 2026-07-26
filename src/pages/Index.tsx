@@ -215,7 +215,7 @@ export default function Index() {
               <MessageCircle className="h-4 w-4 text-white" />
             </div>
             <h4 className="text-base font-bold text-slate-900 pt-1">
-              Join Assam Future Doctors 2026
+              Join rddonline.in WhatsApp group
             </h4>
           </div>
           <p className="text-sm text-slate-700 leading-relaxed mb-4">

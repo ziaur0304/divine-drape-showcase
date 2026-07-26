@@ -22,6 +22,7 @@ const DOCUMENTS = [
   "NEET Score Card",
   "Class 10 Admit Card",
   "Class 10 Mark Sheet and Pass Certificate",
+  "Class 12 Admit Card",
   "Class 12 Mark Sheet and Pass Certificate",
   "Recent Passport-size Photographs",
   "Aadhaar Card/Voter ID",

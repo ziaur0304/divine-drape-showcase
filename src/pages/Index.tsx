@@ -219,9 +219,9 @@ export default function Index() {
             </h4>
           </div>
           <p className="text-sm text-slate-700 leading-relaxed mb-4">
-            Join our WhatsApp group, "Assam Future Doctors 2026 🩺," to receive all the latest
-            updates, important announcements, and complete guidance regarding RE-NEET counselling
-            for admission to MBBS, BDS, and BAMS courses in Assam.
+            Join our WhatsApp group, "rddonline.in" to receive all the latest updates, important
+            announcements, and complete guidance regarding RE-NEET counselling for admission to MBBS,
+            BDS, and BAMS courses in Assam.
           </p>
           <p className="text-sm text-slate-700 leading-relaxed mb-4">
             We'll support and guide you throughout the counselling process until you secure your

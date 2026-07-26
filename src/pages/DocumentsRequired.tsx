@@ -21,18 +21,15 @@ const DOCUMENTS = [
   "PRC (Permanent Resident Certificate)",
   "NEET UG 2026 Admit Card",
   "NEET Score Card",
-  "NEET UG 2026 OMR Sheet",
   "Class 10 Admit Card",
   "Class 10 Mark Sheet and Pass Certificate",
   "Class 12 Mark Sheet and Pass Certificate",
   "Recent Passport-size Photographs",
-  "Aadhaar Card",
+  "Aadhaar Card/Voter ID",
   "Declaration by the Parent/Guardian",
   "Annexures",
   "Certificate for Reservation (EWS Certificate / Caste Certificate)",
   "Signature",
-  "Character Certificate*",
-  "Gap Certificate* (if applicable)",
 ];
 
 export default function DocumentsRequired() {

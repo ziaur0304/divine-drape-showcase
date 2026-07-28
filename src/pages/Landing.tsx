@@ -34,7 +34,7 @@ const BUTTONS = [
     icon: Building2,
     gradient: "from-fuchsia-600 via-purple-600 to-indigo-700",
   },
-] as const;
+];
 
 const Landing = () => {
   return (

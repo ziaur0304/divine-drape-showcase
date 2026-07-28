@@ -228,7 +228,7 @@ export default function Index() {
             medical college.
           </p>
           <Button
-            onClick={() => window.open("https://chat.whatsapp.com/HsabYdYM41ACoDqpBzh2C1", "_blank")}
+            onClick={() => window.open("https://chat.whatsapp.com/JxxVtLrs4dx9XHKs1mGLxq?s=cl&p=a&ilr=1&amv=2", "_blank")}
             className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-xl h-12 text-base font-semibold shadow-md hover:shadow-lg transition-all"
           >
             <MessageCircle className="h-5 w-5 mr-2" />

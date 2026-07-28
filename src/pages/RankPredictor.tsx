@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/dialog";
 import { ArrowLeft, MessageCircle, Sparkles, Target, Loader2 } from "lucide-react";
 
-const GROUP_URL = "https://chat.whatsapp.com/HsabYdYM41ACoDqpBzh2C1";
+const GROUP_URL = "https://chat.whatsapp.com/JxxVtLrs4dx9XHKs1mGLxq?s=cl&p=a&ilr=1&amv=2";
 
 type RankMap = Record<number, string>;
 

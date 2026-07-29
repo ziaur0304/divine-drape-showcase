@@ -1,6 +1,10 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { GraduationCap, Stethoscope, Wheat, Building2, ArrowRight } from "lucide-react";
-import logoAsset from "@/assets/rddonline-logo.png.asset.json";
+import { GraduationCap, Stethoscope, Wheat, Building2, ArrowRight, Eye } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+
+const LOGO_URL = "/rddonline-logo.png";
+
 
 const BUTTONS = [
   {

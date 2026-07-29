@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { ArrowLeft, Clock } from "lucide-react";
-import logoAsset from "@/assets/rddonline-logo.png.asset.json";
+const LOGO_URL = "/rddonline-logo.png";
 
 const ComingSoon = () => {
   const { state } = useLocation() as { state?: { title?: string } };

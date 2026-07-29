@@ -27,8 +27,6 @@ const shareOnWhatsApp = () =>
   window.open(`https://wa.me/?text=${encodeURIComponent(SHARE_MESSAGE)}`, "_blank");
 
 export default function Index() {
-  const [visits, setVisits] = useState<number | null>(null);
-
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -42,28 +40,6 @@ export default function Index() {
     return () => observer.disconnect();
   }, []);
 
-  useEffect(() => {
-    let cancelled = false;
-    const run = async () => {
-      try {
-        const key = "rdd_visit_logged";
-        if (!sessionStorage.getItem(key)) {
-          await supabase.from("page_visits").insert({});
-          sessionStorage.setItem(key, "1");
-        }
-      } catch {
-        // ignore
-      }
-      const { count } = await supabase
-        .from("page_visits")
-        .select("*", { count: "exact", head: true });
-      if (!cancelled) setVisits(count ?? 0);
-    };
-    run();
-    return () => {
-      cancelled = true;
-    };
-  }, []);
 
   return (
     <main className="min-h-screen bg-white text-slate-900">

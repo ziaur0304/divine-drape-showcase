@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -7,7 +7,7 @@ import {
   MessageCircle,
   Trophy,
   Share2,
-  Eye,
+  Home,
   Building2,
   BarChart3,
   FileText,
@@ -15,6 +15,7 @@ import {
   Layers,
   Crown,
 } from "lucide-react";
+
 import { WHATSAPP_URL } from "@/lib/config";
 import { supabase } from "@/integrations/supabase/client";
 
@@ -26,8 +27,6 @@ const shareOnWhatsApp = () =>
   window.open(`https://wa.me/?text=${encodeURIComponent(SHARE_MESSAGE)}`, "_blank");
 
 export default function Index() {
-  const [visits, setVisits] = useState<number | null>(null);
-
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -41,28 +40,6 @@ export default function Index() {
     return () => observer.disconnect();
   }, []);
 
-  useEffect(() => {
-    let cancelled = false;
-    const run = async () => {
-      try {
-        const key = "rdd_visit_logged";
-        if (!sessionStorage.getItem(key)) {
-          await supabase.from("page_visits").insert({});
-          sessionStorage.setItem(key, "1");
-        }
-      } catch {
-        // ignore
-      }
-      const { count } = await supabase
-        .from("page_visits")
-        .select("*", { count: "exact", head: true });
-      if (!cancelled) setVisits(count ?? 0);
-    };
-    run();
-    return () => {
-      cancelled = true;
-    };
-  }, []);
 
   return (
     <main className="min-h-screen bg-white text-slate-900">
@@ -101,17 +78,14 @@ export default function Index() {
             <h1 className="text-xl font-bold text-blue-600">RDD Online</h1>
             <p className="text-xs text-slate-500">Rank • Dream • Destination</p>
           </div>
-          <div className="flex flex-col items-end text-right">
-            <span className="text-[10px] uppercase tracking-wider text-slate-400 font-medium">
-              Total Visits
-            </span>
-            <div className="flex items-center gap-1.5 text-blue-600 font-bold">
-              <Eye className="h-3.5 w-3.5" />
-              <span className="text-sm tabular-nums">
-                {visits === null ? "…" : visits.toLocaleString()}
-              </span>
-            </div>
-          </div>
+          <Link
+            to="/"
+            className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-blue-50 hover:bg-blue-100 text-blue-700 text-sm font-semibold transition-colors"
+          >
+            <Home className="h-4 w-4" />
+            Home
+          </Link>
+
         </div>
       </header>
 

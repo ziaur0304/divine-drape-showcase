@@ -13,7 +13,7 @@ const ComingSoon = () => {
           <Link to="/" className="inline-flex items-center gap-2 text-slate-700 hover:text-blue-600 text-sm font-medium">
             <ArrowLeft className="w-4 h-4" /> Back to Home
           </Link>
-          <img src={logoAsset.url} alt="RDD Online" className="h-8" />
+          <img src={LOGO_URL} alt="RDD Online" className="h-8" />
         </div>
       </header>
 

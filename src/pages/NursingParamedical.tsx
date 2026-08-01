@@ -81,10 +81,13 @@ const NursingParamedical = () => {
                     "_blank"
                   )
                 }
-                className="w-full h-14 text-base font-semibold rounded-xl border-2 border-emerald-200 hover:bg-emerald-50 text-emerald-700 transition-all"
+                className="w-full h-auto min-h-[3.5rem] py-3 px-4 text-base font-semibold rounded-xl border-2 border-emerald-200 hover:bg-emerald-50 text-emerald-700 transition-all whitespace-normal"
               >
-                <Phone className="h-5 w-5 mr-2" />
-                Text on WhatsApp (+91 93877 38853)
+                <Phone className="h-5 w-5 mr-2 shrink-0" />
+                <span className="text-center leading-snug">
+                  Text on WhatsApp<br className="sm:hidden" />
+                  <span className="sm:ml-1">+91 93877 38853</span>
+                </span>
               </Button>
             </div>
           </Card>

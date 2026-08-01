@@ -43,6 +43,21 @@ export default function Index() {
 
   return (
     <main className="min-h-screen bg-white text-slate-900">
+      {/* Header */}
+      <header className="border-b border-slate-100 bg-white/80 backdrop-blur-sm sticky top-0 z-50">
+        <div className="max-w-3xl mx-auto px-4 py-3 flex items-center justify-between gap-3">
+          <img src="/d2donline-logo.png" alt="D2D Online — Dream to Destination" className="h-10 sm:h-12" />
+          <Link
+            to="/"
+            className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-blue-50 hover:bg-blue-100 text-blue-700 text-sm font-semibold transition-colors"
+          >
+            <Home className="h-4 w-4" />
+            Home
+          </Link>
+
+        </div>
+      </header>
+
       {/* Premium Membership Banner */}
       <section className="relative overflow-hidden">
         <Link
@@ -70,21 +85,6 @@ export default function Index() {
           </div>
         </Link>
       </section>
-
-      {/* Header */}
-      <header className="border-b border-slate-100 bg-white/80 backdrop-blur-sm sticky top-0 z-50">
-        <div className="max-w-3xl mx-auto px-4 py-3 flex items-center justify-between gap-3">
-          <img src="/d2donline-logo.png" alt="D2D Online — Dream to Destination" className="h-10 sm:h-12" />
-          <Link
-            to="/"
-            className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-blue-50 hover:bg-blue-100 text-blue-700 text-sm font-semibold transition-colors"
-          >
-            <Home className="h-4 w-4" />
-            Home
-          </Link>
-
-        </div>
-      </header>
 
       {/* Top Action Buttons */}
       <section className="px-4 pt-4 pb-2 max-w-3xl mx-auto space-y-3">

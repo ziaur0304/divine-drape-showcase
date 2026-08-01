@@ -4,7 +4,6 @@ import { Card } from "@/components/ui/card";
 import {
   ArrowLeft,
   MessageCircle,
-  Phone,
   GraduationCap,
   HeartPulse,
   Leaf,
@@ -229,7 +228,7 @@ const PrivateAdmissions = () => {
                 }
                 className="w-full h-auto min-h-[3.5rem] py-3 px-4 text-base font-semibold rounded-xl border-2 border-violet-200 hover:bg-violet-50 text-violet-700 transition-all whitespace-normal"
               >
-                <Phone className="h-5 w-5 mr-2 shrink-0" />
+                <MessageCircle className="h-5 w-5 mr-2 shrink-0" />
                 <span className="text-center leading-snug">
                   WhatsApp Us<br className="sm:hidden" />
                   <span className="sm:ml-1">+91 93652 48667</span>

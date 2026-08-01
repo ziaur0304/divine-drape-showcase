@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { ArrowLeft, MessageCircle, Phone } from "lucide-react";
+import { ArrowLeft, MessageCircle } from "lucide-react";
 
 const LOGO_URL = "/d2donline-logo.png";
 const WHATSAPP_GROUP_URL = "https://chat.whatsapp.com/IgPMiK3XhstEblwii7iXIA?s=cl&p=a&mlu=4";
@@ -83,7 +83,7 @@ const NursingParamedical = () => {
                 }
                 className="w-full h-auto min-h-[3.5rem] py-3 px-4 text-base font-semibold rounded-xl border-2 border-emerald-200 hover:bg-emerald-50 text-emerald-700 transition-all whitespace-normal"
               >
-                <Phone className="h-5 w-5 mr-2 shrink-0" />
+                <MessageCircle className="h-5 w-5 mr-2 shrink-0" />
                 <span className="text-center leading-snug">
                   Text on WhatsApp<br className="sm:hidden" />
                   <span className="sm:ml-1">+91 93877 38853</span>

@@ -87,13 +87,33 @@ const Landing = () => {
 
       <main className="max-w-6xl mx-auto px-4 sm:px-6 py-10 sm:py-14">
 
+        <section className="mb-10 sm:mb-12 max-w-3xl mx-auto text-center rounded-2xl border border-blue-100 bg-white/70 backdrop-blur p-6 sm:p-8 shadow-sm">
+          <p className="text-slate-800 text-base sm:text-lg font-medium leading-relaxed">
+            D2DOnline is one stop solution for Career Guidance. It is the most trusted, most popular and most organised platform in Assam for Career Guidance.
+          </p>
+          <p className="mt-3 text-slate-600 text-sm sm:text-base">
+            If you are confused about your career and stuck in your life click below to message us.
+          </p>
+          <button
+            onClick={() =>
+              window.open(
+                `https://wa.me/919365248667?text=${encodeURIComponent(
+                  "Hi D2DOnline! I am confused about my career and need guidance. Please help me."
+                )}`,
+                "_blank"
+              )
+            }
+            className="mt-5 inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white font-bold text-base shadow-lg hover:shadow-xl transition-all"
+          >
+            <MessageCircle className="h-5 w-5" />
+            Message on WhatsApp
+          </button>
+        </section>
+
         <section className="text-center mb-10 sm:mb-14">
           <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
             Choose Your <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Admission Path</span>
           </h1>
-          <p className="mt-4 text-slate-600 text-base sm:text-lg max-w-2xl mx-auto">
-            Trusted guidance for aspirants across Assam — pick a category below to explore admissions, ranks, and college information.
-          </p>
         </section>
 
         <section className="grid gap-5 sm:gap-6 sm:grid-cols-2">

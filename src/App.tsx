@@ -26,7 +26,7 @@ const App = () => (
       <Route path="/" element={<Landing />} />
       <Route path="/govt-medical" element={<GovtMedical />} />
       <Route path="/nursing-paramedical" element={<NursingParamedical />} />
-      <Route path="/agriculture-veterinary" element={<ComingSoon />} />
+      <Route path="/agriculture-veterinary" element={<AgricultureVeterinary />} />
       <Route path="/private-admissions" element={<ComingSoon />} />
       <Route path="/submit" element={<SubmitMark />} />
       <Route path="/live-rank" element={<LiveRank />} />

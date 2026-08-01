@@ -6,7 +6,7 @@ import {
   ArrowLeft,
   FileText,
   Download,
-  Phone,
+  MessageCircle,
   ShieldCheck,
 } from "lucide-react";
 
@@ -53,7 +53,7 @@ export default function DocumentsRequired() {
           <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-400 via-green-500 to-emerald-400" />
           <div className="flex items-start gap-3 mb-3">
             <div className="shrink-0 w-10 h-10 rounded-full bg-gradient-to-br from-emerald-500 to-green-600 flex items-center justify-center shadow-md">
-              <Phone className="h-5 w-5 text-white" />
+              <MessageCircle className="h-5 w-5 text-white" />
             </div>
             <div>
               <h2 className="text-lg font-bold text-emerald-900 leading-tight">
@@ -69,7 +69,7 @@ export default function DocumentsRequired() {
             onClick={() => window.open(PREMIUM_URL, "_blank")}
             className="w-full bg-gradient-to-r from-emerald-600 to-green-700 hover:from-emerald-700 hover:to-green-800 text-white rounded-xl h-12 text-base font-bold shadow-lg hover:shadow-xl transition-all"
           >
-            <Phone className="h-5 w-5 mr-2" />
+            <MessageCircle className="h-5 w-5 mr-2" />
             Click Here
           </Button>
         </Card>

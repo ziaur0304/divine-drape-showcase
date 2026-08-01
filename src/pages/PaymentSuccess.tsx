@@ -20,7 +20,7 @@ export default function PaymentSuccess() {
             Payment Successful!
           </h1>
           <p className="mt-2 text-slate-600">
-            Welcome to RDD Online Premium Membership.
+            Welcome to D2D Online Premium Membership.
           </p>
 
           <div className="mt-6 rounded-2xl bg-slate-50 border border-slate-100 p-4 text-left">
@@ -45,7 +45,7 @@ export default function PaymentSuccess() {
             className="w-full mt-4 h-12 rounded-xl bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-semibold shadow-lg"
           >
             <a
-              href="https://wa.me/919365248667?text=Hi%20RDD%20Online,%20I%20just%20purchased%20Premium%20Membership"
+              href="https://wa.me/919365248667?text=Hi%20D2D%20Online,%20I%20just%20purchased%20Premium%20Membership"
               target="_blank"
               rel="noopener noreferrer"
             >

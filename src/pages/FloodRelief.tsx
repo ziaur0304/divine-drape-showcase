@@ -47,7 +47,7 @@ declare global {
 }
 
 const GOAL_AMOUNT = 500000; // ₹5,00,000 goal
-const WHATSAPP_URL = "https://wa.me/919365248667?text=Hi%20RDD%20Online,%20I%20want%20to%20volunteer%20for%20Assam%20Flood%20Relief";
+const WHATSAPP_URL = "https://wa.me/919365248667?text=Hi%20D2D%20Online,%20I%20want%20to%20volunteer%20for%20Assam%20Flood%20Relief";
 
 const SUGGESTED = [100, 250, 500, 1000, 2500, 5000];
 
@@ -70,7 +70,7 @@ const UPDATES = [
   {
     date: "22 July 2026",
     title: "Emergency response initiated",
-    desc: "RDD Online kicked off coordinated flood relief efforts with local volunteers in Upper Assam.",
+    desc: "D2D Online kicked off coordinated flood relief efforts with local volunteers in Upper Assam.",
   },
 ];
 
@@ -179,7 +179,7 @@ export default function FloodRelief() {
         key: data.keyId,
         amount: data.amount,
         currency: data.currency,
-        name: "RDD Online — Assam Flood Relief",
+        name: "D2D Online — Assam Flood Relief",
         description: "Donation for flood-affected families in Assam",
         order_id: data.orderId,
         prefill: { name: name.trim(), email: email.trim(), contact: phone.trim() },
@@ -223,8 +223,7 @@ export default function FloodRelief() {
             <ArrowLeft className="h-5 w-5 text-slate-700" />
           </Link>
           <div>
-            <h1 className="text-lg font-bold text-blue-700">RDD Online</h1>
-            <p className="text-xs text-slate-500">Assam Flood Relief Fund</p>
+            <img src="/d2donline-logo.png" alt="D2D Online — Dream to Destination" className="h-9 sm:h-10" /><p className="text-xs text-slate-500">Assam Flood Relief Fund</p>
           </div>
         </div>
       </header>
@@ -455,7 +454,7 @@ export default function FloodRelief() {
           <div className="p-6 md:p-8">
             <h3 className="text-2xl font-bold text-slate-900">Why We Started This Campaign</h3>
             <p className="mt-3 text-slate-700 leading-relaxed">
-              RDD Online believes that true education goes hand in hand with humanity. Through this initiative, we aim to provide emergency relief to flood-affected families across Upper Assam with the support of generous donors and volunteers.
+              D2D Online believes that true education goes hand in hand with humanity. Through this initiative, we aim to provide emergency relief to flood-affected families across Upper Assam with the support of generous donors and volunteers.
             </p>
           </div>
         </Card>

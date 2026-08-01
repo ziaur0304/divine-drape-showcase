@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { GraduationCap, Stethoscope, Wheat, Building2, ArrowRight, Eye } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 
-const LOGO_URL = "/rddonline-logo.png";
+const LOGO_URL = "/d2donline-logo.png";
 
 
 const BUTTONS = [
@@ -70,7 +70,7 @@ const Landing = () => {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
       <header className="px-4 py-4 border-b bg-white/80 backdrop-blur sticky top-0 z-20">
         <div className="max-w-6xl mx-auto flex items-center justify-between gap-3">
-          <img src={LOGO_URL} alt="RDD Online — Rank Dream Destination" className="h-12 sm:h-14" />
+          <img src={LOGO_URL} alt="D2D Online — Dream to Destination" className="h-12 sm:h-14" />
           <div className="flex flex-col items-end text-right">
             <span className="text-[10px] uppercase tracking-wider text-slate-400 font-medium">
               Total Visits
@@ -127,7 +127,7 @@ const Landing = () => {
       </main>
 
       <footer className="px-4 py-6 text-center text-xs text-slate-500">
-        © {new Date().getFullYear()} RDD Online · Rank • Dream • Destination
+        © {new Date().getFullYear()} D2D Online · Dream to Destination
       </footer>
     </div>
   );

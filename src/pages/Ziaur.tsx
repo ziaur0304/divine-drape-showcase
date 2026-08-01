@@ -91,8 +91,7 @@ export default function Ziaur() {
             <ArrowLeft className="h-5 w-5 text-slate-700" />
           </Link>
           <div className="flex-1">
-            <h1 className="text-lg font-bold text-blue-600">RDD Online</h1>
-            <p className="text-xs text-slate-500">Admin · Merit List Entry</p>
+            <img src="/d2donline-logo.png" alt="D2D Online — Dream to Destination" className="h-9 sm:h-10" /><p className="text-xs text-slate-500">Admin · Merit List Entry</p>
           </div>
           <Button
             variant="outline"

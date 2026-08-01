@@ -168,8 +168,7 @@ export default function ClosingRanks() {
             <ArrowLeft className="h-5 w-5 text-slate-700" />
           </Link>
           <div>
-            <h1 className="text-lg font-bold text-blue-600">RDD Online</h1>
-            <p className="text-xs text-slate-500">Rank • Dream • Destination</p>
+            <img src="/d2donline-logo.png" alt="D2D Online — Dream to Destination" className="h-9 sm:h-10" />
           </div>
         </div>
       </header>
@@ -216,7 +215,7 @@ export default function ClosingRanks() {
                 className="w-full md:w-auto bg-white hover:bg-blue-50 text-blue-700 font-semibold rounded-xl shadow-md hover:shadow-lg transition-all duration-200 h-12 px-6"
               >
                 <a
-                  href="https://wa.me/919365248667?text=Hi%20RDD%20Online,%20I%20want%20to%20enroll%20in%20the%20Premium%20Counselling%20Guidance"
+                  href="https://wa.me/919365248667?text=Hi%20D2D%20Online,%20I%20want%20to%20enroll%20in%20the%20Premium%20Counselling%20Guidance"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

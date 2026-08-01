@@ -18,8 +18,8 @@ import {
 import { WHATSAPP_URL } from "@/lib/config";
 import { supabase } from "@/integrations/supabase/client";
 
-const SITE_URL = "https://rddonline.in";
-const SHARE_MESSAGE = `Check out RDD Online — The biggest and most organised platform in Assam for NEET UG Counselling Guidance: ${SITE_URL}`;
+const SITE_URL = "https://d2donline.in";
+const SHARE_MESSAGE = `Check out D2D Online — The biggest and most organised platform in Assam for NEET UG Counselling Guidance: ${SITE_URL}`;
 
 const openWhatsApp = () => window.open(WHATSAPP_URL, "_blank");
 const shareOnWhatsApp = () =>
@@ -98,8 +98,7 @@ export default function Index() {
       <header className="border-b border-slate-100 bg-white/80 backdrop-blur-sm sticky top-0 z-50">
         <div className="max-w-3xl mx-auto px-4 py-3 flex items-center justify-between gap-3">
           <div>
-            <h1 className="text-xl font-bold text-blue-600">RDD Online</h1>
-            <p className="text-xs text-slate-500">Rank • Dream • Destination</p>
+            <img src="/d2donline-logo.png" alt="D2D Online — Dream to Destination" className="h-9 sm:h-10" />
           </div>
           <div className="flex flex-col items-end text-right">
             <span className="text-[10px] uppercase tracking-wider text-slate-400 font-medium">
@@ -215,11 +214,11 @@ export default function Index() {
               <MessageCircle className="h-4 w-4 text-white" />
             </div>
             <h4 className="text-base font-bold text-slate-900 pt-1">
-              Join rddonline.in WhatsApp group
+              Join d2donline.in WhatsApp group
             </h4>
           </div>
           <p className="text-sm text-slate-700 leading-relaxed mb-4">
-            Join our WhatsApp group, "rddonline.in" to receive all the latest updates, important
+            Join our WhatsApp group, "d2donline.in" to receive all the latest updates, important
             announcements, and complete guidance regarding RE-NEET counselling for admission to MBBS,
             BDS, and BAMS courses in Assam.
           </p>
@@ -241,8 +240,8 @@ export default function Index() {
       {/* Footer */}
       <footer className="border-t border-slate-100 mt-4 py-8 px-4 text-center">
         <div className="max-w-3xl mx-auto">
-          <h4 className="font-bold text-slate-900">RDD Online</h4>
-          <p className="text-sm text-slate-500 mt-1">Rank • Dream • Destination</p>
+          <h4 className="font-bold text-slate-900">D2D Online</h4>
+          <p className="text-sm text-slate-500 mt-1">Dream to Destination</p>
           <p className="text-sm text-slate-400 mt-1">
             Turning your RE-NEET rank into your medical destination.
           </p>

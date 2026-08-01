@@ -7,6 +7,7 @@ import {
   Sparkles,
   Loader2,
   ShieldCheck,
+  MessageCircle,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -159,7 +160,24 @@ export default function PremiumMembership() {
         </div>
       </header>
 
-      <section className="px-4 pt-10 pb-6 max-w-3xl mx-auto text-center">
+      <section className="px-4 pt-6 max-w-3xl mx-auto">
+        <div className="rounded-2xl border border-amber-200 bg-gradient-to-br from-amber-50 to-yellow-50 p-5 text-center shadow-md">
+          <p className="text-sm md:text-base font-medium text-slate-800">
+            If you are facing error in making the payment, click below to message us
+          </p>
+          <a
+            href="https://wa.me/919365248667?text=Hi%20D2DOnline%21%20I%20am%20facing%20an%20error%20while%20making%20the%20payment%20for%20Premium%20Plus%20Membership.%20Please%20help%20me."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-4 inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-emerald-500 to-green-600 px-5 py-3 text-sm font-bold text-white shadow-lg transition-all hover:from-emerald-600 hover:to-green-700 hover:shadow-xl"
+          >
+            <MessageCircle className="h-5 w-5" />
+            Message us on WhatsApp
+          </a>
+        </div>
+      </section>
+
+      <section className="px-4 pt-8 pb-6 max-w-3xl mx-auto text-center">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-blue-100 to-amber-100 text-blue-800 text-xs font-semibold uppercase tracking-wider mb-4">
           <Sparkles className="h-3.5 w-3.5 text-amber-600" />
           Premium Membership

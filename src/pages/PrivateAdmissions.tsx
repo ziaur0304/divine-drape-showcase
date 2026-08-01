@@ -4,7 +4,6 @@ import { Card } from "@/components/ui/card";
 import {
   ArrowLeft,
   MessageCircle,
-  Phone,
   GraduationCap,
   HeartPulse,
   Leaf,

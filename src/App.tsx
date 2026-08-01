@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Landing from "./pages/Landing";
 import GovtMedical from "./pages/GovtMedical";
 import ComingSoon from "./pages/ComingSoon";
+import PrivateAdmissions from "./pages/PrivateAdmissions";
 import AgricultureVeterinary from "./pages/AgricultureVeterinary";
 import NursingParamedical from "./pages/NursingParamedical";
 import SubmitMark from "./pages/SubmitMark";
@@ -27,7 +28,7 @@ const App = () => (
       <Route path="/govt-medical" element={<GovtMedical />} />
       <Route path="/nursing-paramedical" element={<NursingParamedical />} />
       <Route path="/agriculture-veterinary" element={<AgricultureVeterinary />} />
-      <Route path="/private-admissions" element={<ComingSoon />} />
+      <Route path="/private-admissions" element={<PrivateAdmissions />} />
       <Route path="/submit" element={<SubmitMark />} />
       <Route path="/live-rank" element={<LiveRank />} />
       <Route path="/check-rank" element={<RankPredictor />} />

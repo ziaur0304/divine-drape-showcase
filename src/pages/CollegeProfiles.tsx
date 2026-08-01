@@ -388,8 +388,7 @@ export default function CollegeProfiles() {
       <header className="border-b border-slate-100 bg-white/80 backdrop-blur-sm sticky top-0 z-40">
         <div className="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between gap-3">
           <div>
-            <h1 className="text-xl font-bold text-blue-600">RDD Online</h1>
-            <p className="text-xs text-slate-500">Rank • Dream • Destination</p>
+            <img src="/d2donline-logo.png" alt="D2D Online — Dream to Destination" className="h-9 sm:h-10" />
           </div>
           <Button
             asChild
@@ -519,9 +518,9 @@ export default function CollegeProfiles() {
       {/* Footer */}
       <footer className="border-t border-slate-100 mt-8 py-8 px-4 text-center">
         <div className="max-w-4xl mx-auto">
-          <h4 className="font-bold text-slate-900">RDD Online</h4>
+          <h4 className="font-bold text-slate-900">D2D Online</h4>
           <p className="text-sm text-slate-500 mt-1">
-            Rank • Dream • Destination
+            Dream to Destination
           </p>
           <p className="text-xs text-slate-400 mt-4">
             Made with ❤️ for Assam RE-NEET Aspirants

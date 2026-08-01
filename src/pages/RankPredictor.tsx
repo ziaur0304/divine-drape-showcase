@@ -41,7 +41,7 @@ export default function RankPredictor() {
   }, []);
 
   useEffect(() => {
-    document.title = "Assam State Rank Predictor 2026 | RDD Online";
+    document.title = "Assam State Rank Predictor 2026 | D2D Online";
     const desc = "Estimate your Assam RE-NEET UG 2026 state rank instantly based on your marks and historical counselling data.";
     let meta = document.querySelector('meta[name="description"]');
     if (!meta) {
@@ -89,8 +89,7 @@ export default function RankPredictor() {
             <span className="text-sm font-medium">Back</span>
           </Link>
           <div className="text-right">
-            <h1 className="text-lg font-bold text-blue-900">RDD Online</h1>
-            <p className="text-[10px] text-slate-500 tracking-wider">Rank • Dream • Destination</p>
+            <img src="/d2donline-logo.png" alt="D2D Online — Dream to Destination" className="h-9 sm:h-10" />
           </div>
         </div>
       </header>

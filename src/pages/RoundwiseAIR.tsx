@@ -77,8 +77,7 @@ export default function RoundwiseAIR() {
             <ArrowLeft className="h-5 w-5 text-slate-700" />
           </Link>
           <div>
-            <h1 className="text-lg font-bold text-blue-600">RDD Online</h1>
-            <p className="text-xs text-slate-500">Rank • Dream • Destination</p>
+            <img src="/d2donline-logo.png" alt="D2D Online — Dream to Destination" className="h-9 sm:h-10" />
           </div>
         </div>
       </header>

@@ -124,6 +124,26 @@ const Landing = () => {
             </Link>
           ))}
         </section>
+
+        <section className="mt-12 sm:mt-16 text-center">
+          <p className="text-slate-600 text-base sm:text-lg font-medium mb-4">
+            For anything other than that mentioned above click below to send us a message
+          </p>
+          <button
+            onClick={() =>
+              window.open(
+                `https://wa.me/919365248667?text=${encodeURIComponent(
+                  "Hi D2DOnline! I have a query regarding admissions and counselling. Please guide me."
+                )}`,
+                "_blank"
+              )
+            }
+            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white font-bold text-base shadow-lg hover:shadow-xl transition-all"
+          >
+            <MessageCircle className="h-5 w-5" />
+            Message on WhatsApp
+          </button>
+        </section>
       </main>
 
       <footer className="px-4 py-6 text-center text-xs text-slate-500">

@@ -116,33 +116,45 @@ const Landing = () => {
           </h1>
         </section>
 
-        <section className="grid gap-5 sm:gap-6 sm:grid-cols-2">
-          {BUTTONS.map(({ title, description, to, state, icon: Icon, gradient }) => (
-            <Link
-              key={title}
-              to={to}
-              state={state}
-              className="group relative overflow-hidden rounded-2xl bg-white shadow-lg hover:shadow-2xl border border-slate-200 transition-all duration-300 hover:-translate-y-1"
+        <section className="max-w-xl mx-auto">
+          <div className="rounded-2xl bg-white border border-slate-200 shadow-lg p-5 sm:p-6">
+            <label className="block text-sm font-semibold text-slate-700 mb-2">
+              Select an admission path
+            </label>
+            <Select value={selected} onValueChange={setSelected}>
+              <SelectTrigger className="h-14 rounded-xl text-left text-base">
+                <SelectValue placeholder="Choose a category..." />
+              </SelectTrigger>
+              <SelectContent className="bg-white z-50">
+                {BUTTONS.map(({ title, icon: Icon }) => (
+                  <SelectItem key={title} value={title} className="py-3">
+                    <span className="flex items-center gap-2">
+                      <Icon className="w-4 h-4 text-blue-600" />
+                      {title}
+                    </span>
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+
+            {selectedItem && (
+              <p className="mt-3 text-sm text-slate-600">{selectedItem.description}</p>
+            )}
+
+            <button
+              disabled={!selectedItem}
+              onClick={() =>
+                selectedItem && navigate(selectedItem.to, { state: selectedItem.state })
+              }
+              className={`mt-5 w-full inline-flex items-center justify-center gap-2 h-14 rounded-xl text-white font-bold text-base shadow-lg transition-all ${
+                selectedItem
+                  ? `bg-gradient-to-r ${selectedItem.gradient} hover:shadow-xl hover:-translate-y-0.5`
+                  : "bg-slate-300 cursor-not-allowed"
+              }`}
             >
-              <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-br ${gradient}`} />
-              <div className="relative p-6 sm:p-7 flex items-start gap-4">
-                <div className={`shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br ${gradient} flex items-center justify-center shadow-md`}>
-                  <Icon className="w-7 h-7 text-white" />
-                </div>
-                <div className="flex-1 min-w-0">
-                  <h2 className="text-lg sm:text-xl font-bold text-slate-900 group-hover:text-white transition-colors">
-                    {title}
-                  </h2>
-                  <p className="mt-1.5 text-sm text-slate-600 group-hover:text-white/90 transition-colors">
-                    {description}
-                  </p>
-                  <div className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-slate-900 group-hover:text-white transition-colors">
-                    Explore <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </div>
-                </div>
-              </div>
-            </Link>
-          ))}
+              Continue <ArrowRight className="w-5 h-5" />
+            </button>
+          </div>
         </section>
 
         <section className="mt-12 sm:mt-16 text-center">

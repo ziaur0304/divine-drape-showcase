@@ -49,6 +49,10 @@ const BUTTONS = [
 
 const Landing = () => {
   const [visits, setVisits] = useState<number | null>(null);
+  const [selected, setSelected] = useState<string>("");
+  const navigate = useNavigate();
+  const selectedItem = BUTTONS.find((b) => b.title === selected);
+
 
   useEffect(() => {
     let cancelled = false;

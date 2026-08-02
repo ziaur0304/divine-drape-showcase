@@ -143,12 +143,7 @@ export default function Index() {
         </Button>
 
         <Button
-          onClick={() =>
-            window.open(
-              "https://dme.assam.gov.in/sites/default/files/swf_utility_folder/departments/dme_lipl_in_oid_8/menu/document/mbbs_bds_annexures_bond.pdf",
-              "_blank"
-            )
-          }
+          onClick={() => navigate("/annexures")}
           className="w-full bg-gradient-to-r from-rose-600 to-red-700 hover:from-rose-700 hover:to-red-800 text-white rounded-xl h-14 text-base font-bold shadow-lg hover:shadow-xl transition-all"
         >
           <Download className="h-5 w-5 mr-2" />

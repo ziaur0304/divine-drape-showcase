@@ -13,8 +13,8 @@ import {
 const PREMIUM_URL =
   "https://wa.me/919365248667?text=Hi%20D2D%20Online,%20I%20want%20to%20enroll%20in%20the%20Premium%20Counselling%20Guidance";
 
-const ANNEXURE_URL =
-  "https://dme.assam.gov.in/sites/default/files/swf_utility_folder/departments/dme_lipl_in_oid_8/menu/document/mbbs_bds_annexures_bond.pdf";
+const ANNEXURE_URL = "/annexures";
+
 
 const DOCUMENTS = [
   "PRC (Permanent Resident Certificate)",
@@ -76,7 +76,7 @@ export default function DocumentsRequired() {
 
         {/* Download Annexure Button */}
         <Button
-          onClick={() => window.open(ANNEXURE_URL, "_blank")}
+          onClick={() => (window.location.href = ANNEXURE_URL)}
           className="w-full bg-gradient-to-r from-blue-900 to-blue-700 hover:from-blue-950 hover:to-blue-800 text-white rounded-xl h-14 text-base font-bold shadow-lg hover:shadow-xl transition-all animate-fade-in-delay-1"
         >
           <Download className="h-5 w-5 mr-2" />

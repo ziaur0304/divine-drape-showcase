@@ -171,7 +171,7 @@ export default function Index() {
         </Button>
 
         <Button
-          onClick={() => navigate("/annexures")}
+          onClick={() => (window.location.href = "/annexures")}
           className="w-full bg-gradient-to-r from-rose-600 to-red-700 hover:from-rose-700 hover:to-red-800 text-white rounded-xl h-14 text-base font-bold shadow-lg hover:shadow-xl transition-all"
         >
           <Download className="h-5 w-5 mr-2" />

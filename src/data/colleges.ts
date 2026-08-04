@@ -102,42 +102,6 @@ export const colleges: College[] = [
       "https://drive.google.com/drive/folders/157EMfR2y8rAbJkMLihjDBfDtX1X13AF3",
   },
   {
-    id: "pmch",
-    name: "Pragjyotishpur Medical College",
-    shortName: "PMCH",
-    overview:
-      "As one of Assam's newest government medical colleges, Pragjyotishpur Medical College & Hospital is still in its early stages of development. While the institution offers modern infrastructure and significant growth potential, students may currently experience the challenges common to newly established medical colleges, including evolving academic systems, ongoing infrastructure expansion, and comparatively lower clinical exposure than long-established institutions. However, with continued government investment and expansion, the college is expected to strengthen its academic and healthcare services in the coming years.",
-    established: "2025",
-    pgCourses: "Not Available",
-    libraryAvailable: "Yes",
-    cadaver: { score: 1 },
-    attendanceStrictness: { score: 5 },
-    facultySupport: { score: 4 },
-    patientFlow: { score: 1 },
-    hostelConditions: {
-      score: 4,
-      description: "Hostel is available in good condition.",
-    },
-    hostelFood: { score: 2 },
-    sportsFacilities: {
-      score: 1,
-      description:
-        "Only some indoor sports facilities are available. No playground is available on campus.",
-    },
-    collegeFest: "Mridangam",
-    locality:
-      "PMCH is located on the outskirts of Guwahati, where the surrounding area is still undergoing development. While the peaceful environment can be beneficial for studies, students may find the locality lacking in vibrant social life and modern amenities. Public transport is available but may not be as frequent or convenient as in central Guwahati, especially during late hours. Options for cafés, shopping malls, entertainment, and recreational activities are limited nearby, requiring students to travel into the city. During the monsoon season, some surrounding roads may also experience waterlogging and traffic delays, making daily commuting less convenient.",
-    distanceFromGuwahati: "Itself situated at Guwahati",
-    studentOpinion: {
-      quote:
-        "I took admission here for city life. I would suggest: don't sacrifice your career just for city life. If you are getting an older and more established college, you'll have much better opportunities for learning and clinical exposure.",
-      name: "Anonymous",
-      designation: "MBBS 1st Year, PMCH",
-    },
-    campusPhotosLink:
-      "https://drive.google.com/drive/folders/1UASXljlIM_h3zwvBSRtMv0XNgwQKbcAQ",
-  },
-  {
     id: "jmch",
     name: "Jorhat Medical College",
     shortName: "JMCH",

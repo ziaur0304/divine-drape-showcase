@@ -19,7 +19,6 @@ import PremiumMembership from "./pages/PremiumMembership";
 import PaymentSuccess from "./pages/PaymentSuccess";
 import FloodRelief from "./pages/FloodRelief";
 import Annexures from "./pages/Annexures";
-import Tools from "./pages/Tools";
 import NotFound from "./pages/NotFound";
 
 const App = () => (
@@ -44,7 +43,6 @@ const App = () => (
       <Route path="/payment-success" element={<PaymentSuccess />} />
       <Route path="/flood-relief" element={<FloodRelief />} />
       <Route path="/annexures" element={<Annexures />} />
-      <Route path="/tools" element={<Tools />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   </BrowserRouter>

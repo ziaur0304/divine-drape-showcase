@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { GraduationCap, Stethoscope, Wheat, Building2, ArrowRight, Eye, MessageCircle, Wrench } from "lucide-react";
+import { GraduationCap, Stethoscope, Wheat, Building2, ArrowRight, Eye, MessageCircle } from "lucide-react";
 import {
   Select,
   SelectContent,
@@ -143,19 +143,6 @@ const Landing = () => {
               Continue <ArrowRight className="w-5 h-5" />
             </button>
           </div>
-        </section>
-
-        <section className="max-w-xl mx-auto mb-10 sm:mb-12">
-          <button
-            onClick={() => navigate("/tools")}
-            className="w-full inline-flex items-center justify-center gap-2 h-14 rounded-xl bg-gradient-to-r from-slate-800 to-slate-900 hover:from-slate-900 hover:to-black text-white font-bold text-base shadow-lg hover:shadow-xl transition-all"
-          >
-            <Wrench className="w-5 h-5" />
-            Photo &amp; PDF Resizer
-          </button>
-          <p className="mt-2 text-center text-xs text-slate-500">
-            Resize photos and compress PDFs for counselling uploads — free and private.
-          </p>
         </section>
 
         <section className="max-w-3xl mx-auto text-center rounded-2xl border border-blue-100 bg-white/70 backdrop-blur p-6 sm:p-8 shadow-sm">

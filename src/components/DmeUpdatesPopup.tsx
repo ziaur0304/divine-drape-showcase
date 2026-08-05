@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import {
   X,
   ListOrdered,
@@ -9,9 +9,6 @@ import {
   Award,
   ChevronRight,
 } from "lucide-react";
-
-// Shown once per page load (every refresh), on every page.
-let shownThisLoad = false;
 
 const ITEMS = [
   {
@@ -48,14 +45,19 @@ const ITEMS = [
 
 const DmeUpdatesPopup = () => {
   const navigate = useNavigate();
+  const { pathname } = useLocation();
   const [open, setOpen] = useState(false);
+  const skipNext = useRef(false);
 
+  // Show the popup on every page load and on every page navigation,
+  // except when the navigation was triggered from the popup itself.
   useEffect(() => {
-    if (!shownThisLoad) {
-      shownThisLoad = true;
-      setOpen(true);
+    if (skipNext.current) {
+      skipNext.current = false;
+      return;
     }
-  }, []);
+    setOpen(true);
+  }, [pathname]);
 
   const close = () => {
     setOpen(false);
@@ -96,6 +98,7 @@ const DmeUpdatesPopup = () => {
             <button
               key={to}
               onClick={() => {
+                skipNext.current = true;
                 close();
                 navigate(to);
               }}

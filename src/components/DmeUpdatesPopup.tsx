@@ -10,7 +10,8 @@ import {
   ChevronRight,
 } from "lucide-react";
 
-const STORAGE_KEY = "d2d_dme_updates_popup_dismissed";
+// Shown once per page load (every refresh), on every page.
+let shownThisLoad = false;
 
 const ITEMS = [
   {
@@ -50,20 +51,14 @@ const DmeUpdatesPopup = () => {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    try {
-      if (!sessionStorage.getItem(STORAGE_KEY)) setOpen(true);
-    } catch {
+    if (!shownThisLoad) {
+      shownThisLoad = true;
       setOpen(true);
     }
   }, []);
 
   const close = () => {
     setOpen(false);
-    try {
-      sessionStorage.setItem(STORAGE_KEY, "1");
-    } catch {
-      /* ignore */
-    }
   };
 
   if (!open) return null;

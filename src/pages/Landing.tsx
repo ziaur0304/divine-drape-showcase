@@ -9,7 +9,6 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { supabase } from "@/integrations/supabase/client";
-import DmeUpdatesPopup from "@/components/DmeUpdatesPopup";
 
 const LOGO_URL = "/d2donline-logo.png";
 
@@ -80,7 +79,6 @@ const Landing = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
-      <DmeUpdatesPopup />
       <header className="px-4 py-4 border-b bg-white/80 backdrop-blur sticky top-0 z-20">
         <div className="max-w-6xl mx-auto flex items-center justify-between gap-3">
           <img src={LOGO_URL} alt="D2D Online — Dream to Destination" className="h-12 sm:h-14" />

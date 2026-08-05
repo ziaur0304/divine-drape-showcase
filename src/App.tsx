@@ -1,5 +1,6 @@
 import { Toaster } from "@/components/ui/sonner";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import DmeUpdatesPopup from "@/components/DmeUpdatesPopup";
 import Landing from "./pages/Landing";
 import GovtMedical from "./pages/GovtMedical";
 import ComingSoon from "./pages/ComingSoon";
@@ -29,6 +30,7 @@ import NotFound from "./pages/NotFound";
 const App = () => (
   <BrowserRouter>
     <Toaster />
+    <DmeUpdatesPopup />
     <Routes>
       <Route path="/" element={<Landing />} />
       <Route path="/govt-medical" element={<GovtMedical />} />

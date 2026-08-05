@@ -14,6 +14,7 @@ import {
   Download,
   Layers,
   Crown,
+  ListOrdered,
 } from "lucide-react";
 
 import { WHATSAPP_URL } from "@/lib/config";

@@ -20,6 +20,10 @@ import PaymentSuccess from "./pages/PaymentSuccess";
 import FloodRelief from "./pages/FloodRelief";
 import Annexures from "./pages/Annexures";
 import StateRankList from "./pages/StateRankList";
+import ProofOfSchooling from "./pages/ProofOfSchooling";
+import CategoryChange from "./pages/CategoryChange";
+import ThreeGenerationCertificate from "./pages/ThreeGenerationCertificate";
+import SpecialQuota from "./pages/SpecialQuota";
 import NotFound from "./pages/NotFound";
 
 const App = () => (
@@ -45,6 +49,10 @@ const App = () => (
       <Route path="/flood-relief" element={<FloodRelief />} />
       <Route path="/annexures" element={<Annexures />} />
       <Route path="/state-rank-list" element={<StateRankList />} />
+      <Route path="/proof-of-schooling" element={<ProofOfSchooling />} />
+      <Route path="/category-change" element={<CategoryChange />} />
+      <Route path="/three-generation-certificate" element={<ThreeGenerationCertificate />} />
+      <Route path="/special-quota" element={<SpecialQuota />} />
 
       <Route path="*" element={<NotFound />} />
     </Routes>

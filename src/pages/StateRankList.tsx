@@ -48,6 +48,8 @@ export default function StateRankList() {
       .finally(() => setLoading(false));
   }, []);
 
+  const LIMIT = 300;
+
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
     if (!q) return rows;
@@ -126,7 +128,7 @@ export default function StateRankList() {
                   </TableCell>
                 </TableRow>
               ) : (
-                filtered.map((r) => (
+                filtered.slice(0, LIMIT).map((r) => (
                   <TableRow key={`${r.rank}-${r.name}`}>
                     <TableCell className="font-bold text-indigo-600">#{r.rank}</TableCell>
                     <TableCell className="text-slate-800">{r.name}</TableCell>

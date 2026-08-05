@@ -139,6 +139,11 @@ export default function StateRankList() {
             </TableBody>
           </Table>
         </Card>
+        {!loading && filtered.length > LIMIT && (
+          <p className="text-xs text-slate-500 text-center">
+            Showing first {LIMIT} of {filtered.length.toLocaleString()} records — use search to find your rank or name.
+          </p>
+        )}
       </section>
     </main>
   );

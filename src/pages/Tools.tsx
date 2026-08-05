@@ -7,6 +7,11 @@ import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { toast } from "sonner";
 import { ArrowLeft, Download, FileImage, FileText, Loader2, Upload } from "lucide-react";
+import * as pdfjs from "pdfjs-dist";
+import pdfWorkerSrc from "pdfjs-dist/build/pdf.worker.min.mjs?url";
+import { jsPDF } from "jspdf";
+
+pdfjs.GlobalWorkerOptions.workerSrc = pdfWorkerSrc;
 
 const formatSize = (bytes: number) =>
   bytes >= 1024 * 1024

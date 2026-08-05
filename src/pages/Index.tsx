@@ -5,7 +5,6 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import {
   MessageCircle,
-  Trophy,
   Share2,
   Eye,
   Building2,
@@ -116,16 +115,6 @@ export default function Index() {
 
       {/* Top Action Buttons */}
       <section className="px-4 pt-4 pb-2 max-w-3xl mx-auto space-y-3">
-        <Button
-          asChild
-          className="w-full bg-gradient-to-r from-indigo-600 to-blue-700 hover:from-indigo-700 hover:to-blue-800 text-white rounded-xl h-14 text-base font-bold shadow-lg hover:shadow-xl transition-all"
-        >
-          <Link to="/check-rank">
-            <Trophy className="h-5 w-5 mr-2" />
-            Check State Rank
-          </Link>
-        </Button>
-
         <Button
           asChild
           className="w-full bg-gradient-to-r from-teal-500 to-cyan-600 hover:from-teal-600 hover:to-cyan-700 text-white rounded-xl h-14 text-base font-bold shadow-lg hover:shadow-xl transition-all"

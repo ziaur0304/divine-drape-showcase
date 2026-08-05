@@ -207,10 +207,7 @@ function PdfResizer() {
   const [result, setResult] = useState<Result | null>(null);
 
   const build = async (scale: number, quality: number) => {
-    const pdfjs = await import("pdfjs-dist");
-    const workerSrc = (await import("pdfjs-dist/build/pdf.worker.min.mjs?url")).default;
-    pdfjs.GlobalWorkerOptions.workerSrc = workerSrc;
-    const { jsPDF } = await import("jspdf");
+
 
     const data = await file!.arrayBuffer();
     const doc = await pdfjs.getDocument({ data }).promise;

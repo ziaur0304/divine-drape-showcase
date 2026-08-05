@@ -103,46 +103,48 @@ export default function StateRankList() {
           />
         </div>
 
-        <Card className="rounded-2xl border-slate-100 shadow-sm overflow-hidden">
-          <Table>
-            <TableHeader className="bg-indigo-50/60">
-              <TableRow>
-                <TableHead className="w-16 font-semibold text-slate-700">Rank</TableHead>
-                <TableHead className="font-semibold text-slate-700">Student Name</TableHead>
-                <TableHead className="text-right font-semibold text-slate-700">
-                  Marks
-                </TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {loading ? (
-                <TableRow>
-                  <TableCell colSpan={3} className="text-center text-slate-500 py-8">
-                    Loading…
-                  </TableCell>
-                </TableRow>
-              ) : filtered.length === 0 ? (
-                <TableRow>
-                  <TableCell colSpan={3} className="text-center text-slate-500 py-8">
-                    No matching records.
-                  </TableCell>
-                </TableRow>
-              ) : (
-                filtered.slice(0, LIMIT).map((r) => (
-                  <TableRow key={`${r.rank}-${r.name}`}>
-                    <TableCell className="font-bold text-indigo-600">#{r.rank}</TableCell>
-                    <TableCell className="text-slate-800">{r.name}</TableCell>
-                    <TableCell className="text-right font-semibold">{r.marks}</TableCell>
+        {loading ? (
+          <Card className="rounded-2xl border-slate-100 shadow-sm p-8 text-center text-slate-500">
+            Loading…
+          </Card>
+        ) : query.trim() === "" ? (
+          <Card className="rounded-2xl border-slate-100 shadow-sm p-8 text-center text-slate-500">
+            Enter a name, rank or marks above to see the result.
+          </Card>
+        ) : filtered.length === 0 ? (
+          <Card className="rounded-2xl border-slate-100 shadow-sm p-8 text-center text-slate-500">
+            No matching records.
+          </Card>
+        ) : (
+          <>
+            <Card className="rounded-2xl border-slate-100 shadow-sm overflow-hidden">
+              <Table>
+                <TableHeader className="bg-indigo-50/60">
+                  <TableRow>
+                    <TableHead className="w-16 font-semibold text-slate-700">Rank</TableHead>
+                    <TableHead className="font-semibold text-slate-700">Student Name</TableHead>
+                    <TableHead className="text-right font-semibold text-slate-700">
+                      Marks
+                    </TableHead>
                   </TableRow>
-                ))
-              )}
-            </TableBody>
-          </Table>
-        </Card>
-        {!loading && filtered.length > LIMIT && (
-          <p className="text-xs text-slate-500 text-center">
-            Showing first {LIMIT} of {filtered.length.toLocaleString()} records — use search to find your rank or name.
-          </p>
+                </TableHeader>
+                <TableBody>
+                  {filtered.slice(0, LIMIT).map((r) => (
+                    <TableRow key={`${r.rank}-${r.name}`}>
+                      <TableCell className="font-bold text-indigo-600">#{r.rank}</TableCell>
+                      <TableCell className="text-slate-800">{r.name}</TableCell>
+                      <TableCell className="text-right font-semibold">{r.marks}</TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </Card>
+            {filtered.length > LIMIT && (
+              <p className="text-xs text-slate-500 text-center">
+                Showing first {LIMIT} of {filtered.length.toLocaleString()} records — refine your search to find the exact rank or name.
+              </p>
+            )}
+          </>
         )}
       </section>
     </main>

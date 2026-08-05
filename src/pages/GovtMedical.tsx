@@ -5,7 +5,7 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import {
   MessageCircle,
-  Trophy,
+  
   Share2,
   Home,
   Building2,
@@ -99,15 +99,6 @@ export default function Index() {
           </Link>
         </Button>
 
-        <Button
-          asChild
-          className="w-full bg-gradient-to-r from-indigo-600 to-blue-700 hover:from-indigo-700 hover:to-blue-800 text-white rounded-xl h-14 text-base font-bold shadow-lg hover:shadow-xl transition-all"
-        >
-          <Link to="/check-rank">
-            <Trophy className="h-5 w-5 mr-2" />
-            Check State Rank
-          </Link>
-        </Button>
 
         <Button
           asChild

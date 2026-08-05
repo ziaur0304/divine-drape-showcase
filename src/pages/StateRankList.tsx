@@ -15,11 +15,8 @@ import {
 interface Row {
   rank: number;
   name: string;
-  category: string;
   marks: number;
 }
-
-const CATEGORY_RE = /\s(Male|Female)\s+(.+)$/i;
 
 function parseCSV(text: string): Row[] {
   return text
@@ -30,16 +27,10 @@ function parseCSV(text: string): Row[] {
       const parts = line.split(",");
       if (parts.length < 3) return null;
       const rank = Number(parts[0]);
-      let name = parts[1].trim();
+      const name = parts[1].trim();
       const marks = Number(parts[2]);
-      let category = "—";
-      const m = name.match(CATEGORY_RE);
-      if (m) {
-        category = m[2].trim();
-        name = name.replace(CATEGORY_RE, "").trim();
-      }
       if (!rank || !name) return null;
-      return { rank, name: name.replace(/\.$/, ""), category, marks };
+      return { rank, name: name.replace(/\.$/, ""), marks };
     })
     .filter(Boolean) as Row[];
 }
@@ -116,7 +107,6 @@ export default function StateRankList() {
               <TableRow>
                 <TableHead className="w-16 font-semibold text-slate-700">Rank</TableHead>
                 <TableHead className="font-semibold text-slate-700">Student Name</TableHead>
-                <TableHead className="font-semibold text-slate-700">Category</TableHead>
                 <TableHead className="text-right font-semibold text-slate-700">
                   Marks
                 </TableHead>
@@ -125,13 +115,13 @@ export default function StateRankList() {
             <TableBody>
               {loading ? (
                 <TableRow>
-                  <TableCell colSpan={4} className="text-center text-slate-500 py-8">
+                  <TableCell colSpan={3} className="text-center text-slate-500 py-8">
                     Loading…
                   </TableCell>
                 </TableRow>
               ) : filtered.length === 0 ? (
                 <TableRow>
-                  <TableCell colSpan={4} className="text-center text-slate-500 py-8">
+                  <TableCell colSpan={3} className="text-center text-slate-500 py-8">
                     No matching records.
                   </TableCell>
                 </TableRow>
@@ -140,7 +130,6 @@ export default function StateRankList() {
                   <TableRow key={`${r.rank}-${r.name}`}>
                     <TableCell className="font-bold text-indigo-600">#{r.rank}</TableCell>
                     <TableCell className="text-slate-800">{r.name}</TableCell>
-                    <TableCell className="text-slate-600 text-sm">{r.category}</TableCell>
                     <TableCell className="text-right font-semibold">{r.marks}</TableCell>
                   </TableRow>
                 ))

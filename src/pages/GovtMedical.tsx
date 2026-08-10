@@ -15,6 +15,7 @@ import {
   Layers,
   Crown,
   ListOrdered,
+  Bell,
 } from "lucide-react";
 
 import { WHATSAPP_URL } from "@/lib/config";
@@ -89,6 +90,16 @@ export default function Index() {
 
       {/* Top Action Buttons */}
       <section className="px-4 pt-4 pb-2 max-w-3xl mx-auto space-y-3">
+        <Button
+          asChild
+          className="w-full bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-700 hover:to-blue-700 text-white rounded-xl h-14 text-base font-bold shadow-lg hover:shadow-xl transition-all"
+        >
+          <Link to="/latest-updates">
+            <Bell className="h-5 w-5 mr-2" />
+            Latest Updates from DME Assam
+          </Link>
+        </Button>
+
         <Button
           asChild
           className="w-full bg-gradient-to-r from-slate-800 to-slate-900 hover:from-slate-900 hover:to-black text-white rounded-xl h-14 text-base font-bold shadow-lg hover:shadow-xl transition-all"

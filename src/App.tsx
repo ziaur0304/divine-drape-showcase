@@ -4,6 +4,7 @@ import LatestUpdates from "./pages/LatestUpdates";
 import Landing from "./pages/Landing";
 import Home from "./pages/Home";
 import HealthCare from "./pages/HealthCare";
+import CoachingComplaint from "./pages/CoachingComplaint";
 import GovtMedical from "./pages/GovtMedical";
 import ComingSoon from "./pages/ComingSoon";
 import PrivateAdmissions from "./pages/PrivateAdmissions";
@@ -36,6 +37,7 @@ const App = () => (
       <Route path="/" element={<Home />} />
       <Route path="/education" element={<Landing />} />
       <Route path="/healthcare" element={<HealthCare />} />
+      <Route path="/coaching-complaint" element={<CoachingComplaint />} />
       <Route path="/govt-medical" element={<GovtMedical />} />
 
       <Route path="/latest-updates" element={<LatestUpdates />} />

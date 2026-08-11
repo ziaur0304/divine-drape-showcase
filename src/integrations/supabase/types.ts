@@ -14,6 +14,30 @@ export type Database = {
   }
   public: {
     Tables: {
+      coaching_complaints: {
+        Row: {
+          complaint: string
+          created_at: string
+          district: string | null
+          id: string
+          institute: string | null
+        }
+        Insert: {
+          complaint: string
+          created_at?: string
+          district?: string | null
+          id?: string
+          institute?: string | null
+        }
+        Update: {
+          complaint?: string
+          created_at?: string
+          district?: string | null
+          id?: string
+          institute?: string | null
+        }
+        Relationships: []
+      }
       flood_donations: {
         Row: {
           amount: number

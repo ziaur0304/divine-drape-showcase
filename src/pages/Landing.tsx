@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { GraduationCap, Stethoscope, Wheat, Building2, ArrowRight, Home, MessageCircle } from "lucide-react";
+import { GraduationCap, Stethoscope, Wheat, Building2, ArrowRight, Home, MessageCircle, AlertTriangle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Select,
@@ -116,6 +116,26 @@ const Landing = () => {
             >
               Continue <ArrowRight className="w-5 h-5" />
             </button>
+          </div>
+        </section>
+
+        <section className="max-w-xl mx-auto mb-10 sm:mb-12">
+          <div className="rounded-2xl border border-rose-200 bg-gradient-to-br from-rose-50 to-orange-50 p-5 sm:p-6 shadow-sm">
+            <div className="flex items-start gap-3">
+              <span className="shrink-0 mt-0.5 inline-flex w-9 h-9 rounded-xl bg-rose-100 items-center justify-center">
+                <AlertTriangle className="w-5 h-5 text-rose-600" />
+              </span>
+              <p className="text-sm sm:text-base text-slate-800 leading-relaxed">
+                If you have ever experienced any problem with any coaching institute of Assam,{" "}
+                <Link
+                  to="/coaching-complaint"
+                  className="font-bold text-rose-700 underline underline-offset-2 hover:text-rose-800"
+                >
+                  click here
+                </Link>{" "}
+                to report a complaint against coaching institute of Assam. We will take action after proper investigation.
+              </p>
+            </div>
           </div>
         </section>
 

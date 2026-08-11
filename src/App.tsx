@@ -2,6 +2,8 @@ import { Toaster } from "@/components/ui/sonner";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LatestUpdates from "./pages/LatestUpdates";
 import Landing from "./pages/Landing";
+import Home from "./pages/Home";
+import HealthCare from "./pages/HealthCare";
 import GovtMedical from "./pages/GovtMedical";
 import ComingSoon from "./pages/ComingSoon";
 import PrivateAdmissions from "./pages/PrivateAdmissions";

@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { GraduationCap, Stethoscope, Wheat, Building2, ArrowRight, Eye, MessageCircle } from "lucide-react";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { GraduationCap, Stethoscope, Wheat, Building2, ArrowRight, Home, MessageCircle } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import {
   Select,
   SelectContent,
@@ -8,7 +9,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { supabase } from "@/integrations/supabase/client";
 
 const LOGO_URL = "/d2donline-logo.png";
 
@@ -48,51 +48,25 @@ const BUTTONS = [
 ];
 
 const Landing = () => {
-  const [visits, setVisits] = useState<number | null>(null);
   const [selected, setSelected] = useState<string>("");
   const navigate = useNavigate();
   const selectedItem = BUTTONS.find((b) => b.title === selected);
-
-
-  useEffect(() => {
-    let cancelled = false;
-    const run = async () => {
-      try {
-        const key = "rdd_visit_logged";
-        if (!sessionStorage.getItem(key)) {
-          await supabase.from("page_visits").insert({});
-          sessionStorage.setItem(key, "1");
-        }
-      } catch {
-        // ignore
-      }
-      const { count } = await supabase
-        .from("page_visits")
-        .select("*", { count: "exact", head: true });
-      if (!cancelled) setVisits(count ?? 0);
-    };
-    run();
-    return () => {
-      cancelled = true;
-    };
-  }, []);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
       <header className="px-4 py-4 border-b bg-white/80 backdrop-blur sticky top-0 z-20">
         <div className="max-w-6xl mx-auto flex items-center justify-between gap-3">
           <img src={LOGO_URL} alt="D2D Online — Dream to Destination" className="h-12 sm:h-14" />
-          <div className="flex flex-col items-end text-right">
-            <span className="text-[10px] uppercase tracking-wider text-slate-400 font-medium">
-              Total Visits
-            </span>
-            <div className="flex items-center gap-1.5 text-blue-600 font-bold">
-              <Eye className="h-3.5 w-3.5" />
-              <span className="text-sm tabular-nums">
-                {visits === null ? "…" : visits.toLocaleString()}
-              </span>
-            </div>
-          </div>
+          <Button
+            asChild
+            variant="outline"
+            className="rounded-xl border-blue-200 text-blue-700 hover:bg-blue-50 hover:text-blue-800 font-semibold px-4 h-10"
+          >
+            <Link to="/">
+              <Home className="h-4 w-4 mr-1.5" />
+              Home
+            </Link>
+          </Button>
         </div>
       </header>
 

@@ -16,6 +16,7 @@ import {
   Crown,
   ListOrdered,
   Bell,
+  FileImage,
 } from "lucide-react";
 
 import { WHATSAPP_URL } from "@/lib/config";

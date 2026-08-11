@@ -27,6 +27,7 @@ import CategoryChange from "./pages/CategoryChange";
 import ThreeGenerationCertificate from "./pages/ThreeGenerationCertificate";
 import SpecialQuota from "./pages/SpecialQuota";
 import PdfImageConverter from "./pages/PdfImageConverter";
+import CounsellingProcess from "./pages/CounsellingProcess";
 import NotFound from "./pages/NotFound";
 
 const App = () => (
@@ -60,6 +61,7 @@ const App = () => (
       <Route path="/three-generation-certificate" element={<ThreeGenerationCertificate />} />
       <Route path="/special-quota" element={<SpecialQuota />} />
       <Route path="/pdf-image-converter" element={<PdfImageConverter />} />
+      <Route path="/counselling-process" element={<CounsellingProcess />} />
 
       <Route path="*" element={<NotFound />} />
     </Routes>

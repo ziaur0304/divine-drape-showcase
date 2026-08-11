@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { GraduationCap, HeartPulse, ArrowRight, Eye } from "lucide-react";
+import { GraduationCap, HeartPulse, ArrowRight, Eye, HelpCircle } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 
 const LOGO_URL = "/d2donline-logo.png";

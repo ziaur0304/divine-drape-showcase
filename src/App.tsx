@@ -58,6 +58,7 @@ const App = () => (
       <Route path="/proof-of-schooling" element={<ProofOfSchooling />} />
       <Route path="/category-change" element={<CategoryChange />} />
       <Route path="/three-generation-certificate" element={<ThreeGenerationCertificate />} />
+      <Route path="/special-quota" element={<SpecialQuota />} />
       <Route path="/pdf-image-converter" element={<PdfImageConverter />} />
 
       <Route path="*" element={<NotFound />} />

@@ -25,17 +25,26 @@ const LatestUpdates = () => (
       <p className="text-sm text-slate-500 mt-1.5">Tap any update below to view details and download forms.</p>
 
       <div className="mt-5 space-y-3">
-        {ITEMS.map(({ title, to, icon: Icon, gradient }) => (
-          <Link
-            key={to}
-            to={to}
-            className={`w-full flex items-center gap-3 text-left px-4 py-4 rounded-xl bg-gradient-to-r ${gradient} text-white font-bold shadow-md hover:shadow-xl hover:brightness-110 transition-all`}
-          >
-            <Icon className="h-5 w-5 shrink-0" />
-            <span className="flex-1 text-sm sm:text-base leading-snug">{title}</span>
-            <ChevronRight className="h-5 w-5 shrink-0 opacity-80" />
-          </Link>
-        ))}
+        {ITEMS.map(({ title, to, href, icon: Icon, gradient }) => {
+          const className = `w-full flex items-center gap-3 text-left px-4 py-4 rounded-xl bg-gradient-to-r ${gradient} text-white font-bold shadow-md hover:shadow-xl hover:brightness-110 transition-all`;
+          const key = to ?? href;
+          const content = (
+            <>
+              <Icon className="h-5 w-5 shrink-0" />
+              <span className="flex-1 text-sm sm:text-base leading-snug">{title}</span>
+              <ChevronRight className="h-5 w-5 shrink-0 opacity-80" />
+            </>
+          );
+          return href ? (
+            <a key={key} href={href} target="_blank" rel="noopener noreferrer" className={className}>
+              {content}
+            </a>
+          ) : (
+            <Link key={key} to={to!} className={className}>
+              {content}
+            </Link>
+          );
+        })}
       </div>
 
       <p className="text-xs text-slate-400 text-center mt-8">

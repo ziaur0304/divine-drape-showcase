@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowLeft, ListOrdered, School, RefreshCcw, Users, Award, ChevronRight } from "lucide-react";
 
 const ITEMS = [
-  { title: "Assam State Rank", to: "/state-rank-list", icon: ListOrdered, gradient: "from-indigo-600 to-blue-600" },
+  { title: "Provisional Merit List", href: "https://dme.assam.gov.in/sites/default/files/swf_utility_folder/departments/dme_lipl_in_oid_8/latest/provisional_assamstate_merit_list_neet-ug-2026.pdf", icon: ListOrdered, gradient: "from-indigo-600 to-blue-600" },
   { title: "Proof of Schooling", to: "/proof-of-schooling", icon: School, gradient: "from-emerald-500 to-teal-600" },
   { title: "Category Change", to: "/category-change", icon: RefreshCcw, gradient: "from-amber-500 to-orange-600" },
   { title: "Three Generation Link Certificate", to: "/three-generation-certificate", icon: Users, gradient: "from-violet-600 to-purple-700" },

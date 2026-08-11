@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { ArrowLeft, ListOrdered, School, RefreshCcw, Users, Award, ChevronRight } from "lucide-react";
+import { ArrowLeft, ListOrdered, School, RefreshCcw, Users, Award, ChevronRight, Download } from "lucide-react";
+import annexuresPdf from "@/assets/Annexures.pdf.asset.json";
 
 const ITEMS = [
   { title: "Provisional Merit List", href: "https://dme.assam.gov.in/sites/default/files/swf_utility_folder/departments/dme_lipl_in_oid_8/latest/provisional_assamstate_merit_list_neet-ug-2026.pdf", icon: ListOrdered, gradient: "from-indigo-600 to-blue-600" },

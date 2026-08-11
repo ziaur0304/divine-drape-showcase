@@ -14,7 +14,7 @@ import {
   Download,
   Layers,
   Crown,
-  ListOrdered,
+  
   Bell,
   FileImage,
 } from "lucide-react";
@@ -113,15 +113,6 @@ export default function Index() {
           </Link>
         </Button>
 
-        <Button
-          asChild
-          className="w-full bg-gradient-to-r from-slate-800 to-slate-900 hover:from-slate-900 hover:to-black text-white rounded-xl h-14 text-base font-bold shadow-lg hover:shadow-xl transition-all"
-        >
-          <Link to="/state-rank-list">
-            <ListOrdered className="h-5 w-5 mr-2" />
-            State Rank List
-          </Link>
-        </Button>
 
 
         <Button

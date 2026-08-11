@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -6,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import {
   MessageCircle,
   Share2,
-  Eye,
+  Home,
   Building2,
   BarChart3,
   FileText,
@@ -15,7 +14,6 @@ import {
   Crown,
 } from "lucide-react";
 import { WHATSAPP_URL } from "@/lib/config";
-import { supabase } from "@/integrations/supabase/client";
 
 const SITE_URL = "https://d2donline.in";
 const SHARE_MESSAGE = `Check out D2D Online — The biggest and most organised platform in Assam for NEET UG Counselling Guidance: ${SITE_URL}`;
@@ -25,44 +23,6 @@ const shareOnWhatsApp = () =>
   window.open(`https://wa.me/?text=${encodeURIComponent(SHARE_MESSAGE)}`, "_blank");
 
 export default function Index() {
-  const [visits, setVisits] = useState<number | null>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) entry.target.classList.add("animate-fade-in");
-        });
-      },
-      { threshold: 0.1 }
-    );
-    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    let cancelled = false;
-    const run = async () => {
-      try {
-        const key = "rdd_visit_logged";
-        if (!sessionStorage.getItem(key)) {
-          await supabase.from("page_visits").insert({});
-          sessionStorage.setItem(key, "1");
-        }
-      } catch {
-        // ignore
-      }
-      const { count } = await supabase
-        .from("page_visits")
-        .select("*", { count: "exact", head: true });
-      if (!cancelled) setVisits(count ?? 0);
-    };
-    run();
-    return () => {
-      cancelled = true;
-    };
-  }, []);
-
   return (
     <main className="min-h-screen bg-white text-slate-900">
       {/* Premium Membership Banner */}

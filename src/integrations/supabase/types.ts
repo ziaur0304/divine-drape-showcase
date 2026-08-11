@@ -65,6 +65,27 @@ export type Database = {
         }
         Relationships: []
       }
+      healthcare_problems: {
+        Row: {
+          created_at: string
+          district: string | null
+          id: string
+          problem: string
+        }
+        Insert: {
+          created_at?: string
+          district?: string | null
+          id?: string
+          problem: string
+        }
+        Update: {
+          created_at?: string
+          district?: string | null
+          id?: string
+          problem?: string
+        }
+        Relationships: []
+      }
       neet_submissions: {
         Row: {
           category: string | null

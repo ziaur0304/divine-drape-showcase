@@ -2,6 +2,8 @@ import { Toaster } from "@/components/ui/sonner";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LatestUpdates from "./pages/LatestUpdates";
 import Landing from "./pages/Landing";
+import Home from "./pages/Home";
+import HealthCare from "./pages/HealthCare";
 import GovtMedical from "./pages/GovtMedical";
 import ComingSoon from "./pages/ComingSoon";
 import PrivateAdmissions from "./pages/PrivateAdmissions";
@@ -31,8 +33,11 @@ const App = () => (
   <BrowserRouter>
     <Toaster />
     <Routes>
-      <Route path="/" element={<Landing />} />
+      <Route path="/" element={<Home />} />
+      <Route path="/education" element={<Landing />} />
+      <Route path="/healthcare" element={<HealthCare />} />
       <Route path="/govt-medical" element={<GovtMedical />} />
+
       <Route path="/latest-updates" element={<LatestUpdates />} />
       <Route path="/nursing-paramedical" element={<NursingParamedical />} />
       <Route path="/agriculture-veterinary" element={<AgricultureVeterinary />} />

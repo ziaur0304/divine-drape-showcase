@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { GraduationCap, Stethoscope, Wheat, Building2, ArrowRight, Home, MessageCircle, AlertTriangle } from "lucide-react";
+import { GraduationCap, Stethoscope, Wheat, Building2, ArrowRight, Home, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Select,

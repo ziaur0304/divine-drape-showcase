@@ -94,6 +94,16 @@ const Home = () => {
           <ArrowRight className="w-5 h-5 shrink-0 group-hover:translate-x-1 transition-transform" />
         </Link>
       </div>
+
+      <div className="mt-10 flex justify-center">
+        <Link
+          to="/about"
+          className="group inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-700 shadow-md border border-slate-200 hover:border-blue-300 hover:text-blue-700 hover:shadow-lg transition-all"
+        >
+          <HelpCircle className="h-4 w-4 text-blue-600" />
+          What is D2DOnline?
+        </Link>
+      </div>
     </main>
 
     <footer className="px-4 py-6 text-center text-xs text-slate-500">

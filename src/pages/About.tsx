@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowLeft, GraduationCap, HeartPulse, Users, MessageCircle } from "lucide-react";
+import { ArrowLeft, GraduationCap, HeartPulse, Phone } from "lucide-react";
 
 const LOGO_URL = "/d2donline-logo.png";
 
@@ -70,20 +70,18 @@ const About = () => {
 
           <div className="rounded-2xl bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 text-white p-6 sm:p-8 text-center">
             <div className="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center mx-auto mb-4">
-              <Users className="h-6 w-6" />
+              <Phone className="h-6 w-6" />
             </div>
-            <h3 className="text-xl font-bold mb-2">Join the D2DOnline Community</h3>
+            <h3 className="text-xl font-bold mb-2">Need More Details?</h3>
             <p className="text-white/90 mb-6 text-sm sm:text-base">
-              Be part of Assam's most trusted, organised, and helpful guidance network.
+              Call us directly for personalised guidance and support.
             </p>
             <a
-              href="https://chat.whatsapp.com/JCkx0hPuex1HFB5QYdrZ0u?s=cl&p=a&mlu=4"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-xl bg-white text-emerald-700 px-6 py-3 font-semibold shadow hover:bg-emerald-50 transition-colors"
+              href="tel:+919365248667"
+              className="inline-flex items-center gap-2 rounded-xl bg-white text-blue-700 px-6 py-3 font-semibold shadow hover:bg-blue-50 transition-colors"
             >
-              <MessageCircle className="h-5 w-5" />
-              Join WhatsApp Group
+              <Phone className="h-5 w-5" />
+              Call 93652 48667
             </a>
           </div>
         </div>

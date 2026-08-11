@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LatestUpdates from "./pages/LatestUpdates";
 import Landing from "./pages/Landing";
 import Home from "./pages/Home";
+import About from "./pages/About";
 import HealthCare from "./pages/HealthCare";
 import CoachingComplaint from "./pages/CoachingComplaint";
 import GovtMedical from "./pages/GovtMedical";
@@ -35,6 +36,7 @@ const App = () => (
     <Toaster />
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="/about" element={<About />} />
       <Route path="/education" element={<Landing />} />
       <Route path="/healthcare" element={<HealthCare />} />
       <Route path="/coaching-complaint" element={<CoachingComplaint />} />

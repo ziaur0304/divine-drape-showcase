@@ -16,6 +16,7 @@ import {
   Crown,
   ListOrdered,
   Bell,
+  FileImage,
 } from "lucide-react";
 
 import { WHATSAPP_URL } from "@/lib/config";
@@ -92,6 +93,16 @@ export default function Index() {
 
       {/* Top Action Buttons */}
       <section className="px-4 pt-4 pb-2 max-w-3xl mx-auto space-y-3">
+        <Button
+          asChild
+          className="w-full bg-gradient-to-r from-sky-600 to-blue-700 hover:from-sky-700 hover:to-blue-800 text-white rounded-xl h-14 text-base font-bold shadow-lg hover:shadow-xl transition-all"
+        >
+          <Link to="/pdf-image-converter">
+            <FileImage className="h-5 w-5 mr-2" />
+            Pdf and image converter for DME website
+          </Link>
+        </Button>
+
         <Button
           asChild
           className="w-full bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-700 hover:to-blue-700 text-white rounded-xl h-14 text-base font-bold shadow-lg hover:shadow-xl transition-all"

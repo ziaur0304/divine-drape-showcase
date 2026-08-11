@@ -59,17 +59,16 @@ export default function Index() {
           <div>
             <img src="/d2donline-logo.png" alt="D2D Online — Dream to Destination" className="h-9 sm:h-10" />
           </div>
-          <div className="flex flex-col items-end text-right">
-            <span className="text-[10px] uppercase tracking-wider text-slate-400 font-medium">
-              Total Visits
-            </span>
-            <div className="flex items-center gap-1.5 text-blue-600 font-bold">
-              <Eye className="h-3.5 w-3.5" />
-              <span className="text-sm tabular-nums">
-                {visits === null ? "…" : visits.toLocaleString()}
-              </span>
-            </div>
-          </div>
+          <Button
+            asChild
+            variant="outline"
+            className="rounded-xl border-blue-200 text-blue-700 hover:bg-blue-50 hover:text-blue-800 font-semibold px-4 h-10"
+          >
+            <Link to="/">
+              <Home className="h-4 w-4 mr-1.5" />
+              Home
+            </Link>
+          </Button>
         </div>
       </header>
 

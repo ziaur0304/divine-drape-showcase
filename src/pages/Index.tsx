@@ -28,19 +28,6 @@ export default function Index() {
   const [visits, setVisits] = useState<number | null>(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) entry.target.classList.add("animate-fade-in");
-        });
-      },
-      { threshold: 0.1 }
-    );
-    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
     let cancelled = false;
     const run = async () => {
       try {

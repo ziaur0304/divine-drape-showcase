@@ -1,15 +1,54 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { GraduationCap, HeartPulse, ArrowRight } from "lucide-react";
+import { GraduationCap, HeartPulse, ArrowRight, Eye } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 
 const LOGO_URL = "/d2donline-logo.png";
 
-const Home = () => (
-  <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
-    <header className="px-4 py-4 border-b bg-white/80 backdrop-blur sticky top-0 z-20">
-      <div className="max-w-6xl mx-auto flex items-center justify-between gap-3">
-        <img src={LOGO_URL} alt="D2D Online — Dream to Destination" className="h-12 sm:h-14" />
-      </div>
-    </header>
+const Home = () => {
+  const [visits, setVisits] = useState<number | null>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    const run = async () => {
+      try {
+        const key = "rdd_visit_logged";
+        if (!sessionStorage.getItem(key)) {
+          await supabase.from("page_visits").insert({});
+          sessionStorage.setItem(key, "1");
+        }
+      } catch {
+        // ignore
+      }
+      const { count } = await supabase
+        .from("page_visits")
+        .select("*", { count: "exact", head: true });
+      if (!cancelled) setVisits(count ?? 0);
+    };
+    run();
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
+      <header className="px-4 py-4 border-b bg-white/80 backdrop-blur sticky top-0 z-20">
+        <div className="max-w-6xl mx-auto flex items-center justify-between gap-3">
+          <img src={LOGO_URL} alt="D2D Online — Dream to Destination" className="h-12 sm:h-14" />
+          <div className="flex flex-col items-end text-right">
+            <span className="text-[10px] uppercase tracking-wider text-slate-400 font-medium">
+              Total Visits
+            </span>
+            <div className="flex items-center gap-1.5 text-blue-600 font-bold">
+              <Eye className="h-3.5 w-3.5" />
+              <span className="text-sm tabular-nums">
+                {visits === null ? "…" : visits.toLocaleString()}
+              </span>
+            </div>
+          </div>
+        </div>
+      </header>
 
     <main className="max-w-3xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
       <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight text-center leading-tight">
@@ -62,5 +101,6 @@ const Home = () => (
     </footer>
   </div>
 );
+};
 
 export default Home;

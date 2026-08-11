@@ -22,7 +22,7 @@ import { WHATSAPP_URL } from "@/lib/config";
 import { supabase } from "@/integrations/supabase/client";
 
 const SITE_URL = "https://d2donline.in";
-const SHARE_MESSAGE = `Check out D2D Online — The biggest and most organised platform in Assam for NEET UG Counselling Guidance: ${SITE_URL}`;
+const SHARE_MESSAGE = `Check out D2D Online — Assam's most trusted career guidance platform for RE-NEET UG counselling, college profiles, ranks, and admission support: ${SITE_URL}`;
 
 const openWhatsApp = () => window.open(WHATSAPP_URL, "_blank");
 const shareOnWhatsApp = () =>

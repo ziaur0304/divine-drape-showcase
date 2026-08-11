@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { ArrowLeft, ListOrdered, School, RefreshCcw, Users, Award, ChevronRight } from "lucide-react";
+import { ArrowLeft, ListOrdered, School, RefreshCcw, Users, Award, ChevronRight, Download } from "lucide-react";
+import annexuresPdf from "@/assets/Annexures.pdf.asset.json";
 
 const ITEMS = [
   { title: "Provisional Merit List", href: "https://dme.assam.gov.in/sites/default/files/swf_utility_folder/departments/dme_lipl_in_oid_8/latest/provisional_assamstate_merit_list_neet-ug-2026.pdf", icon: ListOrdered, gradient: "from-indigo-600 to-blue-600" },
@@ -7,6 +8,7 @@ const ITEMS = [
   { title: "Category Change", to: "/category-change", icon: RefreshCcw, gradient: "from-amber-500 to-orange-600" },
   { title: "Three Generation Link Certificate", to: "/three-generation-certificate", icon: Users, gradient: "from-violet-600 to-purple-700" },
   { title: "Special Quota", to: "/special-quota", icon: Award, gradient: "from-rose-600 to-red-700" },
+  { title: "Download Annexures", href: annexuresPdf.url, icon: Download, gradient: "from-slate-700 to-slate-900" },
 ];
 
 const LatestUpdates = () => (

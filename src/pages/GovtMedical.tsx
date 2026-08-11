@@ -20,6 +20,8 @@ import {
 
 import { WHATSAPP_URL } from "@/lib/config";
 import { supabase } from "@/integrations/supabase/client";
+import annexuresPdf from "@/assets/Annexures.pdf.asset.json";
+
 
 const SITE_URL = "https://d2donline.in";
 const SHARE_MESSAGE = `Check out D2D Online — Assam's most trusted career guidance platform for RE-NEET UG counselling, college profiles, ranks, and admission support: ${SITE_URL}`;
@@ -156,12 +158,15 @@ export default function Index() {
         </Button>
 
         <Button
-          onClick={() => (window.location.href = "/annexures")}
+          asChild
           className="w-full bg-gradient-to-r from-rose-600 to-red-700 hover:from-rose-700 hover:to-red-800 text-white rounded-xl h-14 text-base font-bold shadow-lg hover:shadow-xl transition-all"
         >
-          <Download className="h-5 w-5 mr-2" />
-          Download Annexures
+          <a href={annexuresPdf.url} download="Annexures.pdf" target="_blank" rel="noopener noreferrer">
+            <Download className="h-5 w-5 mr-2" />
+            Download Annexures
+          </a>
         </Button>
+
 
 
         <Card className="relative overflow-hidden border-0 bg-gradient-to-br from-amber-50 via-orange-50 to-amber-100 p-5 rounded-2xl shadow-lg">

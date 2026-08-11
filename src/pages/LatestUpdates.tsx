@@ -8,6 +8,7 @@ const ITEMS = [
   { title: "Category Change", to: "/category-change", icon: RefreshCcw, gradient: "from-amber-500 to-orange-600" },
   { title: "Three Generation Link Certificate", to: "/three-generation-certificate", icon: Users, gradient: "from-violet-600 to-purple-700" },
   { title: "Special Quota", to: "/special-quota", icon: Award, gradient: "from-rose-600 to-red-700" },
+  { title: "Download Annexures", href: annexuresPdf.url, icon: Download, gradient: "from-slate-700 to-slate-900" },
 ];
 
 const LatestUpdates = () => (

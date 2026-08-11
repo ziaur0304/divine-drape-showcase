@@ -27,6 +27,7 @@ import CategoryChange from "./pages/CategoryChange";
 import ThreeGenerationCertificate from "./pages/ThreeGenerationCertificate";
 import SpecialQuota from "./pages/SpecialQuota";
 import PdfImageConverter from "./pages/PdfImageConverter";
+import CounsellingProcess from "./pages/CounsellingProcess";
 import NotFound from "./pages/NotFound";
 
 const App = () => (

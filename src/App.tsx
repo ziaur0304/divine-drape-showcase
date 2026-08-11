@@ -61,6 +61,7 @@ const App = () => (
       <Route path="/three-generation-certificate" element={<ThreeGenerationCertificate />} />
       <Route path="/special-quota" element={<SpecialQuota />} />
       <Route path="/pdf-image-converter" element={<PdfImageConverter />} />
+      <Route path="/counselling-process" element={<CounsellingProcess />} />
 
       <Route path="*" element={<NotFound />} />
     </Routes>

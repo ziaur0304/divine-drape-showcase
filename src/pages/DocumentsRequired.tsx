@@ -76,12 +76,15 @@ export default function DocumentsRequired() {
 
         {/* Download Annexure Button */}
         <Button
-          onClick={() => (window.location.href = ANNEXURE_URL)}
+          asChild
           className="w-full bg-gradient-to-r from-blue-900 to-blue-700 hover:from-blue-950 hover:to-blue-800 text-white rounded-xl h-14 text-base font-bold shadow-lg hover:shadow-xl transition-all animate-fade-in-delay-1"
         >
-          <Download className="h-5 w-5 mr-2" />
-          📄 Download Annexures
+          <a href={annexuresPdf.url} download="Annexures.pdf" target="_blank" rel="noopener noreferrer">
+            <Download className="h-5 w-5 mr-2" />
+            Download Annexures
+          </a>
         </Button>
+
 
         {/* Page Title */}
         <div className="text-center space-y-2 animate-fade-in-delay-2">

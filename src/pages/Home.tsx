@@ -78,21 +78,6 @@ const Home = () => {
           <ArrowRight className="w-5 h-5 shrink-0 group-hover:translate-x-1 transition-transform" />
         </Link>
 
-        <Link
-          to="/healthcare"
-          className="group flex items-center gap-4 rounded-2xl p-5 sm:p-6 bg-gradient-to-r from-emerald-500 via-teal-600 to-cyan-600 text-white shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all"
-        >
-          <span className="shrink-0 w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center">
-            <HeartPulse className="w-6 h-6" />
-          </span>
-          <span className="flex-1">
-            <span className="block text-lg sm:text-xl font-bold">D2DOnline Health Care</span>
-            <span className="block text-sm text-white/85 mt-1">
-              Share healthcare problems in Assam anonymously
-            </span>
-          </span>
-          <ArrowRight className="w-5 h-5 shrink-0 group-hover:translate-x-1 transition-transform" />
-        </Link>
       </div>
 
       <div className="mt-10 flex justify-center">

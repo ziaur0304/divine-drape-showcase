@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowLeft, GraduationCap, HeartPulse, Phone } from "lucide-react";
+import { ArrowLeft, GraduationCap, Phone } from "lucide-react";
 
 const LOGO_URL = "/d2donline-logo.png";
 
@@ -50,16 +50,6 @@ const About = () => {
               </p>
             </div>
 
-            <div className="rounded-2xl bg-white p-6 shadow-sm border border-slate-100">
-              <div className="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center mb-4">
-                <HeartPulse className="h-5 w-5" />
-              </div>
-              <h3 className="font-bold text-slate-900 mb-2">D2DOnline Health Care</h3>
-              <p className="text-sm text-slate-600">
-                A platform to anonymously report healthcare problems in Assam so they can be
-                highlighted and addressed.
-              </p>
-            </div>
           </div>
 
           <p>

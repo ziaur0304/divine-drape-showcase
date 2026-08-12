@@ -30,6 +30,7 @@ import PdfImageConverter from "./pages/PdfImageConverter";
 import CounsellingProcess from "./pages/CounsellingProcess";
 import NotFound from "./pages/NotFound";
 import PremiumTopBanner from "./components/PremiumTopBanner";
+import ScrollToTop from "./components/ScrollToTop";
 
 const App = () => (
   <BrowserRouter>

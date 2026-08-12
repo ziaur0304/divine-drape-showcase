@@ -68,6 +68,7 @@ const App = () => (
       <Route path="/special-quota" element={<SpecialQuota />} />
       <Route path="/pdf-image-converter" element={<PdfImageConverter />} />
       <Route path="/counselling-process" element={<CounsellingProcess />} />
+      <Route path="/counselling-schedule-2026" element={<CounsellingSchedule2026 />} />
 
       <Route path="*" element={<NotFound />} />
     </Routes>

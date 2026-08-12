@@ -79,7 +79,7 @@ export default function Index() {
               <Crown className="h-3 w-3" /> Premium
             </div>
             <h3 className="text-lg md:text-xl font-extrabold text-white leading-snug">
-              Get Expert RE-NEET Counselling Guidance
+              Premium Guidance for DME Assam Counselling Processes and Admission Support into MBBS and BDS
             </h3>
             <p className="text-sm text-amber-50 mt-2 leading-relaxed">
               Join Premium Plus Membership at ₹1999. Step-by-step counselling support,

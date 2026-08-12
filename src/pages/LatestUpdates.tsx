@@ -26,6 +26,31 @@ const LatestUpdates = () => (
       <h1 className="text-2xl md:text-3xl font-extrabold leading-snug">Latest Updates from DME Assam</h1>
       <p className="text-sm text-slate-500 mt-1.5">Tap any update below to view details and download forms.</p>
 
+      {/* New important counselling schedule card */}
+      <Link
+        to="/counselling-schedule-2026"
+        className="mt-5 block w-full text-left rounded-2xl border-2 border-blue-600 bg-gradient-to-br from-blue-50 via-white to-indigo-50 p-5 shadow-lg hover:shadow-xl hover:border-blue-700 transition-all"
+      >
+        <div className="flex flex-wrap items-center gap-2 mb-2">
+          <span className="inline-flex items-center gap-1 rounded-full bg-rose-600 px-2.5 py-1 text-[11px] font-bold uppercase tracking-wide text-white shadow-sm">
+            Important
+          </span>
+          <span className="inline-flex items-center gap-1 rounded-full bg-blue-600 px-2.5 py-1 text-[11px] font-bold uppercase tracking-wide text-white shadow-sm">
+            New
+          </span>
+        </div>
+        <h2 className="text-lg font-extrabold text-slate-900 leading-snug">
+          1st Round Online Counselling for MBBS/BDS Admission 2026
+        </h2>
+        <p className="mt-1.5 text-sm text-slate-600 leading-relaxed">
+          Registration 13–15 Aug • Choice Filling 16–18 Aug • Result 22 Aug 2026. View the full schedule, eligibility & important notes.
+        </p>
+        <span className="mt-3 inline-flex items-center gap-2 rounded-xl bg-blue-600 px-4 py-2.5 text-sm font-bold text-white shadow-md">
+          View Counselling Schedule
+          <ChevronRight className="h-4 w-4" />
+        </span>
+      </Link>
+
       <div className="mt-5 space-y-3">
         {ITEMS.map(({ title, to, href, icon: Icon, gradient }) => {
           const className = `w-full flex items-center gap-3 text-left px-4 py-4 rounded-xl bg-gradient-to-r ${gradient} text-white font-bold shadow-md hover:shadow-xl hover:brightness-110 transition-all`;

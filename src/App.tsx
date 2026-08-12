@@ -28,6 +28,7 @@ import ThreeGenerationCertificate from "./pages/ThreeGenerationCertificate";
 import SpecialQuota from "./pages/SpecialQuota";
 import PdfImageConverter from "./pages/PdfImageConverter";
 import CounsellingProcess from "./pages/CounsellingProcess";
+import CounsellingSchedule2026 from "./pages/CounsellingSchedule2026";
 import NotFound from "./pages/NotFound";
 import PremiumTopBanner from "./components/PremiumTopBanner";
 import ScrollToTop from "./components/ScrollToTop";
@@ -67,6 +68,7 @@ const App = () => (
       <Route path="/special-quota" element={<SpecialQuota />} />
       <Route path="/pdf-image-converter" element={<PdfImageConverter />} />
       <Route path="/counselling-process" element={<CounsellingProcess />} />
+      <Route path="/counselling-schedule-2026" element={<CounsellingSchedule2026 />} />
 
       <Route path="*" element={<NotFound />} />
     </Routes>

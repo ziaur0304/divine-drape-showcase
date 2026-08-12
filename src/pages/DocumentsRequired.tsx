@@ -12,8 +12,6 @@ import {
 
 import annexuresPdf from "@/assets/Annexures.pdf.asset.json";
 
-const PREMIUM_URL =
-  "https://wa.me/919365248667?text=Hi%20D2D%20Online,%20I%20want%20to%20enroll%20in%20the%20Premium%20Counselling%20Guidance";
 
 
 
@@ -49,32 +47,6 @@ export default function DocumentsRequired() {
       </header>
 
       <div className="max-w-3xl mx-auto px-4 py-6 space-y-6">
-        {/* Premium Guidance Card */}
-        <Card className="relative overflow-hidden border-0 bg-gradient-to-br from-emerald-50 via-green-50 to-emerald-100 p-5 rounded-2xl shadow-lg animate-fade-in">
-          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-400 via-green-500 to-emerald-400" />
-          <div className="flex items-start gap-3 mb-3">
-            <div className="shrink-0 w-10 h-10 rounded-full bg-gradient-to-br from-emerald-500 to-green-600 flex items-center justify-center shadow-md">
-              <MessageCircle className="h-5 w-5 text-white" />
-            </div>
-            <div>
-              <h2 className="text-lg font-bold text-emerald-900 leading-tight">
-                Need End-to-End Premium Counselling Guidance?
-              </h2>
-            </div>
-          </div>
-          <p className="text-sm text-emerald-950/80 leading-relaxed mb-4">
-            Get personalized counselling, choice filling assistance, document guidance,
-            DME portal support, and priority WhatsApp support.
-          </p>
-          <Button
-            onClick={() => window.open(PREMIUM_URL, "_blank")}
-            className="w-full bg-gradient-to-r from-emerald-600 to-green-700 hover:from-emerald-700 hover:to-green-800 text-white rounded-xl h-12 text-base font-bold shadow-lg hover:shadow-xl transition-all"
-          >
-            <MessageCircle className="h-5 w-5 mr-2" />
-            Click Here
-          </Button>
-        </Card>
-
         {/* Download Annexure Button */}
         <Button
           asChild

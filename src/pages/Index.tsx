@@ -12,7 +12,6 @@ import {
   FileText,
   Download,
   Layers,
-  Crown,
   Instagram,
   Youtube,
   MapPin,
@@ -60,34 +59,6 @@ export default function Index() {
 
   return (
     <main className="min-h-screen bg-white text-slate-900">
-      {/* Premium Membership Banner */}
-      <section className="relative overflow-hidden">
-        <Link
-          to="/premium-membership"
-          className="group relative block overflow-hidden transition-all"
-        >
-          <div className="absolute inset-0 bg-gradient-to-br from-amber-500 via-yellow-500 to-amber-600" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.25),transparent_60%)]" />
-          <div className="absolute -top-8 -left-8 w-32 h-32 rounded-full bg-white/15 blur-2xl" />
-          <div className="absolute -bottom-8 -right-8 w-28 h-28 rounded-full bg-amber-200/25 blur-2xl" />
-          <div className="relative p-5 md:p-6">
-            <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/15 border border-white/30 text-white text-[10px] font-bold uppercase tracking-wider mb-3">
-              <Crown className="h-3 w-3" /> Premium
-            </div>
-            <h3 className="text-lg md:text-xl font-extrabold text-white leading-snug">
-              Get Expert RE-NEET Counselling Guidance
-            </h3>
-            <p className="text-sm text-amber-50 mt-2 leading-relaxed">
-              Join Premium Plus Membership at ₹1999. Step-by-step counselling support,
-              choice filling help, and document verification guidance.
-            </p>
-            <div className="mt-4 inline-flex items-center justify-center h-11 px-6 rounded-xl bg-white group-hover:bg-amber-50 text-amber-700 font-bold text-sm shadow-lg transition-all">
-              Join Premium →
-            </div>
-          </div>
-        </Link>
-      </section>
-
       {/* Header */}
       <header className="border-b border-slate-100 bg-white/80 backdrop-blur-sm sticky top-0 z-50">
         <div className="max-w-3xl mx-auto px-4 py-3 flex items-center justify-between gap-3">

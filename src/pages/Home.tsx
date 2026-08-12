@@ -18,6 +18,7 @@ const LOGO_URL = "/d2donline-logo.png";
 
 const Home = () => {
   const [visits, setVisits] = useState<number | null>(null);
+  const [copied, setCopied] = useState(false);
 
   useEffect(() => {
     let cancelled = false;

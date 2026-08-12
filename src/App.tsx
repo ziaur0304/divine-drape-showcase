@@ -34,6 +34,7 @@ import ScrollToTop from "./components/ScrollToTop";
 
 const App = () => (
   <BrowserRouter>
+    <ScrollToTop />
     <Toaster />
     <PremiumTopBanner />
     <Routes>

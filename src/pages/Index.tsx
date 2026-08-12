@@ -16,6 +16,8 @@ import {
   Instagram,
   Youtube,
   MapPin,
+  Copy,
+  Check,
 } from "lucide-react";
 import { WHATSAPP_URL } from "@/lib/config";
 import { supabase } from "@/integrations/supabase/client";

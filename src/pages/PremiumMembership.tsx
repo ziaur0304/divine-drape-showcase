@@ -24,7 +24,10 @@ export default function PremiumMembership() {
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-[11px] font-bold uppercase tracking-wider">
             <Crown className="h-3.5 w-3.5" /> Premium Plus
           </div>
-          <h1 className="text-2xl md:text-3xl font-extrabold mt-3">Scan &amp; Pay</h1>
+          <h1 className="text-2xl md:text-3xl font-extrabold mt-3">Scan & Pay</h1>
+          <p className="mt-4 text-4xl md:text-6xl font-black tracking-tight bg-gradient-to-r from-amber-600 via-orange-600 to-rose-600 bg-clip-text text-transparent">
+            Pay ₹1999
+          </p>
         </div>
 
         <Card className="overflow-hidden rounded-3xl border-0 shadow-xl bg-white p-5">

@@ -264,7 +264,7 @@ export default function Index() {
               className="flex items-center justify-center gap-2 w-full rounded-xl bg-slate-900 hover:bg-slate-800 text-white h-11 text-sm font-semibold shadow-md hover:shadow-lg transition-all"
             >
               <MapPin className="h-4 w-4" />
-              View on Google Maps
+              Get Directions
             </a>
           </div>
         </Card>

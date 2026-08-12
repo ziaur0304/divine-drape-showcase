@@ -29,10 +29,12 @@ import SpecialQuota from "./pages/SpecialQuota";
 import PdfImageConverter from "./pages/PdfImageConverter";
 import CounsellingProcess from "./pages/CounsellingProcess";
 import NotFound from "./pages/NotFound";
+import PremiumTopBanner from "./components/PremiumTopBanner";
 
 const App = () => (
   <BrowserRouter>
     <Toaster />
+    <PremiumTopBanner />
     <Routes>
       <Route path="/" element={<GovtMedical />} />
       <Route path="/home" element={<Home />} />

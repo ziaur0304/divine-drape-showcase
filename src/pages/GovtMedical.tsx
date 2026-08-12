@@ -13,7 +13,6 @@ import {
   FileText,
   Download,
   Layers,
-  Crown,
   
   Bell,
   FileImage,

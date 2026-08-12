@@ -12,7 +12,6 @@ import {
   FileText,
   Download,
   Layers,
-  Crown,
   Instagram,
   Youtube,
   MapPin,

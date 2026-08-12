@@ -12,8 +12,6 @@ import {
 
 import annexuresPdf from "@/assets/Annexures.pdf.asset.json";
 
-const PREMIUM_URL =
-  "https://wa.me/919365248667?text=Hi%20D2D%20Online,%20I%20want%20to%20enroll%20in%20the%20Premium%20Counselling%20Guidance";
 
 
 

@@ -269,6 +269,25 @@ export default function Index() {
               <MapPin className="h-4 w-4" />
               Get Directions
             </a>
+            <button
+              onClick={async () => {
+                try {
+                  await navigator.clipboard.writeText("Barpeta, Assam");
+                  setCopied(true);
+                  setTimeout(() => setCopied(false), 2000);
+                } catch {
+                  // ignore
+                }
+              }}
+              className="flex items-center justify-center gap-2 w-full rounded-xl bg-white border border-slate-200 hover:border-blue-300 hover:bg-blue-50 text-slate-700 hover:text-blue-700 h-11 text-sm font-semibold shadow-sm hover:shadow-md transition-all mt-3"
+            >
+              {copied ? (
+                <Check className="h-4 w-4 text-green-600" />
+              ) : (
+                <Copy className="h-4 w-4" />
+              )}
+              {copied ? "Copied!" : "Copy Address"}
+            </button>
           </div>
         </Card>
       </section>

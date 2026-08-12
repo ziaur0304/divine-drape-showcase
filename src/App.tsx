@@ -28,6 +28,7 @@ import ThreeGenerationCertificate from "./pages/ThreeGenerationCertificate";
 import SpecialQuota from "./pages/SpecialQuota";
 import PdfImageConverter from "./pages/PdfImageConverter";
 import CounsellingProcess from "./pages/CounsellingProcess";
+import CounsellingSchedule2026 from "./pages/CounsellingSchedule2026";
 import NotFound from "./pages/NotFound";
 import PremiumTopBanner from "./components/PremiumTopBanner";
 import ScrollToTop from "./components/ScrollToTop";

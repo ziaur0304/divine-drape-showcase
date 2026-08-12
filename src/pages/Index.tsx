@@ -213,6 +213,61 @@ export default function Index() {
             Join WhatsApp Group
           </Button>
         </Card>
+
+        {/* Social Media & Office */}
+        <Card className="border-slate-100 bg-white p-5 rounded-2xl shadow-sm">
+          <h4 className="text-base font-bold text-slate-900 mb-4 text-center">Connect With Us</h4>
+          <div className="grid grid-cols-3 gap-3">
+            <a
+              href="https://www.instagram.com/d2donlineofficial?igsh=M3MzMWg5aXk4bjUy"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-col items-center justify-center gap-2 rounded-xl bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500 text-white p-3 font-semibold text-sm shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all"
+            >
+              <Instagram className="h-5 w-5" />
+              Instagram
+            </a>
+            <a
+              href="https://youtube.com/@d2donlineofficial?si=0WseyJuS_TJMsNTq"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-col items-center justify-center gap-2 rounded-xl bg-gradient-to-br from-red-600 to-red-700 text-white p-3 font-semibold text-sm shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all"
+            >
+              <Youtube className="h-5 w-5" />
+              YouTube
+            </a>
+            <a
+              href="https://wa.me/919365248667?text=I'm%20from%20D2DOnline%20Website!"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-col items-center justify-center gap-2 rounded-xl bg-gradient-to-br from-green-500 to-emerald-600 text-white p-3 font-semibold text-sm shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all"
+            >
+              <MessageCircle className="h-5 w-5" />
+              WhatsApp
+            </a>
+          </div>
+
+          <div className="mt-6 pt-5 border-t border-slate-100">
+            <div className="flex items-start gap-3 mb-3">
+              <div className="shrink-0 w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center shadow-md">
+                <MapPin className="h-4 w-4 text-white" />
+              </div>
+              <div>
+                <h4 className="text-base font-bold text-slate-900">Our Office</h4>
+                <p className="text-sm text-slate-600">Barpeta, Assam</p>
+              </div>
+            </div>
+            <a
+              href="https://maps.app.goo.gl/6fucZNa91XWCVHZ89"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 w-full rounded-xl bg-slate-900 hover:bg-slate-800 text-white h-11 text-sm font-semibold shadow-md hover:shadow-lg transition-all"
+            >
+              <MapPin className="h-4 w-4" />
+              View on Google Maps
+            </a>
+          </div>
+        </Card>
       </section>
 
 

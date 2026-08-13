@@ -7,14 +7,10 @@ const RegistrationHelpPopup = () => {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const key = "d2d_registration_help_seen";
-    if (!sessionStorage.getItem(key)) {
-      const t = setTimeout(() => {
-        setOpen(true);
-        sessionStorage.setItem(key, "1");
-      }, 1200);
-      return () => clearTimeout(t);
-    }
+    const t = setTimeout(() => {
+      setOpen(true);
+    }, 1200);
+    return () => clearTimeout(t);
   }, []);
 
   if (!open) return null;

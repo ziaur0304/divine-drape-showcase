@@ -144,18 +144,18 @@ async function compressPdf(file: File, targetBytes: number): Promise<Blob> {
 }
 
 async function compressImage(file: File, targetBytes: number): Promise<Blob> {
-  const bitmap = await createImageBitmap(file);
-  let scale = 1;
+  const src = await loadImage(file);
+  let scale = Math.min(1, Math.sqrt(MAX_PIXELS / (src.width * src.height)));
   let best: Blob | null = null;
 
   for (let s = 0; s < 10; s++) {
     const canvas = document.createElement("canvas");
-    canvas.width = Math.max(1, Math.round(bitmap.width * scale));
-    canvas.height = Math.max(1, Math.round(bitmap.height * scale));
+    canvas.width = Math.max(1, Math.round(src.width * scale));
+    canvas.height = Math.max(1, Math.round(src.height * scale));
     const ctx = canvas.getContext("2d")!;
     ctx.fillStyle = "#ffffff";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
-    ctx.drawImage(bitmap, 0, 0, canvas.width, canvas.height);
+    src.draw(ctx, canvas.width, canvas.height);
 
     for (let q = 0.92; q >= 0.15; q -= 0.07) {
       const blob = await canvasToBlob(canvas, q);
@@ -166,6 +166,7 @@ async function compressImage(file: File, targetBytes: number): Promise<Blob> {
   }
   return best!;
 }
+
 
 export default function PdfImageConverter() {
   const [pdfFile, setPdfFile] = useState<File | null>(null);

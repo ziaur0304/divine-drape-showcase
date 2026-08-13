@@ -173,9 +173,11 @@ async function compressImage(file: File, targetBytes: number): Promise<Blob> {
 export default function PdfImageConverter() {
   const [pdfFile, setPdfFile] = useState<File | null>(null);
   const [pdfBusy, setPdfBusy] = useState(false);
-  const [imgFile, setImgFile] = useState<File | null>(null);
-  const [imgBusy, setImgBusy] = useState<number | null>(null);
-  const [cropSource, setCropSource] = useState<File | null>(null);
+  const [photoCropSrc, setPhotoCropSrc] = useState<File | null>(null);
+  const [signCropSrc, setSignCropSrc] = useState<File | null>(null);
+  const [photoFile, setPhotoFile] = useState<File | null>(null);
+  const [signFile, setSignFile] = useState<File | null>(null);
+  const [busy, setBusy] = useState<string | null>(null);
 
 
   const handlePdf = async () => {
@@ -199,25 +201,29 @@ export default function PdfImageConverter() {
     }
   };
 
-  const handleImage = async (targetKb: number) => {
-    if (!imgFile) return toast.error("Please select an image first");
-    setImgBusy(targetKb);
+  const handleImage = async (kind: "photo" | "signature", file: File | null, targetKb: number) => {
+    if (!file) return toast.error("Please select an image first");
+    setBusy(kind);
     try {
-      const blob = await compressImage(imgFile, targetKb * 1024);
-      const how = await saveBlob(blob, imgFile.name.replace(/\.[^.]+$/, "") + `-${targetKb}kb.jpg`);
+      const blob = await compressImage(file, targetKb * 1024);
+      const how = await saveBlob(blob, file.name.replace(/\.[^.]+$/, "") + `-${targetKb}kb.jpg`);
       toast.success(
         (blob.size <= targetKb * 1024
           ? `Done — compressed to ${kb(blob.size)}`
           : `Smallest possible: ${kb(blob.size)}`) +
           (how === "shared" ? " — choose “Save to Files”" : "")
       );
-
     } catch (e) {
       console.error(e);
       toast.error("Could not process this image. Please try another file.");
     } finally {
-      setImgBusy(null);
+      setBusy(null);
     }
+  };
+
+  const downloadCropped = async (file: File) => {
+    const how = await saveBlob(file, file.name);
+    toast.success("Cropped image saved" + (how === "shared" ? " — choose “Save to Files”" : ""));
   };
 
   return (

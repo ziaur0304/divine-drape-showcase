@@ -294,9 +294,24 @@ export default function PdfImageConverter() {
               type="file"
               accept="image/*"
               className="hidden"
-              onChange={(e) => setImgFile(e.target.files?.[0] ?? null)}
+              onChange={(e) => {
+                setImgFile(e.target.files?.[0] ?? null);
+                setCropSource(e.target.files?.[0] ?? null);
+              }}
             />
           </label>
+
+          {cropSource && (
+            <ImageCropper
+              file={cropSource}
+              onCropped={(f) => {
+                setImgFile(f);
+                setCropSource(null);
+                toast.success("Cropped — now download it under 30 KB or 50 KB");
+              }}
+            />
+          )}
+
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4">
             <Button

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Home, FileDown, ImageDown, Loader2, Upload } from "lucide-react";
+import { Home, FileDown, ImageDown, Loader2, Upload, Crop } from "lucide-react";
 import { toast } from "sonner";
 import { PDFDocument } from "pdf-lib";
 import * as pdfjsLib from "pdfjs-dist";

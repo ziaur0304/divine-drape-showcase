@@ -179,12 +179,14 @@ export default function PdfImageConverter() {
     setPdfBusy(true);
     try {
       const blob = await compressPdf(pdfFile, 250 * 1024);
-      downloadBlob(blob, pdfFile.name.replace(/\.pdf$/i, "") + "-compressed.pdf");
+      const how = await saveBlob(blob, pdfFile.name.replace(/\.pdf$/i, "") + "-compressed.pdf");
       toast.success(
-        blob.size <= 250 * 1024
+        (blob.size <= 250 * 1024
           ? `Done — compressed to ${kb(blob.size)}`
-          : `Smallest possible: ${kb(blob.size)} (could not reach 250 KB)`
+          : `Smallest possible: ${kb(blob.size)} (could not reach 250 KB)`) +
+          (how === "shared" ? " — choose “Save to Files”" : "")
       );
+
     } catch (e) {
       console.error(e);
       toast.error("Could not process this PDF. Please try another file.");

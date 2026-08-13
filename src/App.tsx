@@ -39,6 +39,7 @@ const App = () => (
     <ScrollToTop />
     <Toaster />
     <PremiumTopBanner />
+    <RegistrationHelpPopup />
     <Routes>
       <Route path="/" element={<GovtMedical />} />
       <Route path="/home" element={<Home />} />

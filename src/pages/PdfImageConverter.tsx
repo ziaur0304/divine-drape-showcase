@@ -200,12 +200,14 @@ export default function PdfImageConverter() {
     setImgBusy(targetKb);
     try {
       const blob = await compressImage(imgFile, targetKb * 1024);
-      downloadBlob(blob, imgFile.name.replace(/\.[^.]+$/, "") + `-${targetKb}kb.jpg`);
+      const how = await saveBlob(blob, imgFile.name.replace(/\.[^.]+$/, "") + `-${targetKb}kb.jpg`);
       toast.success(
-        blob.size <= targetKb * 1024
+        (blob.size <= targetKb * 1024
           ? `Done — compressed to ${kb(blob.size)}`
-          : `Smallest possible: ${kb(blob.size)}`
+          : `Smallest possible: ${kb(blob.size)}`) +
+          (how === "shared" ? " — choose “Save to Files”" : "")
       );
+
     } catch (e) {
       console.error(e);
       toast.error("Could not process this image. Please try another file.");

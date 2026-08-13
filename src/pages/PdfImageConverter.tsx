@@ -318,9 +318,13 @@ export default function PdfImageConverter() {
           </div>
         </Card>
 
-        <p className="text-xs text-slate-400 text-center">
-          D2D Online is an independent initiative and is not affiliated with NTA, MCC or DME Assam.
+        <p className="text-xs text-slate-500 text-center">
+          On iPhone, the share sheet opens after processing — tap "Save to Files" to keep the
+          compressed file.
         </p>
+
+        <p className="text-xs text-slate-400 text-center">
+
       </section>
     </main>
   );

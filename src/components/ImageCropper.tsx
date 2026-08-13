@@ -3,22 +3,20 @@ import { Button } from "@/components/ui/button";
 import { Slider } from "@/components/ui/slider";
 import { Crop, RotateCcw, Check } from "lucide-react";
 
-export type CropPreset = { id: string; label: string; w: number; h: number };
-
-export const CROP_PRESETS: CropPreset[] = [
-  { id: "photo", label: "Face Photo (200 × 300)", w: 200, h: 300 },
-  { id: "sign", label: "Signature (210 × 110)", w: 210, h: 110 },
-];
+type CropPreset = { id: string; label: string; w: number; h: number };
 
 type Rect = { x: number; y: number; w: number; h: number };
 
 interface Props {
   file: File;
+  width: number;
+  height: number;
+  label: string;
   onCropped: (file: File) => void;
 }
 
-export default function ImageCropper({ file, onCropped }: Props) {
-  const [preset, setPreset] = useState<CropPreset>(CROP_PRESETS[0]);
+export default function ImageCropper({ file, width, height, label, onCropped }: Props) {
+  const preset: CropPreset = { id: label.toLowerCase().replace(/\s+/g, "-"), label, w: width, h: height };
   const [src, setSrc] = useState<string>("");
   const [natural, setNatural] = useState({ w: 0, h: 0 });
   const [size, setSize] = useState(80); // % of max fitting box
@@ -69,7 +67,7 @@ export default function ImageCropper({ file, onCropped }: Props) {
   useEffect(() => {
     if (display.w) reset(display.w, display.h, size, preset);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [size, preset, display.w, display.h]);
+  }, [size, width, height, display.w, display.h]);
 
   const clamp = (r: Rect): Rect => ({
     ...r,
@@ -122,24 +120,7 @@ export default function ImageCropper({ file, onCropped }: Props) {
     <div className="mt-4 rounded-xl border border-slate-200 p-4">
       <div className="flex items-center gap-2 mb-3">
         <Crop className="h-4 w-4 text-teal-600" />
-        <h3 className="font-bold text-sm">Crop your image</h3>
-      </div>
-
-      <div className="grid grid-cols-2 gap-2 mb-3">
-        {CROP_PRESETS.map((p) => (
-          <button
-            key={p.id}
-            type="button"
-            onClick={() => setPreset(p)}
-            className={`rounded-lg border px-3 py-2 text-xs font-semibold transition-colors ${
-              preset.id === p.id
-                ? "border-teal-500 bg-teal-50 text-teal-700"
-                : "border-slate-200 text-slate-600 hover:border-teal-300"
-            }`}
-          >
-            {p.label}
-          </button>
-        ))}
+        <h3 className="font-bold text-sm">Crop to {width} × {height} px</h3>
       </div>
 
       <div

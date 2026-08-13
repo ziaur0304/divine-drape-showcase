@@ -324,6 +324,9 @@ export default function PdfImageConverter() {
         </p>
 
         <p className="text-xs text-slate-400 text-center">
+          D2D Online is an independent initiative and is not affiliated with NTA, MCC or DME Assam.
+        </p>
+
 
       </section>
     </main>

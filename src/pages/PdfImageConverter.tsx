@@ -286,8 +286,10 @@ export default function PdfImageConverter() {
             <h2 className="text-lg font-bold">Image Resizer</h2>
           </div>
           <p className="text-sm text-slate-600 mb-4">
-            Upload any photo or scan and download it under 30 KB or 50 KB.
+            Upload a photo or scan, crop it to the required size (face photo 200 × 300, signature
+            210 × 110), then download it under 30 KB or 50 KB.
           </p>
+
 
           <label className="flex flex-col items-center justify-center gap-2 border-2 border-dashed border-slate-200 rounded-xl p-6 cursor-pointer hover:border-teal-300 transition-colors">
             <Upload className="h-6 w-6 text-slate-400" />

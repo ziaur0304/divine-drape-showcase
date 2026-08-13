@@ -12,20 +12,91 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = pdfWorkerUrl;
 
 const kb = (bytes: number) => `${(bytes / 1024).toFixed(0)} KB`;
 
-function downloadBlob(blob: Blob, filename: string) {
+const isIOS = () =>
+  typeof navigator !== "undefined" &&
+  (/iPad|iPhone|iPod/.test(navigator.userAgent) ||
+    (navigator.platform === "MacIntel" && (navigator as never as { maxTouchPoints: number }).maxTouchPoints > 1));
+
+async function saveBlob(blob: Blob, filename: string) {
+  // iOS Safari ignores the download attribute for blob URLs, so use the
+  // native share sheet when possible (lets the user Save to Files / Photos).
+  const file = new File([blob], filename, { type: blob.type });
+  const nav = navigator as Navigator & {
+    canShare?: (d: { files: File[] }) => boolean;
+    share?: (d: { files: File[]; title?: string }) => Promise<void>;
+  };
+  if (isIOS() && nav.canShare?.({ files: [file] }) && nav.share) {
+    try {
+      await nav.share({ files: [file], title: filename });
+      return "shared";
+    } catch (e) {
+      if ((e as DOMException)?.name === "AbortError") return "shared";
+      // fall through to download
+    }
+  }
+
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
   a.href = url;
   a.download = filename;
+  a.rel = "noopener";
+  document.body.appendChild(a);
   a.click();
-  URL.revokeObjectURL(url);
+  document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 60_000);
+  return "downloaded";
 }
 
 function canvasToBlob(canvas: HTMLCanvasElement, quality: number): Promise<Blob> {
-  return new Promise((resolve) =>
-    canvas.toBlob((b) => resolve(b as Blob), "image/jpeg", quality)
-  );
+  return new Promise((resolve, reject) => {
+    if (canvas.toBlob) {
+      canvas.toBlob((b) => (b ? resolve(b) : reject(new Error("toBlob failed"))), "image/jpeg", quality);
+    } else {
+      // Very old Safari fallback
+      const dataUrl = canvas.toDataURL("image/jpeg", quality);
+      const bin = atob(dataUrl.split(",")[1]);
+      const arr = new Uint8Array(bin.length);
+      for (let i = 0; i < bin.length; i++) arr[i] = bin.charCodeAt(i);
+      resolve(new Blob([arr], { type: "image/jpeg" }));
+    }
+  });
 }
+
+// iOS Safari has a hard canvas memory cap (~16.7 MP); keep well below it.
+const MAX_PIXELS = 4_000_000;
+
+async function loadImage(file: File): Promise<{ width: number; height: number; draw: (ctx: CanvasRenderingContext2D, w: number, h: number) => void }> {
+  // createImageBitmap can fail on iOS for HEIC/large photos — fall back to <img>.
+  try {
+    if (typeof createImageBitmap === "function") {
+      const bitmap = await createImageBitmap(file);
+      return {
+        width: bitmap.width,
+        height: bitmap.height,
+        draw: (ctx, w, h) => ctx.drawImage(bitmap, 0, 0, w, h),
+      };
+    }
+  } catch {
+    /* fall through */
+  }
+  const url = URL.createObjectURL(file);
+  try {
+    const img = await new Promise<HTMLImageElement>((resolve, reject) => {
+      const el = new Image();
+      el.onload = () => resolve(el);
+      el.onerror = () => reject(new Error("Unsupported image format"));
+      el.src = url;
+    });
+    return {
+      width: img.naturalWidth,
+      height: img.naturalHeight,
+      draw: (ctx, w, h) => ctx.drawImage(img, 0, 0, w, h),
+    };
+  } finally {
+    setTimeout(() => URL.revokeObjectURL(url), 30_000);
+  }
+}
+
 
 async function compressPdf(file: File, targetBytes: number): Promise<Blob> {
   const data = await file.arrayBuffer();

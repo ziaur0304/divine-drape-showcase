@@ -32,6 +32,7 @@ import CounsellingSchedule2026 from "./pages/CounsellingSchedule2026";
 import NotFound from "./pages/NotFound";
 import PremiumTopBanner from "./components/PremiumTopBanner";
 import ScrollToTop from "./components/ScrollToTop";
+import RegistrationHelpPopup from "./components/RegistrationHelpPopup";
 
 const App = () => (
   <BrowserRouter>

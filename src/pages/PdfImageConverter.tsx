@@ -7,6 +7,8 @@ import { toast } from "sonner";
 import { PDFDocument } from "pdf-lib";
 import * as pdfjsLib from "pdfjs-dist";
 import pdfWorkerUrl from "pdfjs-dist/build/pdf.worker.min.mjs?url";
+import ImageCropper from "@/components/ImageCropper";
+
 
 pdfjsLib.GlobalWorkerOptions.workerSrc = pdfWorkerUrl;
 
@@ -173,6 +175,8 @@ export default function PdfImageConverter() {
   const [pdfBusy, setPdfBusy] = useState(false);
   const [imgFile, setImgFile] = useState<File | null>(null);
   const [imgBusy, setImgBusy] = useState<number | null>(null);
+  const [cropSource, setCropSource] = useState<File | null>(null);
+
 
   const handlePdf = async () => {
     if (!pdfFile) return toast.error("Please select a PDF file first");

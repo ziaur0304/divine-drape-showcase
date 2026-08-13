@@ -7,6 +7,8 @@ import { toast } from "sonner";
 import { PDFDocument } from "pdf-lib";
 import * as pdfjsLib from "pdfjs-dist";
 import pdfWorkerUrl from "pdfjs-dist/build/pdf.worker.min.mjs?url";
+import ImageCropper from "@/components/ImageCropper";
+
 
 pdfjsLib.GlobalWorkerOptions.workerSrc = pdfWorkerUrl;
 
@@ -173,6 +175,8 @@ export default function PdfImageConverter() {
   const [pdfBusy, setPdfBusy] = useState(false);
   const [imgFile, setImgFile] = useState<File | null>(null);
   const [imgBusy, setImgBusy] = useState<number | null>(null);
+  const [cropSource, setCropSource] = useState<File | null>(null);
+
 
   const handlePdf = async () => {
     if (!pdfFile) return toast.error("Please select a PDF file first");
@@ -282,8 +286,10 @@ export default function PdfImageConverter() {
             <h2 className="text-lg font-bold">Image Resizer</h2>
           </div>
           <p className="text-sm text-slate-600 mb-4">
-            Upload any photo or scan and download it under 30 KB or 50 KB.
+            Upload a photo or scan, crop it to the required size (face photo 200 × 300, signature
+            210 × 110), then download it under 30 KB or 50 KB.
           </p>
+
 
           <label className="flex flex-col items-center justify-center gap-2 border-2 border-dashed border-slate-200 rounded-xl p-6 cursor-pointer hover:border-teal-300 transition-colors">
             <Upload className="h-6 w-6 text-slate-400" />
@@ -294,9 +300,24 @@ export default function PdfImageConverter() {
               type="file"
               accept="image/*"
               className="hidden"
-              onChange={(e) => setImgFile(e.target.files?.[0] ?? null)}
+              onChange={(e) => {
+                setImgFile(e.target.files?.[0] ?? null);
+                setCropSource(e.target.files?.[0] ?? null);
+              }}
             />
           </label>
+
+          {cropSource && (
+            <ImageCropper
+              file={cropSource}
+              onCropped={(f) => {
+                setImgFile(f);
+                setCropSource(null);
+                toast.success("Cropped — now download it under 30 KB or 50 KB");
+              }}
+            />
+          )}
+
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4">
             <Button

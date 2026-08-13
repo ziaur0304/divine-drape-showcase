@@ -285,65 +285,146 @@ export default function PdfImageConverter() {
           </Button>
         </Card>
 
-        {/* Image Resizer */}
+        {/* Photo Cropping */}
         <Card className="border-slate-200 p-5 rounded-2xl shadow-sm">
           <div className="flex items-center gap-2 mb-1">
-            <ImageDown className="h-5 w-5 text-teal-600" />
-            <h2 className="text-lg font-bold">Image Resizer</h2>
+            <Crop className="h-5 w-5 text-teal-600" />
+            <h2 className="text-lg font-bold">Crop Photo (200 × 300)</h2>
           </div>
           <p className="text-sm text-slate-600 mb-4">
-            Upload a photo or scan, crop it to the required size (face photo 200 × 300, signature
-            210 × 110), then download it under 30 KB or 50 KB.
+            Crop your passport-style face photo to the required 200 × 300 px size.
           </p>
-
 
           <label className="flex flex-col items-center justify-center gap-2 border-2 border-dashed border-slate-200 rounded-xl p-6 cursor-pointer hover:border-teal-300 transition-colors">
             <Upload className="h-6 w-6 text-slate-400" />
             <span className="text-sm text-slate-600 text-center break-all">
-              {imgFile ? `${imgFile.name} (${kb(imgFile.size)})` : "Tap to choose an image"}
+              {photoCropSrc ? `${photoCropSrc.name} (${kb(photoCropSrc.size)})` : "Tap to choose your photo"}
             </span>
             <input
               type="file"
               accept="image/*"
               className="hidden"
-              onChange={(e) => {
-                setImgFile(e.target.files?.[0] ?? null);
-                setCropSource(e.target.files?.[0] ?? null);
-              }}
+              onChange={(e) => setPhotoCropSrc(e.target.files?.[0] ?? null)}
             />
           </label>
 
-          {cropSource && (
+          {photoCropSrc && (
             <ImageCropper
-              file={cropSource}
+              file={photoCropSrc}
+              width={200}
+              height={300}
+              label="photo"
               onCropped={(f) => {
-                setImgFile(f);
-                setCropSource(null);
-                toast.success("Cropped — now download it under 30 KB or 50 KB");
+                setPhotoFile(f);
+                downloadCropped(f);
               }}
             />
           )}
-
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4">
-            <Button
-              onClick={() => handleImage(30)}
-              disabled={imgBusy !== null}
-              className="h-12 rounded-xl bg-gradient-to-r from-teal-500 to-cyan-600 hover:from-teal-600 hover:to-cyan-700 text-white font-bold"
-            >
-              {imgBusy === 30 ? <Loader2 className="h-5 w-5 mr-2 animate-spin" /> : <ImageDown className="h-5 w-5 mr-2" />}
-              Download under 30 KB
-            </Button>
-            <Button
-              onClick={() => handleImage(50)}
-              disabled={imgBusy !== null}
-              className="h-12 rounded-xl bg-gradient-to-r from-violet-600 to-purple-700 hover:from-violet-700 hover:to-purple-800 text-white font-bold"
-            >
-              {imgBusy === 50 ? <Loader2 className="h-5 w-5 mr-2 animate-spin" /> : <ImageDown className="h-5 w-5 mr-2" />}
-              Download under 50 KB
-            </Button>
-          </div>
         </Card>
+
+        {/* Signature Cropping */}
+        <Card className="border-slate-200 p-5 rounded-2xl shadow-sm">
+          <div className="flex items-center gap-2 mb-1">
+            <Crop className="h-5 w-5 text-violet-600" />
+            <h2 className="text-lg font-bold">Crop Signature (210 × 110)</h2>
+          </div>
+          <p className="text-sm text-slate-600 mb-4">
+            Crop your scanned signature to the required 210 × 110 px size.
+          </p>
+
+          <label className="flex flex-col items-center justify-center gap-2 border-2 border-dashed border-slate-200 rounded-xl p-6 cursor-pointer hover:border-violet-300 transition-colors">
+            <Upload className="h-6 w-6 text-slate-400" />
+            <span className="text-sm text-slate-600 text-center break-all">
+              {signCropSrc ? `${signCropSrc.name} (${kb(signCropSrc.size)})` : "Tap to choose your signature"}
+            </span>
+            <input
+              type="file"
+              accept="image/*"
+              className="hidden"
+              onChange={(e) => setSignCropSrc(e.target.files?.[0] ?? null)}
+            />
+          </label>
+
+          {signCropSrc && (
+            <ImageCropper
+              file={signCropSrc}
+              width={210}
+              height={110}
+              label="signature"
+              onCropped={(f) => {
+                setSignFile(f);
+                downloadCropped(f);
+              }}
+            />
+          )}
+        </Card>
+
+        {/* Photo Resizer */}
+        <Card className="border-slate-200 p-5 rounded-2xl shadow-sm">
+          <div className="flex items-center gap-2 mb-1">
+            <ImageDown className="h-5 w-5 text-teal-600" />
+            <h2 className="text-lg font-bold">Resize Photo (under 50 KB)</h2>
+          </div>
+          <p className="text-sm text-slate-600 mb-4">
+            Upload your photo (cropped one if you cropped it above) and download it under 50 KB.
+          </p>
+
+          <label className="flex flex-col items-center justify-center gap-2 border-2 border-dashed border-slate-200 rounded-xl p-6 cursor-pointer hover:border-teal-300 transition-colors">
+            <Upload className="h-6 w-6 text-slate-400" />
+            <span className="text-sm text-slate-600 text-center break-all">
+              {photoFile ? `${photoFile.name} (${kb(photoFile.size)})` : "Tap to choose your photo"}
+            </span>
+            <input
+              type="file"
+              accept="image/*"
+              className="hidden"
+              onChange={(e) => setPhotoFile(e.target.files?.[0] ?? null)}
+            />
+          </label>
+
+          <Button
+            onClick={() => handleImage("photo", photoFile, 50)}
+            disabled={busy !== null}
+            className="w-full h-12 mt-4 rounded-xl bg-gradient-to-r from-teal-500 to-cyan-600 hover:from-teal-600 hover:to-cyan-700 text-white font-bold"
+          >
+            {busy === "photo" ? <Loader2 className="h-5 w-5 mr-2 animate-spin" /> : <ImageDown className="h-5 w-5 mr-2" />}
+            Download photo under 50 KB
+          </Button>
+        </Card>
+
+        {/* Signature Resizer */}
+        <Card className="border-slate-200 p-5 rounded-2xl shadow-sm">
+          <div className="flex items-center gap-2 mb-1">
+            <ImageDown className="h-5 w-5 text-violet-600" />
+            <h2 className="text-lg font-bold">Resize Signature (under 30 KB)</h2>
+          </div>
+          <p className="text-sm text-slate-600 mb-4">
+            Upload your signature (cropped one if you cropped it above) and download it under 30 KB.
+          </p>
+
+          <label className="flex flex-col items-center justify-center gap-2 border-2 border-dashed border-slate-200 rounded-xl p-6 cursor-pointer hover:border-violet-300 transition-colors">
+            <Upload className="h-6 w-6 text-slate-400" />
+            <span className="text-sm text-slate-600 text-center break-all">
+              {signFile ? `${signFile.name} (${kb(signFile.size)})` : "Tap to choose your signature"}
+            </span>
+            <input
+              type="file"
+              accept="image/*"
+              className="hidden"
+              onChange={(e) => setSignFile(e.target.files?.[0] ?? null)}
+            />
+          </label>
+
+          <Button
+            onClick={() => handleImage("signature", signFile, 30)}
+            disabled={busy !== null}
+            className="w-full h-12 mt-4 rounded-xl bg-gradient-to-r from-violet-600 to-purple-700 hover:from-violet-700 hover:to-purple-800 text-white font-bold"
+          >
+            {busy === "signature" ? <Loader2 className="h-5 w-5 mr-2 animate-spin" /> : <ImageDown className="h-5 w-5 mr-2" />}
+            Download signature under 30 KB
+          </Button>
+        </Card>
+
 
         <p className="text-xs text-slate-500 text-center">
           On iPhone, the share sheet opens after processing — tap "Save to Files" to keep the

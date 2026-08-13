@@ -12,20 +12,91 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = pdfWorkerUrl;
 
 const kb = (bytes: number) => `${(bytes / 1024).toFixed(0)} KB`;
 
-function downloadBlob(blob: Blob, filename: string) {
+const isIOS = () =>
+  typeof navigator !== "undefined" &&
+  (/iPad|iPhone|iPod/.test(navigator.userAgent) ||
+    (navigator.platform === "MacIntel" && (navigator as never as { maxTouchPoints: number }).maxTouchPoints > 1));
+
+async function saveBlob(blob: Blob, filename: string) {
+  // iOS Safari ignores the download attribute for blob URLs, so use the
+  // native share sheet when possible (lets the user Save to Files / Photos).
+  const file = new File([blob], filename, { type: blob.type });
+  const nav = navigator as Navigator & {
+    canShare?: (d: { files: File[] }) => boolean;
+    share?: (d: { files: File[]; title?: string }) => Promise<void>;
+  };
+  if (isIOS() && nav.canShare?.({ files: [file] }) && nav.share) {
+    try {
+      await nav.share({ files: [file], title: filename });
+      return "shared";
+    } catch (e) {
+      if ((e as DOMException)?.name === "AbortError") return "shared";
+      // fall through to download
+    }
+  }
+
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
   a.href = url;
   a.download = filename;
+  a.rel = "noopener";
+  document.body.appendChild(a);
   a.click();
-  URL.revokeObjectURL(url);
+  document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 60_000);
+  return "downloaded";
 }
 
 function canvasToBlob(canvas: HTMLCanvasElement, quality: number): Promise<Blob> {
-  return new Promise((resolve) =>
-    canvas.toBlob((b) => resolve(b as Blob), "image/jpeg", quality)
-  );
+  return new Promise((resolve, reject) => {
+    if (canvas.toBlob) {
+      canvas.toBlob((b) => (b ? resolve(b) : reject(new Error("toBlob failed"))), "image/jpeg", quality);
+    } else {
+      // Very old Safari fallback
+      const dataUrl = canvas.toDataURL("image/jpeg", quality);
+      const bin = atob(dataUrl.split(",")[1]);
+      const arr = new Uint8Array(bin.length);
+      for (let i = 0; i < bin.length; i++) arr[i] = bin.charCodeAt(i);
+      resolve(new Blob([arr], { type: "image/jpeg" }));
+    }
+  });
 }
+
+// iOS Safari has a hard canvas memory cap (~16.7 MP); keep well below it.
+const MAX_PIXELS = 4_000_000;
+
+async function loadImage(file: File): Promise<{ width: number; height: number; draw: (ctx: CanvasRenderingContext2D, w: number, h: number) => void }> {
+  // createImageBitmap can fail on iOS for HEIC/large photos — fall back to <img>.
+  try {
+    if (typeof createImageBitmap === "function") {
+      const bitmap = await createImageBitmap(file);
+      return {
+        width: bitmap.width,
+        height: bitmap.height,
+        draw: (ctx, w, h) => ctx.drawImage(bitmap, 0, 0, w, h),
+      };
+    }
+  } catch {
+    /* fall through */
+  }
+  const url = URL.createObjectURL(file);
+  try {
+    const img = await new Promise<HTMLImageElement>((resolve, reject) => {
+      const el = new Image();
+      el.onload = () => resolve(el);
+      el.onerror = () => reject(new Error("Unsupported image format"));
+      el.src = url;
+    });
+    return {
+      width: img.naturalWidth,
+      height: img.naturalHeight,
+      draw: (ctx, w, h) => ctx.drawImage(img, 0, 0, w, h),
+    };
+  } finally {
+    setTimeout(() => URL.revokeObjectURL(url), 30_000);
+  }
+}
+
 
 async function compressPdf(file: File, targetBytes: number): Promise<Blob> {
   const data = await file.arrayBuffer();
@@ -47,7 +118,9 @@ async function compressPdf(file: File, targetBytes: number): Promise<Blob> {
     const out = await PDFDocument.create();
     for (let i = 1; i <= pdf.numPages; i++) {
       const page = await pdf.getPage(i);
-      const viewport = page.getViewport({ scale: attempt.scale });
+      const base = page.getViewport({ scale: attempt.scale });
+      const capped = Math.min(1, Math.sqrt(MAX_PIXELS / (base.width * base.height)));
+      const viewport = page.getViewport({ scale: attempt.scale * capped });
       const canvas = document.createElement("canvas");
       canvas.width = Math.max(1, Math.floor(viewport.width));
       canvas.height = Math.max(1, Math.floor(viewport.height));
@@ -55,6 +128,7 @@ async function compressPdf(file: File, targetBytes: number): Promise<Blob> {
       ctx.fillStyle = "#ffffff";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       await page.render({ canvasContext: ctx, viewport, canvas } as never).promise;
+
 
       const jpegBlob = await canvasToBlob(canvas, attempt.quality);
       const jpegBytes = new Uint8Array(await jpegBlob.arrayBuffer());
@@ -70,18 +144,18 @@ async function compressPdf(file: File, targetBytes: number): Promise<Blob> {
 }
 
 async function compressImage(file: File, targetBytes: number): Promise<Blob> {
-  const bitmap = await createImageBitmap(file);
-  let scale = 1;
+  const src = await loadImage(file);
+  let scale = Math.min(1, Math.sqrt(MAX_PIXELS / (src.width * src.height)));
   let best: Blob | null = null;
 
   for (let s = 0; s < 10; s++) {
     const canvas = document.createElement("canvas");
-    canvas.width = Math.max(1, Math.round(bitmap.width * scale));
-    canvas.height = Math.max(1, Math.round(bitmap.height * scale));
+    canvas.width = Math.max(1, Math.round(src.width * scale));
+    canvas.height = Math.max(1, Math.round(src.height * scale));
     const ctx = canvas.getContext("2d")!;
     ctx.fillStyle = "#ffffff";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
-    ctx.drawImage(bitmap, 0, 0, canvas.width, canvas.height);
+    src.draw(ctx, canvas.width, canvas.height);
 
     for (let q = 0.92; q >= 0.15; q -= 0.07) {
       const blob = await canvasToBlob(canvas, q);
@@ -92,6 +166,7 @@ async function compressImage(file: File, targetBytes: number): Promise<Blob> {
   }
   return best!;
 }
+
 
 export default function PdfImageConverter() {
   const [pdfFile, setPdfFile] = useState<File | null>(null);
@@ -104,12 +179,14 @@ export default function PdfImageConverter() {
     setPdfBusy(true);
     try {
       const blob = await compressPdf(pdfFile, 250 * 1024);
-      downloadBlob(blob, pdfFile.name.replace(/\.pdf$/i, "") + "-compressed.pdf");
+      const how = await saveBlob(blob, pdfFile.name.replace(/\.pdf$/i, "") + "-compressed.pdf");
       toast.success(
-        blob.size <= 250 * 1024
+        (blob.size <= 250 * 1024
           ? `Done — compressed to ${kb(blob.size)}`
-          : `Smallest possible: ${kb(blob.size)} (could not reach 250 KB)`
+          : `Smallest possible: ${kb(blob.size)} (could not reach 250 KB)`) +
+          (how === "shared" ? " — choose “Save to Files”" : "")
       );
+
     } catch (e) {
       console.error(e);
       toast.error("Could not process this PDF. Please try another file.");
@@ -123,12 +200,14 @@ export default function PdfImageConverter() {
     setImgBusy(targetKb);
     try {
       const blob = await compressImage(imgFile, targetKb * 1024);
-      downloadBlob(blob, imgFile.name.replace(/\.[^.]+$/, "") + `-${targetKb}kb.jpg`);
+      const how = await saveBlob(blob, imgFile.name.replace(/\.[^.]+$/, "") + `-${targetKb}kb.jpg`);
       toast.success(
-        blob.size <= targetKb * 1024
+        (blob.size <= targetKb * 1024
           ? `Done — compressed to ${kb(blob.size)}`
-          : `Smallest possible: ${kb(blob.size)}`
+          : `Smallest possible: ${kb(blob.size)}`) +
+          (how === "shared" ? " — choose “Save to Files”" : "")
       );
+
     } catch (e) {
       console.error(e);
       toast.error("Could not process this image. Please try another file.");
@@ -239,9 +318,16 @@ export default function PdfImageConverter() {
           </div>
         </Card>
 
+        <p className="text-xs text-slate-500 text-center">
+          On iPhone, the share sheet opens after processing — tap "Save to Files" to keep the
+          compressed file.
+        </p>
+
         <p className="text-xs text-slate-400 text-center">
           D2D Online is an independent initiative and is not affiliated with NTA, MCC or DME Assam.
         </p>
+
+
       </section>
     </main>
   );

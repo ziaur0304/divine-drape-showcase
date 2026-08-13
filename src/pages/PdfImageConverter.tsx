@@ -118,7 +118,9 @@ async function compressPdf(file: File, targetBytes: number): Promise<Blob> {
     const out = await PDFDocument.create();
     for (let i = 1; i <= pdf.numPages; i++) {
       const page = await pdf.getPage(i);
-      const viewport = page.getViewport({ scale: attempt.scale });
+      const base = page.getViewport({ scale: attempt.scale });
+      const capped = Math.min(1, Math.sqrt(MAX_PIXELS / (base.width * base.height)));
+      const viewport = page.getViewport({ scale: attempt.scale * capped });
       const canvas = document.createElement("canvas");
       canvas.width = Math.max(1, Math.floor(viewport.width));
       canvas.height = Math.max(1, Math.floor(viewport.height));
@@ -126,6 +128,7 @@ async function compressPdf(file: File, targetBytes: number): Promise<Blob> {
       ctx.fillStyle = "#ffffff";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       await page.render({ canvasContext: ctx, viewport, canvas } as never).promise;
+
 
       const jpegBlob = await canvasToBlob(canvas, attempt.quality);
       const jpegBytes = new Uint8Array(await jpegBlob.arrayBuffer());

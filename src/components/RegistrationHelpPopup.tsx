@@ -47,7 +47,7 @@ const RegistrationHelpPopup = () => {
             counselling in the DME website, call us:
           </p>
           <a
-            href={`tel:+${PHONE}`}
+            href={`tel:${PHONE}`}
             className="mt-4 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-blue-600 to-cyan-600 px-6 py-3 text-base font-bold text-white shadow-lg hover:shadow-xl transition-all"
           >
             <Phone className="h-5 w-5" />

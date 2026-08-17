@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Phone, X } from "lucide-react";
 
-const PHONE = "9365248667";
+const PHONE = "+919365248667";
 
 const RegistrationHelpPopup = () => {
   const [open, setOpen] = useState(false);

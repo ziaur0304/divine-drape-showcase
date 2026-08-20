@@ -2,9 +2,9 @@ import { Link, useLocation } from "react-router-dom";
 import { ArrowLeft, Clock } from "lucide-react";
 const LOGO_URL = "/d2donline-logo.png";
 
-const ComingSoon = () => {
+const ComingSoon = ({ title: titleProp }: { title?: string }) => {
   const { state } = useLocation() as { state?: { title?: string } };
-  const title = state?.title ?? "Coming Soon";
+  const title = titleProp ?? state?.title ?? "Coming Soon";
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 flex flex-col">

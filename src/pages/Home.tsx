@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import {
-  GraduationCap,
-  ArrowRight,
+  Sparkles,
+  Package,
   Eye,
-  HelpCircle,
   Instagram,
   Youtube,
   MessageCircle,
   MapPin,
   Copy,
   Check,
+  ArrowRight,
 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 
@@ -62,125 +62,135 @@ const Home = () => {
         </div>
       </header>
 
-    <main className="max-w-3xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
-      <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight text-center leading-tight">
-        Welcome to{" "}
-        <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-          D2D Online
-        </span>
-      </h1>
-      <p className="mt-3 text-center text-slate-600 text-base sm:text-lg">
-        Choose what you are looking for
-      </p>
-
-      <div className="mt-10 space-y-5">
-        <Link
-          to="/education"
-          className="group flex items-center gap-4 rounded-2xl p-5 sm:p-6 bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 text-white shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all"
-        >
-          <span className="shrink-0 w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center">
-            <GraduationCap className="w-6 h-6" />
-          </span>
-          <span className="flex-1">
-            <span className="block text-lg sm:text-xl font-bold">D2DOnline Education</span>
-            <span className="block text-sm text-white/85 mt-1">
-              Admissions, ranks, colleges & counselling guidance
+      <main className="max-w-3xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
+        {/* Hero */}
+        <section className="text-center mb-10 sm:mb-14">
+          <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+            Welcome to{" "}
+            <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+              D2D Online
             </span>
-          </span>
-          <ArrowRight className="w-5 h-5 shrink-0 group-hover:translate-x-1 transition-transform" />
-        </Link>
-      </div>
+          </h1>
+          <p className="mt-3 text-slate-600 text-base sm:text-lg">
+            Dream to Destination — choose where you'd like to begin
+          </p>
+        </section>
 
-      {/* Social Media & Office */}
-      <div className="mt-10 bg-white rounded-2xl shadow-md border border-slate-100 p-5 sm:p-6">
-        <h4 className="text-base font-bold text-slate-900 mb-4 text-center">Connect With Us</h4>
-        <div className="grid grid-cols-3 gap-3">
-          <a
-            href="https://www.instagram.com/d2donlineofficial?igsh=M3MzMWg5aXk4bjUy"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex flex-col items-center justify-center gap-2 rounded-xl bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500 text-white p-3 font-semibold text-sm shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all"
+        {/* Two primary buttons */}
+        <section className="space-y-5">
+          <Link
+            to="/services"
+            className="group flex items-center gap-4 rounded-2xl p-5 sm:p-6 bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 text-white shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all"
           >
-            <Instagram className="h-5 w-5" />
-            Instagram
-          </a>
-          <a
-            href="https://youtube.com/@d2donlineofficial?si=0WseyJuS_TJMsNTq"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex flex-col items-center justify-center gap-2 rounded-xl bg-gradient-to-br from-red-600 to-red-700 text-white p-3 font-semibold text-sm shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all"
-          >
-            <Youtube className="h-5 w-5" />
-            YouTube
-          </a>
-          <a
-            href="https://wa.me/919365248667?text=I'm%20from%20D2DOnline%20Website!"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex flex-col items-center justify-center gap-2 rounded-xl bg-gradient-to-br from-green-500 to-emerald-600 text-white p-3 font-semibold text-sm shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all"
-          >
-            <MessageCircle className="h-5 w-5" />
-            WhatsApp
-          </a>
-        </div>
+            <span className="shrink-0 w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center">
+              <Sparkles className="w-6 h-6" />
+            </span>
+            <span className="flex-1 text-left">
+              <span className="block text-lg sm:text-xl font-bold">D2DOnline Services</span>
+              <span className="block text-sm text-white/85 mt-1">
+                Career guidance, counselling & admission support
+              </span>
+            </span>
+            <ArrowRight className="w-5 h-5 shrink-0 group-hover:translate-x-1 transition-transform" />
+          </Link>
 
-        <div className="mt-6 pt-5 border-t border-slate-100">
-          <div className="flex items-start gap-3 mb-3">
-            <div className="shrink-0 w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center shadow-md">
-              <MapPin className="h-4 w-4 text-white" />
-            </div>
-            <div>
-              <h4 className="text-base font-bold text-slate-900">Our Office</h4>
-              <p className="text-sm text-slate-600">Barpeta, Assam</p>
-            </div>
+          <Link
+            to="/products"
+            className="group flex items-center gap-4 rounded-2xl p-5 sm:p-6 bg-gradient-to-r from-amber-500 via-orange-500 to-rose-500 text-white shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all"
+          >
+            <span className="shrink-0 w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center">
+              <Package className="w-6 h-6" />
+            </span>
+            <span className="flex-1 text-left">
+              <span className="block text-lg sm:text-xl font-bold">D2DOnline Products</span>
+              <span className="block text-sm text-white/85 mt-1">
+                Educational tools & resources (launching soon)
+              </span>
+            </span>
+            <ArrowRight className="w-5 h-5 shrink-0 group-hover:translate-x-1 transition-transform" />
+          </Link>
+        </section>
+
+        {/* Social Media & Office */}
+        <div className="mt-12 bg-white rounded-2xl shadow-md border border-slate-100 p-5 sm:p-6">
+          <h4 className="text-base font-bold text-slate-900 mb-4 text-center">Connect With Us</h4>
+          <div className="grid grid-cols-3 gap-3">
+            <a
+              href="https://www.instagram.com/d2donlineofficial?igsh=M3MzMWg5aXk4bjUy"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-col items-center justify-center gap-2 rounded-xl bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500 text-white p-3 font-semibold text-sm shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all"
+            >
+              <Instagram className="h-5 w-5" />
+              Instagram
+            </a>
+            <a
+              href="https://youtube.com/@d2donlineofficial?si=0WseyJuS_TJMsNTq"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-col items-center justify-center gap-2 rounded-xl bg-gradient-to-br from-red-600 to-red-700 text-white p-3 font-semibold text-sm shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all"
+            >
+              <Youtube className="h-5 w-5" />
+              YouTube
+            </a>
+            <a
+              href="https://wa.me/919365248667?text=I'm%20from%20D2DOnline%20Website!"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-col items-center justify-center gap-2 rounded-xl bg-gradient-to-br from-green-500 to-emerald-600 text-white p-3 font-semibold text-sm shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all"
+            >
+              <MessageCircle className="h-5 w-5" />
+              WhatsApp
+            </a>
           </div>
-          <a
-            href="https://maps.app.goo.gl/6fucZNa91XWCVHZ89"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 w-full rounded-xl bg-slate-900 hover:bg-slate-800 text-white h-11 text-sm font-semibold shadow-md hover:shadow-lg transition-all"
-          >
-            <MapPin className="h-4 w-4" />
-            Get Directions
-          </a>
-          <button
-            onClick={async () => {
-              try {
-                await navigator.clipboard.writeText("Barpeta, Assam");
-                setCopied(true);
-                setTimeout(() => setCopied(false), 2000);
-              } catch {
-                // ignore
-              }
-            }}
-            className="flex items-center justify-center gap-2 w-full rounded-xl bg-white border border-slate-200 hover:border-blue-300 hover:bg-blue-50 text-slate-700 hover:text-blue-700 h-11 text-sm font-semibold shadow-sm hover:shadow-md transition-all mt-3"
-          >
-            {copied ? (
-              <Check className="h-4 w-4 text-green-600" />
-            ) : (
-              <Copy className="h-4 w-4" />
-            )}
-            {copied ? "Copied!" : "Copy Address"}
-          </button>
+
+          <div className="mt-6 pt-5 border-t border-slate-100">
+            <div className="flex items-start gap-3 mb-3">
+              <div className="shrink-0 w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center shadow-md">
+                <MapPin className="h-4 w-4 text-white" />
+              </div>
+              <div>
+                <h4 className="text-base font-bold text-slate-900">Our Office</h4>
+                <p className="text-sm text-slate-600">Barpeta, Assam</p>
+              </div>
+            </div>
+            <a
+              href="https://maps.app.goo.gl/6fucZNa91XWCVHZ89"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 w-full rounded-xl bg-slate-900 hover:bg-slate-800 text-white h-11 text-sm font-semibold shadow-md hover:shadow-lg transition-all"
+            >
+              <MapPin className="h-4 w-4" />
+              Get Directions
+            </a>
+            <button
+              onClick={async () => {
+                try {
+                  await navigator.clipboard.writeText("Barpeta, Assam");
+                  setCopied(true);
+                  setTimeout(() => setCopied(false), 2000);
+                } catch {
+                  // ignore
+                }
+              }}
+              className="flex items-center justify-center gap-2 w-full rounded-xl bg-white border border-slate-200 hover:border-blue-300 hover:bg-blue-50 text-slate-700 hover:text-blue-700 h-11 text-sm font-semibold shadow-sm hover:shadow-md transition-all mt-3"
+            >
+              {copied ? (
+                <Check className="h-4 w-4 text-green-600" />
+              ) : (
+                <Copy className="h-4 w-4" />
+              )}
+              {copied ? "Copied!" : "Copy Address"}
+            </button>
+          </div>
         </div>
-      </div>
+      </main>
 
-      <div className="mt-10 flex justify-center">
-        <Link
-          to="/about"
-          className="group inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-700 shadow-md border border-slate-200 hover:border-blue-300 hover:text-blue-700 hover:shadow-lg transition-all"
-        >
-          <HelpCircle className="h-4 w-4 text-blue-600" />
-          What is D2DOnline?
-        </Link>
-      </div>
-    </main>
-
-    <footer className="px-4 py-6 text-center text-xs text-slate-500">
-      © {new Date().getFullYear()} D2D Online · Dream to Destination
-    </footer>
-  </div>
-);
+      <footer className="px-4 py-6 text-center text-xs text-slate-500">
+        © {new Date().getFullYear()} D2D Online · Dream to Destination
+      </footer>
+    </div>
+  );
 };
 
 export default Home;

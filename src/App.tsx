@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LatestUpdates from "./pages/LatestUpdates";
 import Landing from "./pages/Landing";
 import Home from "./pages/Home";
+import Services from "./pages/Services";
 import About from "./pages/About";
 import GovtMedical from "./pages/GovtMedical";
 import ComingSoon from "./pages/ComingSoon";
@@ -41,8 +42,11 @@ const App = () => (
     <PremiumTopBanner />
     <RegistrationHelpPopup />
     <Routes>
-      <Route path="/" element={<GovtMedical />} />
+      <Route path="/" element={<Home />} />
       <Route path="/home" element={<Home />} />
+      <Route path="/services" element={<Services />} />
+      <Route path="/products" element={<ComingSoon title="D2DOnline Products" />} />
+      <Route path="/healthcare" element={<ComingSoon title="D2DOnline HealthCare" />} />
       <Route path="/about" element={<About />} />
       <Route path="/education" element={<Landing />} />
       <Route path="/govt-medical" element={<GovtMedical />} />

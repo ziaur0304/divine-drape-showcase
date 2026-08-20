@@ -32,13 +32,11 @@ import CounsellingProcess from "./pages/CounsellingProcess";
 import CounsellingSchedule2026 from "./pages/CounsellingSchedule2026";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
-import RegistrationHelpPopup from "./components/RegistrationHelpPopup";
 
 const App = () => (
   <BrowserRouter>
     <ScrollToTop />
     <Toaster />
-    <RegistrationHelpPopup />
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/home" element={<Home />} />

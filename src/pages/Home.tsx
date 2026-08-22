@@ -4,12 +4,6 @@ import {
   Sparkles,
   Package,
   Eye,
-  Instagram,
-  Youtube,
-  MessageCircle,
-  MapPin,
-  Copy,
-  Check,
   ArrowRight,
 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
@@ -18,7 +12,6 @@ const LOGO_URL = "/d2donline-logo.png";
 
 const Home = () => {
   const [visits, setVisits] = useState<number | null>(null);
-  const [copied, setCopied] = useState(false);
 
   useEffect(() => {
     let cancelled = false;

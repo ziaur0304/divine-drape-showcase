@@ -72,7 +72,7 @@ const Home = () => {
             </span>
           </h1>
           <p className="mt-3 text-slate-600 text-base sm:text-lg">
-            Dream to Destination — choose where you'd like to begin
+            You just dream it, we will turn it into your destination
           </p>
         </section>
 

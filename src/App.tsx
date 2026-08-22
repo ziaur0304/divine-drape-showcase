@@ -1,7 +1,7 @@
 import { Toaster } from "@/components/ui/sonner";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LatestUpdates from "./pages/LatestUpdates";
-import Landing from "./pages/Landing";
+
 import Home from "./pages/Home";
 import Services from "./pages/Services";
 import About from "./pages/About";

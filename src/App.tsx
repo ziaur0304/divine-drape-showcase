@@ -7,6 +7,7 @@ import Services from "./pages/Services";
 import About from "./pages/About";
 import GovtMedical from "./pages/GovtMedical";
 import ComingSoon from "./pages/ComingSoon";
+import Landing from "./pages/Landing";
 import PrivateAdmissions from "./pages/PrivateAdmissions";
 import AgricultureVeterinary from "./pages/AgricultureVeterinary";
 import NursingParamedical from "./pages/NursingParamedical";
@@ -45,7 +46,7 @@ const App = () => (
       <Route path="/business" element={<ComingSoon title="D2DOnline Business" />} />
       <Route path="/healthcare" element={<ComingSoon title="D2DOnline HealthCare" />} />
       <Route path="/about" element={<About />} />
-      <Route path="/education" element={<ComingSoon title="D2DOnline Education" />} />
+      <Route path="/education" element={<Landing />} />
       <Route path="/govt-medical" element={<GovtMedical />} />
 
       <Route path="/latest-updates" element={<LatestUpdates />} />

@@ -1,6 +1,13 @@
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { supabase } from "@/integrations/supabase/client";
-import { Shield, Send, CheckCircle2, AlertTriangle, Lock } from "lucide-react";
+import { Shield, Send, CheckCircle2, AlertTriangle, Lock, MessageSquareWarning, MapPin } from "lucide-react";
+
+interface Complaint {
+  id: string;
+  complaint: string;
+  district: string | null;
+  created_at: string;
+}
 
 const LOGO_URL = "/d2donline-logo.png";
 

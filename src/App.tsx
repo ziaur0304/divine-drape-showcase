@@ -8,6 +8,7 @@ import About from "./pages/About";
 import GovtMedical from "./pages/GovtMedical";
 import ComingSoon from "./pages/ComingSoon";
 import Landing from "./pages/Landing";
+import Business from "./pages/Business";
 import PrivateAdmissions from "./pages/PrivateAdmissions";
 import AgricultureVeterinary from "./pages/AgricultureVeterinary";
 import NursingParamedical from "./pages/NursingParamedical";

@@ -26,6 +26,23 @@ const Home = () => {
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
+  const [complaints, setComplaints] = useState<Complaint[]>([]);
+  const [loadingList, setLoadingList] = useState(true);
+
+  const fetchComplaints = useCallback(async () => {
+    setLoadingList(true);
+    const { data } = await supabase
+      .from("coaching_complaints")
+      .select("id, complaint, district, created_at")
+      .eq("institute", "Ajmal S40")
+      .order("created_at", { ascending: false });
+    setComplaints(data ?? []);
+    setLoadingList(false);
+  }, []);
+
+  useEffect(() => {
+    fetchComplaints();
+  }, [fetchComplaints]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

@@ -70,6 +70,7 @@ const Home = () => {
     setSubmitted(true);
     setComplaint("");
     setDistrict("");
+    fetchComplaints();
   };
 
   return (

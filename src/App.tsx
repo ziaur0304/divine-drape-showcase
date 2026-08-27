@@ -8,6 +8,7 @@ import About from "./pages/About";
 import GovtMedical from "./pages/GovtMedical";
 import ComingSoon from "./pages/ComingSoon";
 import Landing from "./pages/Landing";
+import Business from "./pages/Business";
 import PrivateAdmissions from "./pages/PrivateAdmissions";
 import AgricultureVeterinary from "./pages/AgricultureVeterinary";
 import NursingParamedical from "./pages/NursingParamedical";
@@ -43,7 +44,7 @@ const App = () => (
       <Route path="/home" element={<Home />} />
       <Route path="/services" element={<Services />} />
       <Route path="/products" element={<ComingSoon title="D2DOnline Products" />} />
-      <Route path="/business" element={<ComingSoon title="D2DOnline Business" />} />
+      <Route path="/business" element={<Business />} />
       <Route path="/healthcare" element={<ComingSoon title="D2DOnline HealthCare" />} />
       <Route path="/about" element={<About />} />
       <Route path="/education" element={<Landing />} />

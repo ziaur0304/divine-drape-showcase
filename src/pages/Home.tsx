@@ -204,6 +204,63 @@ const Home = () => {
             </form>
           )}
         </section>
+
+        {/* Complaints list */}
+        <section className="mt-8">
+          <div className="flex items-center gap-2 mb-4">
+            <MessageSquareWarning className="w-5 h-5 text-slate-700" />
+            <h2 className="text-lg sm:text-xl font-bold text-slate-900">
+              All Submitted Complaints
+            </h2>
+            <span className="ml-auto text-sm font-semibold text-slate-500 bg-slate-100 rounded-full px-3 py-1">
+              {complaints.length}
+            </span>
+          </div>
+
+          {loadingList ? (
+            <div className="text-center text-sm text-slate-400 py-8">
+              Loading complaints...
+            </div>
+          ) : complaints.length === 0 ? (
+            <div className="text-center text-sm text-slate-400 py-8 border border-dashed border-slate-200 rounded-xl">
+              No complaints submitted yet. Be the first to raise your voice.
+            </div>
+          ) : (
+            <ul className="space-y-3">
+              {complaints.map((c) => (
+                <li
+                  key={c.id}
+                  className="bg-white rounded-xl border border-slate-200 shadow-sm p-4 sm:p-5"
+                >
+                  <p className="text-sm text-slate-800 whitespace-pre-wrap leading-relaxed">
+                    {c.complaint}
+                  </p>
+                  <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-slate-400">
+                    {c.district && (
+                      <span className="inline-flex items-center gap-1">
+                        <MapPin className="w-3.5 h-3.5" />
+                        {c.district}
+                      </span>
+                    )}
+                    <span>
+                      {new Date(c.created_at).toLocaleString("en-IN", {
+                        day: "2-digit",
+                        month: "short",
+                        year: "numeric",
+                        hour: "2-digit",
+                        minute: "2-digit",
+                      })}
+                    </span>
+                    <span className="inline-flex items-center gap-1 text-emerald-600">
+                      <Lock className="w-3.5 h-3.5" />
+                      Anonymous
+                    </span>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          )}
+        </section>
       </main>
 
       <footer className="px-4 py-6 text-center text-xs text-slate-500">

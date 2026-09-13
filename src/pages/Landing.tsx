@@ -105,9 +105,14 @@ const Landing = () => {
 
             <button
               disabled={!selectedItem}
-              onClick={() =>
-                selectedItem && navigate(selectedItem.to, { state: selectedItem.state })
-              }
+              onClick={() => {
+                if (!selectedItem) return;
+                if (selectedItem.title === "Govt MBBS, BAMS and BDS Admissions") {
+                  window.location.href = "https://neetyatra.in/";
+                  return;
+                }
+                navigate(selectedItem.to, { state: selectedItem.state });
+              }}
               className={`mt-5 w-full inline-flex items-center justify-center gap-2 h-14 rounded-xl text-white font-bold text-base shadow-lg transition-all ${
                 selectedItem
                   ? `bg-gradient-to-r ${selectedItem.gradient} hover:shadow-xl hover:-translate-y-0.5`

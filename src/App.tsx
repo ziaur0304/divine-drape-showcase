@@ -32,6 +32,7 @@ import SpecialQuota from "./pages/SpecialQuota";
 import PdfImageConverter from "./pages/PdfImageConverter";
 import CounsellingProcess from "./pages/CounsellingProcess";
 import CounsellingSchedule2026 from "./pages/CounsellingSchedule2026";
+import OutsideAssamVerification from "./pages/OutsideAssamVerification";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
 
@@ -74,6 +75,7 @@ const App = () => (
       <Route path="/pdf-image-converter" element={<PdfImageConverter />} />
       <Route path="/counselling-process" element={<CounsellingProcess />} />
       <Route path="/counselling-schedule-2026" element={<CounsellingSchedule2026 />} />
+      <Route path="/outside-assam-document-verification" element={<OutsideAssamVerification />} />
 
       <Route path="*" element={<NotFound />} />
     </Routes>

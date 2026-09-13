@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowLeft, ListOrdered, School, RefreshCcw, Users, Award, ChevronRight, Download } from "lucide-react";
+import { ArrowLeft, ListOrdered, School, RefreshCcw, Users, Award, ChevronRight, Download, CalendarDays } from "lucide-react";
 import annexuresPdf from "@/assets/Annexures.pdf.asset.json";
 
 const ITEMS = [
@@ -25,6 +25,40 @@ const LatestUpdates = () => (
     <section className="px-4 pt-6 pb-14 max-w-3xl mx-auto">
       <h1 className="text-2xl md:text-3xl font-extrabold leading-snug">Latest Updates from DME Assam</h1>
       <p className="text-sm text-slate-500 mt-1.5">Tap any update below to view details and download forms.</p>
+
+      {/* Important outside-Assam document verification update */}
+      <Link
+        to="/outside-assam-document-verification"
+        className="mt-5 block w-full overflow-hidden rounded-xl border-2 border-blue-700 bg-white text-left shadow-xl transition-all hover:border-blue-900 hover:shadow-2xl"
+      >
+        <div className="flex items-center justify-between gap-3 bg-blue-950 px-5 py-3 text-white">
+          <span className="inline-flex items-center rounded bg-rose-600 px-2.5 py-1 text-[11px] font-extrabold uppercase tracking-wide">
+            Important
+          </span>
+          <span className="flex items-center gap-1.5 text-xs font-semibold text-blue-100">
+            <CalendarDays className="h-4 w-4" />
+            12 August 2026
+          </span>
+        </div>
+        <div className="p-5">
+          <h2 className="text-lg font-extrabold leading-snug text-slate-950">
+            Document Verification for Candidates Who Studied Outside Assam
+          </h2>
+          <p className="mt-2 text-sm leading-relaxed text-slate-600">
+            Offline verification for eligible candidates in the Provisional Assam State Merit List who studied outside Assam between Class I and Class XII.
+          </p>
+          <div className="mt-3 border-l-4 border-blue-700 bg-blue-50 px-3 py-2 text-sm font-bold text-slate-900">
+            20 August 2026 • 10:00 AM onwards • DME Assam, Sixmile
+          </div>
+          <span className="mt-4 inline-flex items-center gap-2 rounded-lg bg-blue-700 px-4 py-2.5 text-sm font-bold text-white shadow-md">
+            View Details
+            <ChevronRight className="h-4 w-4" />
+          </span>
+          <p className="mt-3 text-xs font-medium text-slate-500">
+            Official Source: DME Assam — www.dme.assam.gov.in
+          </p>
+        </div>
+      </Link>
 
       {/* New important counselling schedule card */}
       <Link
@@ -67,7 +101,7 @@ const LatestUpdates = () => (
               {content}
             </a>
           ) : (
-            <Link key={key} to={to!} className={className}>
+            <Link key={key} to={to ?? "/latest-updates"} className={className}>
               {content}
             </Link>
           );
